@@ -1,0 +1,90 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/firephyz/dev/ece287/lab4/simulation/qsim
+vseven_seg
+Z1 !s110 1473991963
+!i10b 1
+!s100 ;kg7dcb]=ZmOVWH>Y]GOm3
+I0HnSh3I^41^A?4YkA8M6D2
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+w1473991962
+8lab4.vo
+Flab4.vo
+L0 32
+Z3 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1473991963.140944
+!s107 lab4.vo|
+!s90 -work|work|lab4.vo|
+!i113 1
+Z4 o-work work
+vseven_seg_vlg_check_tst
+R1
+!i10b 1
+!s100 RQQYB69C9a3NONoIUb?EY1
+IXnJg>222DE[8O00gYOZ591
+R2
+R0
+Z5 w1473991960
+Z6 8Waveform.vwf.vt
+Z7 FWaveform.vwf.vt
+L0 64
+R3
+r1
+!s85 0
+31
+Z8 !s108 1473991963.160655
+Z9 !s107 Waveform.vwf.vt|
+Z10 !s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R4
+vseven_seg_vlg_sample_tst
+R1
+!i10b 1
+!s100 nb7Tnbo_9zh0_L`EE_3`a2
+IF06WUgJheBzl6jRGXc5oz3
+R2
+R0
+R5
+R6
+R7
+L0 30
+R3
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R4
+vseven_seg_vlg_vec_tst
+R1
+!i10b 1
+!s100 =EbGM8cjkc]U1<Z[d>4Q@1
+I1h6fc;eBojWf3oZAdXzh50
+R2
+R0
+R5
+R6
+R7
+L0 321
+R3
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R4
