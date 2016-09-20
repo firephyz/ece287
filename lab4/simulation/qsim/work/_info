@@ -8,83 +8,167 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/firephyz/dev/ece287/lab4/simulation/qsim
+vBlock1
+Z1 !s110 1474136789
+!i10b 1
+!s100 mUj[RH5^VR;oISPje]W?C3
+I=><@@4haIUi7U3df0GTER3
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+w1474136789
+Z3 8lab4.vo
+Z4 Flab4.vo
+Z5 L0 32
+Z6 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1474136789.724968
+Z7 !s107 lab4.vo|
+Z8 !s90 -work|work|lab4.vo|
+!i113 1
+Z9 o-work work
+n@block1
+vBlock1_vlg_check_tst
+R1
+!i10b 1
+!s100 JLi`ci@>bm>GM<`;2W^D92
+Ia^NFSPPE5UicYmRfG6IZE0
+R2
+R0
+Z10 w1474136787
+Z11 8Waveform.vwf.vt
+Z12 FWaveform.vwf.vt
+Z13 L0 64
+R6
+r1
+!s85 0
+31
+Z14 !s108 1474136789.747547
+Z15 !s107 Waveform.vwf.vt|
+Z16 !s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R9
+n@block1_vlg_check_tst
+vBlock1_vlg_sample_tst
+R1
+!i10b 1
+!s100 0a@b@zRK16E5`<X5eTN`80
+IlW;og`?7NZOTX2i:aXN<33
+R2
+R0
+R10
+R11
+R12
+Z17 L0 30
+R6
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R9
+n@block1_vlg_sample_tst
+vBlock1_vlg_vec_tst
+R1
+!i10b 1
+!s100 B^7UkzlO?09]O5_SdaSZ>3
+I>jB3kZ;P]aTO?FHiiHXNz1
+R2
+R0
+R10
+R11
+R12
+Z18 L0 321
+R6
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R9
+n@block1_vlg_vec_tst
 vseven_seg
-Z1 !s110 1473991963
+Z19 !s110 1473991963
 !i10b 1
 !s100 ;kg7dcb]=ZmOVWH>Y]GOm3
 I0HnSh3I^41^A?4YkA8M6D2
-Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R2
 R0
 w1473991962
-8lab4.vo
-Flab4.vo
-L0 32
-Z3 OV;L;10.3d;59
+R3
+R4
+R5
+R6
 r1
 !s85 0
 31
 !s108 1473991963.140944
-!s107 lab4.vo|
-!s90 -work|work|lab4.vo|
+R7
+R8
 !i113 1
-Z4 o-work work
+R9
 vseven_seg_vlg_check_tst
-R1
+R19
 !i10b 1
 !s100 RQQYB69C9a3NONoIUb?EY1
 IXnJg>222DE[8O00gYOZ591
 R2
 R0
-Z5 w1473991960
-Z6 8Waveform.vwf.vt
-Z7 FWaveform.vwf.vt
-L0 64
-R3
+Z20 w1473991960
+R11
+R12
+R13
+R6
 r1
 !s85 0
 31
-Z8 !s108 1473991963.160655
-Z9 !s107 Waveform.vwf.vt|
-Z10 !s90 -work|work|Waveform.vwf.vt|
+Z21 !s108 1473991963.160655
+R15
+R16
 !i113 1
-R4
+R9
 vseven_seg_vlg_sample_tst
-R1
+R19
 !i10b 1
 !s100 nb7Tnbo_9zh0_L`EE_3`a2
 IF06WUgJheBzl6jRGXc5oz3
 R2
 R0
-R5
+R20
+R11
+R12
+R17
 R6
-R7
-L0 30
-R3
 r1
 !s85 0
 31
-R8
-R9
-R10
+R21
+R15
+R16
 !i113 1
-R4
+R9
 vseven_seg_vlg_vec_tst
-R1
+R19
 !i10b 1
 !s100 =EbGM8cjkc]U1<Z[d>4Q@1
 I1h6fc;eBojWf3oZAdXzh50
 R2
 R0
-R5
+R20
+R11
+R12
+R18
 R6
-R7
-L0 321
-R3
 r1
 !s85 0
 31
-R8
-R9
-R10
+R21
+R15
+R16
 !i113 1
-R4
+R9
