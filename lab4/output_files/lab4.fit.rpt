@@ -1,5 +1,5 @@
 Fitter report for lab4
-Tue Sep 20 18:03:40 2016
+Thu Sep 22 14:51:09 2016
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -64,10 +64,10 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Tue Sep 20 18:03:40 2016      ;
+; Fitter Status                      ; Successful - Thu Sep 22 14:51:09 2016      ;
 ; Quartus II 64-Bit Version          ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
 ; Revision Name                      ; lab4                                       ;
-; Top-level Entity Name              ; seven_seg                                  ;
+; Top-level Entity Name              ; lab4                                       ;
 ; Family                             ; Cyclone IV E                               ;
 ; Device                             ; EP4CE115F29C7                              ;
 ; Timing Models                      ; Final                                      ;
@@ -163,8 +163,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; b        ; Missing drive strength and slew rate ;
 ; c        ; Missing drive strength and slew rate ;
 ; d        ; Missing drive strength and slew rate ;
-; e        ; Missing drive strength and slew rate ;
 ; f        ; Missing drive strength and slew rate ;
+; e        ; Missing drive strength and slew rate ;
 ; g        ; Missing drive strength and slew rate ;
 +----------+--------------------------------------+
 
@@ -207,7 +207,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/burgekm/ece287/lab4/output_files/lab4.pin.
+The pin-out file can be found in M:/ece287/ece287/lab4/output_files/lab4.pin.
 
 
 +---------------------------------------------------------------------+
@@ -1189,7 +1189,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
-; |seven_seg                 ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 11   ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |seven_seg          ; work         ;
+; |lab4                      ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 11   ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |lab4               ; work         ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1203,13 +1203,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; b    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; c    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; d    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; e    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; f    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; e    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; g    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; in1  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; in2  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; in3  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; in0  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; in3  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; in2  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; in1  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -1218,38 +1218,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 ; Source Pin / Fanout ; Pad To Core Index ; Setting ;
 +---------------------+-------------------+---------+
-; in1                 ;                   ;         ;
-;      - a~0          ; 0                 ; 6       ;
-;      - b~0          ; 0                 ; 6       ;
-;      - c~0          ; 0                 ; 6       ;
-;      - d~0          ; 0                 ; 6       ;
-;      - e~0          ; 0                 ; 6       ;
-;      - f~0          ; 0                 ; 6       ;
-;      - g~0          ; 0                 ; 6       ;
-; in2                 ;                   ;         ;
-;      - a~0          ; 1                 ; 6       ;
-;      - b~0          ; 1                 ; 6       ;
-;      - c~0          ; 1                 ; 6       ;
-;      - d~0          ; 1                 ; 6       ;
-;      - e~0          ; 1                 ; 6       ;
-;      - f~0          ; 1                 ; 6       ;
-;      - g~0          ; 1                 ; 6       ;
-; in3                 ;                   ;         ;
-;      - a~0          ; 1                 ; 6       ;
-;      - b~0          ; 1                 ; 6       ;
-;      - c~0          ; 1                 ; 6       ;
-;      - d~0          ; 1                 ; 6       ;
-;      - e~0          ; 1                 ; 6       ;
-;      - f~0          ; 1                 ; 6       ;
-;      - g~0          ; 1                 ; 6       ;
 ; in0                 ;                   ;         ;
-;      - a~0          ; 0                 ; 6       ;
-;      - b~0          ; 0                 ; 6       ;
-;      - c~0          ; 0                 ; 6       ;
-;      - d~0          ; 0                 ; 6       ;
-;      - e~0          ; 0                 ; 6       ;
-;      - f~0          ; 0                 ; 6       ;
-;      - g~0          ; 0                 ; 6       ;
+;      - inst12~0     ; 0                 ; 6       ;
+;      - inst19~0     ; 0                 ; 6       ;
+;      - inst25~0     ; 0                 ; 6       ;
+;      - inst32~0     ; 0                 ; 6       ;
+;      - inst40~0     ; 0                 ; 6       ;
+;      - inst50~0     ; 0                 ; 6       ;
+;      - inst47~0     ; 0                 ; 6       ;
+; in3                 ;                   ;         ;
+;      - inst12~0     ; 1                 ; 6       ;
+;      - inst19~0     ; 1                 ; 6       ;
+;      - inst25~0     ; 1                 ; 6       ;
+;      - inst32~0     ; 1                 ; 6       ;
+;      - inst40~0     ; 1                 ; 6       ;
+;      - inst50~0     ; 1                 ; 6       ;
+;      - inst47~0     ; 1                 ; 6       ;
+; in2                 ;                   ;         ;
+;      - inst12~0     ; 1                 ; 6       ;
+;      - inst19~0     ; 1                 ; 6       ;
+;      - inst25~0     ; 1                 ; 6       ;
+;      - inst32~0     ; 1                 ; 6       ;
+;      - inst40~0     ; 1                 ; 6       ;
+;      - inst50~0     ; 1                 ; 6       ;
+;      - inst47~0     ; 1                 ; 6       ;
+; in1                 ;                   ;         ;
+;      - inst12~0     ; 0                 ; 6       ;
+;      - inst19~0     ; 0                 ; 6       ;
+;      - inst25~0     ; 0                 ; 6       ;
+;      - inst32~0     ; 0                 ; 6       ;
+;      - inst40~0     ; 0                 ; 6       ;
+;      - inst50~0     ; 0                 ; 6       ;
+;      - inst47~0     ; 0                 ; 6       ;
 +---------------------+-------------------+---------+
 
 
@@ -1258,17 +1258,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------+---------------------+
 ; Name      ; Fan-Out             ;
 +-----------+---------------------+
-; in0~input ; 7                   ;
-; in3~input ; 7                   ;
-; in2~input ; 7                   ;
 ; in1~input ; 7                   ;
-; g~0       ; 1                   ;
-; f~0       ; 1                   ;
-; e~0       ; 1                   ;
-; d~0       ; 1                   ;
-; c~0       ; 1                   ;
-; b~0       ; 1                   ;
-; a~0       ; 1                   ;
+; in2~input ; 7                   ;
+; in3~input ; 7                   ;
+; in0~input ; 7                   ;
+; inst47~0  ; 1                   ;
+; inst50~0  ; 1                   ;
+; inst40~0  ; 1                   ;
+; inst32~0  ; 1                   ;
+; inst25~0  ; 1                   ;
+; inst19~0  ; 1                   ;
+; inst12~0  ; 1                   ;
 +-----------+---------------------+
 
 
@@ -1279,12 +1279,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Block interconnects   ; 11 / 342,891 ( < 1 % ) ;
 ; C16 interconnects     ; 14 / 10,120 ( < 1 % )  ;
-; C4 interconnects      ; 17 / 209,544 ( < 1 % ) ;
+; C4 interconnects      ; 22 / 209,544 ( < 1 % ) ;
 ; Direct links          ; 1 / 342,891 ( < 1 % )  ;
 ; Global clocks         ; 0 / 20 ( 0 % )         ;
 ; Local interconnects   ; 0 / 119,088 ( 0 % )    ;
-; R24 interconnects     ; 7 / 9,963 ( < 1 % )    ;
-; R4 interconnects      ; 17 / 289,782 ( < 1 % ) ;
+; R24 interconnects     ; 9 / 9,963 ( < 1 % )    ;
+; R4 interconnects      ; 13 / 289,782 ( < 1 % ) ;
 +-----------------------+------------------------+
 
 
@@ -1422,13 +1422,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; b                  ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; c                  ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; d                  ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; e                  ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; f                  ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; e                  ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; g                  ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; in1                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; in2                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; in3                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; in0                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; in3                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; in2                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; in1                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
 
@@ -1519,23 +1519,23 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.01 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.04 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
-Info (144001): Generated suppressed messages file C:/Users/burgekm/ece287/lab4/output_files/lab4.fit.smsg
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (144001): Generated suppressed messages file M:/ece287/ece287/lab4/output_files/lab4.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 922 megabytes
-    Info: Processing ended: Tue Sep 20 18:03:41 2016
-    Info: Elapsed time: 00:00:11
+    Info: Peak virtual memory: 919 megabytes
+    Info: Processing ended: Thu Sep 22 14:51:12 2016
+    Info: Elapsed time: 00:00:16
     Info: Total CPU time (on all processors): 00:00:11
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/burgekm/ece287/lab4/output_files/lab4.fit.smsg.
+The suppressed messages can be found in M:/ece287/ece287/lab4/output_files/lab4.fit.smsg.
 
 
