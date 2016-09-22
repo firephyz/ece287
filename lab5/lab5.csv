@@ -1,0 +1,29 @@
+# Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, the Altera Quartus II License Agreement,
+# the Altera MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Altera and sold by Altera or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+
+# Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+# File: M:\ece287\ece287\lab5\lab5.csv
+# Generated on: Thu Sep 22 15:30:43 2016
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair
+led0,Output,PIN_E21,7,B7_N0,PIN_K4,,,,,
+led1,Output,PIN_E22,7,B7_N0,PIN_M4,,,,,
+led2,Output,PIN_E25,7,B7_N1,PIN_K3,,,,,
+x0,Input,PIN_AC28,5,B5_N2,PIN_L3,,,,,
+x1,Input,PIN_AB28,5,B5_N1,PIN_J6,,,,,
+y0,Input,PIN_AC27,5,B5_N2,PIN_L4,,,,,
+y1,Input,PIN_AD27,5,B5_N2,PIN_M3,,,,,

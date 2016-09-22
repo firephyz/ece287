@@ -1,0 +1,32 @@
+|lab5
+x0 => s1.IN0
+x0 => s2.IN0
+x0 => s2.IN0
+x1 => s0.IN0
+x1 => s1.IN0
+x1 => s2.IN1
+x1 => s2.IN0
+x2 => s3.IN0
+x2 => s3.IN1
+x2 => s3.IN0
+x3 => cout.IN1
+x3 => cout.IN0
+y0 => s1.IN1
+y0 => s2.IN1
+y0 => s2.IN1
+y1 => s0.IN1
+y1 => s1.IN1
+y1 => s2.IN1
+y1 => s2.IN1
+y2 => s3.IN1
+y2 => s3.IN1
+y2 => s3.IN1
+y3 => cout.IN1
+y3 => cout.IN1
+s0 << s0.DB_MAX_OUTPUT_PORT_TYPE
+s1 << s1.DB_MAX_OUTPUT_PORT_TYPE
+s2 << s2.DB_MAX_OUTPUT_PORT_TYPE
+s3 << s3.DB_MAX_OUTPUT_PORT_TYPE
+cout << cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
