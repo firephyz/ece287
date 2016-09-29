@@ -1,14 +1,35 @@
-module lab5(x0, x1, x2, x3, y0, y1, y2, y3, s0, s1, s2, s3, cout);
+module lab5(aors, x, y, out);
 
-	input x0, x1, x2, x3;
-	input y0, y1, y2, y3;
-	output s0, s1, s2, s3;
-	output cout;
+	input aors;
+	input [3:0]x, [3:0]y;
+	output [6:0]out;
 	
-	assign s0 = x1 ^ y1;
-	assign s1 = x0 ^ y0 ^ (x1 & y1);
-	assign s2 = (x0 & x1 &  y1) | (y0 & x1 & y1) | (x0 & y0);
-	assign s3 = (x2) ^ (y2) ^ ((x2 & s2) | (y2 & s2) | (x2 & y2));
-	assign cout = (x2) ^ (y2) ^((x3 & s3) | (y3 & s3) | (x3 & y3));
+	wire c0, c1, c2;
+	wire [3:0]sum, cout;
+	
+	reg cin;
+	reg [3:0]ywire;
+	
+	always@(*)
+	begin
+		if(aors == 1'b0)
+		begin
+			cin = 1'b0;
+			ywire = y;
+		end
+		else
+		begin
+			cin = 1'b1;
+			ywire = ~y;
+		end
+	end
+	
+	full_adder adder0(x[0], ywire[0], cin, sum[0], c0);
+	full_adder adder1(x[1], ywire[1], c0, sum[1], c1);
+	full_adder adder2(x[2], ywire[2], c1, sum[2], c2);
+	full_adder adder3(x[3], ywire[3], c2, sum[3], cout);
+	
+	seven_seg answer(sum[0], sum[1], sum[2], sum[3],
+						  out[0], out[1], out[2], out[3], out[4], out[5], out[6]);
 
 endmodule

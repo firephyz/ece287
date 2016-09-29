@@ -15,21 +15,22 @@
 
 # Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 # File: M:\ece287\ece287\lab5\output_files\lab5.csv
-# Generated on: Thu Sep 22 15:55:28 2016
+# Generated on: Thu Sep 29 14:52:40 2016
 
 # Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
 
 To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair
-cout,Output,PIN_H21,7,B7_N2,PIN_K8,,,,,
-s0,Output,PIN_E21,7,B7_N0,PIN_L6,,,,,
-s1,Output,PIN_E22,7,B7_N0,PIN_M4,,,,,
-s2,Output,PIN_E25,7,B7_N1,PIN_M3,,,,,
-s3,Output,PIN_E24,7,B7_N1,PIN_K7,,,,,
-x0,Input,PIN_AC28,5,B5_N2,PIN_AC28,,,,,
-x1,Input,PIN_AB28,5,B5_N1,PIN_AB28,,,,,
-x2,Input,PIN_AC27,5,B5_N2,PIN_J6,,,,,
-x3,Input,PIN_AD27,5,B5_N2,PIN_L8,,,,,
-y0,Input,PIN_AB27,5,B5_N1,PIN_AD27,,,,,
-y1,Input,PIN_AC26,5,B5_N2,PIN_AC27,,,,,
-y2,Input,PIN_AD26,5,B5_N2,PIN_J7,,,,,
-y3,Input,PIN_AB26,5,B5_N1,PIN_J5,,,,,
+aors,Input,PIN_Y23,5,B5_N2,PIN_Y26,,,,,
+cout,Output,PIN_H21,7,B7_N2,PIN_H21,,,,,
+s0,Output,PIN_E21,7,B7_N0,PIN_E21,,,,,
+s1,Output,PIN_E22,7,B7_N0,PIN_E22,,,,,
+s2,Output,PIN_E25,7,B7_N1,PIN_E25,,,,,
+s3,Output,PIN_E24,7,B7_N1,PIN_E24,,,,,
+x0,Input,PIN_AB28,5,B5_N1,PIN_AB28,,,,,
+x1,Input,PIN_AC28,5,B5_N2,PIN_AC28,,,,,
+x2,Input,PIN_AC27,5,B5_N2,PIN_AC27,,,,,
+x3,Input,PIN_AD27,5,B5_N2,PIN_AD27,,,,,
+y0,Input,PIN_AB27,5,B5_N1,PIN_AB27,,,,,
+y1,Input,PIN_AC26,5,B5_N2,PIN_AC26,,,,,
+y2,Input,PIN_AD26,5,B5_N2,PIN_AD26,,,,,
+y3,Input,PIN_AB26,5,B5_N1,PIN_AB26,,,,,

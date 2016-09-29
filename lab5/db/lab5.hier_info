@@ -1,32 +1,143 @@
 |lab5
-x0 => s1.IN0
-x0 => s2.IN0
-x0 => s2.IN0
-x1 => s0.IN0
-x1 => s1.IN0
-x1 => s2.IN1
-x1 => s2.IN0
-x2 => s3.IN0
-x2 => s3.IN1
-x2 => s3.IN0
-x3 => cout.IN1
-x3 => cout.IN0
-y0 => s1.IN1
-y0 => s2.IN1
-y0 => s2.IN1
-y1 => s0.IN1
-y1 => s1.IN1
-y1 => s2.IN1
-y1 => s2.IN1
-y2 => s3.IN1
-y2 => s3.IN1
-y2 => s3.IN1
-y3 => cout.IN1
-y3 => cout.IN1
-s0 << s0.DB_MAX_OUTPUT_PORT_TYPE
-s1 << s1.DB_MAX_OUTPUT_PORT_TYPE
-s2 << s2.DB_MAX_OUTPUT_PORT_TYPE
-s3 << s3.DB_MAX_OUTPUT_PORT_TYPE
-cout << cout.DB_MAX_OUTPUT_PORT_TYPE
+aors => y0wire.OUTPUTSELECT
+aors => y1wire.OUTPUTSELECT
+aors => y2wire.OUTPUTSELECT
+aors => y3wire.OUTPUTSELECT
+aors => cin.IN1
+x0 => x0.IN1
+x1 => x1.IN1
+x2 => x2.IN1
+x3 => x3.IN1
+y0 => y0wire.DATAB
+y0 => y0wire.DATAA
+y1 => y1wire.DATAB
+y1 => y1wire.DATAA
+y2 => y2wire.DATAB
+y2 => y2wire.DATAA
+y3 => y3wire.DATAB
+y3 => y3wire.DATAA
+a << seven_seg:answer.port4
+b << seven_seg:answer.port5
+c << seven_seg:answer.port6
+d << seven_seg:answer.port7
+e << seven_seg:answer.port8
+f << seven_seg:answer.port9
+g << seven_seg:answer.port10
+
+
+|lab5|full_adder:adder0
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab5|full_adder:adder1
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab5|full_adder:adder2
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab5|full_adder:adder3
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab5|seven_seg:answer
+in0 => a.IN1
+in0 => b.IN1
+in0 => b.IN1
+in0 => c.IN1
+in0 => c.IN0
+in0 => d.IN1
+in0 => d.IN1
+in0 => g.IN1
+in0 => a.IN1
+in0 => a.IN0
+in0 => b.IN1
+in0 => b.IN1
+in0 => d.IN1
+in0 => d.IN1
+in0 => d.IN1
+in0 => e.IN0
+in0 => f.IN0
+in1 => a.IN0
+in1 => a.IN0
+in1 => b.IN0
+in1 => c.IN1
+in1 => d.IN1
+in1 => e.IN1
+in1 => e.IN0
+in1 => a.IN0
+in1 => a.IN1
+in1 => b.IN0
+in1 => b.IN0
+in1 => c.IN1
+in1 => d.IN0
+in1 => d.IN1
+in1 => f.IN1
+in2 => a.IN1
+in2 => a.IN0
+in2 => d.IN1
+in2 => e.IN0
+in2 => f.IN1
+in2 => a.IN1
+in2 => a.IN0
+in2 => b.IN1
+in2 => b.IN0
+in3 => a.IN1
+in3 => a.IN1
+in3 => b.IN1
+in3 => e.IN1
+in3 => e.IN1
+in3 => a.IN1
+in3 => a.IN1
+in3 => b.IN1
+in3 => b.IN1
+a <= a.DB_MAX_OUTPUT_PORT_TYPE
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+e <= e.DB_MAX_OUTPUT_PORT_TYPE
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+g <= g.DB_MAX_OUTPUT_PORT_TYPE
 
 
