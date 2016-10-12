@@ -1,0 +1,50 @@
+# Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, the Altera Quartus II License Agreement,
+# the Altera MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Altera and sold by Altera or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+
+# Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
+# File: /home/kyle/dev/verilog/test/pins.csv
+# Generated on: Wed Oct 12 11:07:15 2016
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Strict Preservation
+clk,Input,PIN_Y2,2,B2_N0,PIN_D4,,,,,,
+data_in[7],Input,PIN_AB28,5,B5_N1,PIN_AA3,,,,,,
+data_in[6],Input,EDGE_BOTTOM,,,PIN_AB19,,,,,,
+data_in[5],Input,EDGE_BOTTOM,,,PIN_AE24,,,,,,
+data_in[4],Input,EDGE_BOTTOM,,,PIN_AD14,,,,,,
+data_in[3],Input,EDGE_BOTTOM,,,PIN_AE7,,,,,,
+data_in[2],Input,EDGE_BOTTOM,,,PIN_D16,,,,,,
+data_in[1],Input,EDGE_BOTTOM,,,PIN_AG4,,,,,,
+data_in[0],Input,EDGE_BOTTOM,,,PIN_G10,,,,,,
+data_out_pin[7],Output,EDGE_BOTTOM,,,PIN_G13,,,,,,
+data_out_pin[6],Output,EDGE_BOTTOM,,,PIN_AH17,,,,,,
+data_out_pin[5],Output,EDGE_BOTTOM,,,PIN_G14,,,,,,
+data_out_pin[4],Output,EDGE_BOTTOM,,,PIN_U2,,,,,,
+data_out_pin[3],Output,EDGE_BOTTOM,,,PIN_AE11,,,,,,
+data_out_pin[2],Output,EDGE_BOTTOM,,,PIN_AF21,,,,,,
+data_out_pin[1],Output,EDGE_BOTTOM,,,PIN_AF11,,,,,,
+data_out_pin[0],Output,EDGE_BOTTOM,,,PIN_D9,,,,,,
+display_out[6],Output,PIN_H22,6,B6_N0,PIN_AC11,,,,,,
+display_out[5],Output,PIN_J22,6,B6_N0,PIN_A8,,,,,,
+display_out[4],Output,PIN_L25,6,B6_N1,PIN_R3,,,,,,
+display_out[3],Output,PIN_L26,6,B6_N1,PIN_Y7,,,,,,
+display_out[2],Output,PIN_E17,7,B7_N2,PIN_J13,,,,,,
+display_out[1],Output,PIN_F22,7,B7_N0,PIN_B7,,,,,,
+display_out[0],Output,PIN_G18,7,B7_N2,PIN_AC21,,,,,,
+enable,Output,PIN_L4,1,B1_N1,PIN_B19,,,,,,
+power,Output,PIN_L5,1,B1_N1,PIN_V21,,,,,,
+rs_pin,Output,PIN_M2,1,B1_N2,PIN_C13,,,,,,
+rw_pin,Output,PIN_M1,1,B1_N2,PIN_L7,,,,,,
