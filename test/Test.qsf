@@ -61,31 +61,16 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/modelsim/Waveform.vw
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_location_assignment PIN_Y2 -to clk
-set_location_assignment PIN_AB28 -to data_in[7]
-set_location_assignment EDGE_BOTTOM -to data_in[6]
-set_location_assignment EDGE_BOTTOM -to data_in[5]
-set_location_assignment EDGE_BOTTOM -to data_in[4]
-set_location_assignment EDGE_BOTTOM -to data_in[3]
-set_location_assignment EDGE_BOTTOM -to data_in[2]
-set_location_assignment EDGE_BOTTOM -to data_in[1]
-set_location_assignment EDGE_BOTTOM -to data_in[0]
-set_location_assignment EDGE_BOTTOM -to data_out_pin[7]
-set_location_assignment EDGE_BOTTOM -to data_out_pin[6]
-set_location_assignment EDGE_BOTTOM -to data_out_pin[5]
-set_location_assignment EDGE_BOTTOM -to data_out_pin[4]
-set_location_assignment EDGE_BOTTOM -to data_out_pin[3]
-set_location_assignment EDGE_BOTTOM -to data_out_pin[2]
-set_location_assignment EDGE_BOTTOM -to data_out_pin[1]
-set_location_assignment EDGE_BOTTOM -to data_out_pin[0]
-set_location_assignment PIN_H22 -to display_out[6]
-set_location_assignment PIN_J22 -to display_out[5]
-set_location_assignment PIN_L25 -to display_out[4]
-set_location_assignment PIN_L26 -to display_out[3]
-set_location_assignment PIN_E17 -to display_out[2]
-set_location_assignment PIN_F22 -to display_out[1]
-set_location_assignment PIN_G18 -to display_out[0]
+set_location_assignment PIN_M5 -to data_out_pin[7]
+set_location_assignment PIN_M3 -to data_out_pin[6]
+set_location_assignment PIN_K2 -to data_out_pin[5]
+set_location_assignment PIN_K1 -to data_out_pin[4]
+set_location_assignment PIN_K7 -to data_out_pin[3]
+set_location_assignment PIN_L2 -to data_out_pin[2]
+set_location_assignment PIN_L1 -to data_out_pin[1]
+set_location_assignment PIN_L3 -to data_out_pin[0]
 set_location_assignment PIN_L4 -to enable
-set_location_assignment PIN_L5 -to power
 set_location_assignment PIN_M2 -to rs_pin
 set_location_assignment PIN_M1 -to rw_pin
+set_location_assignment PIN_L5 -to power_pin
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
