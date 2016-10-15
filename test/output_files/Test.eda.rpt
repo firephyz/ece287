@@ -1,6 +1,6 @@
 EDA Netlist Writer report for Test
-Wed Oct 12 23:01:56 2016
-Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
+Sat Oct 15 18:19:08 2016
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
 ---------------------
@@ -17,7 +17,7 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edit
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -37,50 +37,42 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Oct 12 23:01:56 2016 ;
+; EDA Netlist Writer Status ; Successful - Sat Oct 15 18:19:08 2016 ;
 ; Revision Name             ; Test                                  ;
-; Top-level Entity Name     ; Test                                  ;
+; Top-level Entity Name     ; LCD_Interface                         ;
 ; Family                    ; Cyclone IV E                          ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                        ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-; Option                                                                                            ; Setting                ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-; Tool Name                                                                                         ; ModelSim-Altera (VHDL) ;
-; Generate netlist for functional simulation only                                                   ; Off                    ;
-; Time scale                                                                                        ; 1 ps                   ;
-; Truncate long hierarchy paths                                                                     ; Off                    ;
-; Map illegal HDL characters                                                                        ; Off                    ;
-; Flatten buses into individual nodes                                                               ; Off                    ;
-; Maintain hierarchy                                                                                ; Off                    ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                    ;
-; Enable glitch filtering                                                                           ; Off                    ;
-; Do not write top level VHDL entity                                                                ; Off                    ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                    ;
-; Architecture name in VHDL output netlist                                                          ; structure              ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                    ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                    ;
-+---------------------------------------------------------------------------------------------------+------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                           ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Option                                                                                            ; Setting                   ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
+; Generate netlist for functional simulation only                                                   ; On                        ;
+; Truncate long hierarchy paths                                                                     ; Off                       ;
+; Map illegal HDL characters                                                                        ; Off                       ;
+; Flatten buses into individual nodes                                                               ; Off                       ;
+; Maintain hierarchy                                                                                ; Off                       ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                       ;
+; Enable glitch filtering                                                                           ; Off                       ;
+; Do not write top level VHDL entity                                                                ; Off                       ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                       ;
+; Architecture name in VHDL output netlist                                                          ; structure                 ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                       ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                       ;
++---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------------+
-; Simulation Generated Files                                                      ;
-+---------------------------------------------------------------------------------+
-; Generated Files                                                                 ;
-+---------------------------------------------------------------------------------+
-; /home/kyle/dev/verilog/test/simulation/modelsim/Test_7_1200mv_85c_slow.vho      ;
-; /home/kyle/dev/verilog/test/simulation/modelsim/Test_7_1200mv_0c_slow.vho       ;
-; /home/kyle/dev/verilog/test/simulation/modelsim/Test_min_1200mv_0c_fast.vho     ;
-; /home/kyle/dev/verilog/test/simulation/modelsim/Test.vho                        ;
-; /home/kyle/dev/verilog/test/simulation/modelsim/Test_7_1200mv_85c_vhd_slow.sdo  ;
-; /home/kyle/dev/verilog/test/simulation/modelsim/Test_7_1200mv_0c_vhd_slow.sdo   ;
-; /home/kyle/dev/verilog/test/simulation/modelsim/Test_min_1200mv_0c_vhd_fast.sdo ;
-; /home/kyle/dev/verilog/test/simulation/modelsim/Test_vhd.sdo                    ;
-+---------------------------------------------------------------------------------+
++-----------------------------------------+
+; Simulation Generated Files              ;
++-----------------------------------------+
+; Generated Files                         ;
++-----------------------------------------+
+; M:/ece287/test/simulation/qsim//Test.vo ;
++-----------------------------------------+
 
 
 +-----------------------------+
@@ -88,21 +80,28 @@ agreement for further details.
 +-----------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
-    Info: Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
-    Info: Processing started: Wed Oct 12 23:01:56 2016
-Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Test -c Test
-Info (204019): Generated file Test_7_1200mv_85c_slow.vho in folder "/home/kyle/dev/verilog/test/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Test_7_1200mv_0c_slow.vho in folder "/home/kyle/dev/verilog/test/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Test_min_1200mv_0c_fast.vho in folder "/home/kyle/dev/verilog/test/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Test.vho in folder "/home/kyle/dev/verilog/test/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Test_7_1200mv_85c_vhd_slow.sdo in folder "/home/kyle/dev/verilog/test/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Test_7_1200mv_0c_vhd_slow.sdo in folder "/home/kyle/dev/verilog/test/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Test_min_1200mv_0c_vhd_fast.sdo in folder "/home/kyle/dev/verilog/test/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Test_vhd.sdo in folder "/home/kyle/dev/verilog/test/simulation/modelsim/" for EDA simulation tool
+    Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+    Info: Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, the Altera Quartus II License Agreement,
+    Info: the Altera MegaCore Function License Agreement, or other 
+    Info: applicable license agreement, including, without limitation, 
+    Info: that your use is for the sole purpose of programming logic 
+    Info: devices manufactured by Altera and sold by Altera or its 
+    Info: authorized distributors.  Please refer to the applicable 
+    Info: agreement for further details.
+    Info: Processing started: Sat Oct 15 18:19:07 2016
+Info: Command: quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=M:/ece287/test/simulation/qsim/ Test -c Test
+Info (204019): Generated file Test.vo in folder "M:/ece287/test/simulation/qsim//" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 1093 megabytes
-    Info: Processing ended: Wed Oct 12 23:01:56 2016
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 465 megabytes
+    Info: Processing ended: Sat Oct 15 18:19:09 2016
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 
