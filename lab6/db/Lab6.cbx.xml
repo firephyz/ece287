@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Lab6">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|BUSMUX:inst5|lpm_mux:$00000" CBX_FILE_NAME="mux_7rc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|BUSMUX:inst4|lpm_mux:$00000" CBX_FILE_NAME="mux_7rc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|BUSMUX:inst1243|lpm_mux:$00000" CBX_FILE_NAME="mux_7rc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|BUSMUX:inst7|lpm_mux:$00000" CBX_FILE_NAME="mux_7rc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|BUSMUX:inst10|lpm_mux:$00000" CBX_FILE_NAME="mux_7rc.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

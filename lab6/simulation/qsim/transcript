@@ -1,0 +1,24 @@
+# do Lab6.do 
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module lab_verilog_example
+# 
+# Top level modules:
+# 	lab_verilog_example
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module lab_verilog_example_vlg_sample_tst
+# -- Compiling module lab_verilog_example_vlg_check_tst
+# -- Compiling module lab_verilog_example_vlg_vec_tst
+# 
+# Top level modules:
+# 	lab_verilog_example_vlg_vec_tst
+# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver -c -voptargs=\"+acc\" -t 1ps -novopt work.lab_verilog_example_vlg_vec_tst 
+# Loading work.lab_verilog_example_vlg_vec_tst
+# Loading work.lab_verilog_example
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading work.lab_verilog_example_vlg_sample_tst
+# Loading work.lab_verilog_example_vlg_check_tst
+# Simulation passed !
+# ** Note: $finish    : Waveform.vwf.vt(230)
+#    Time: 1 us  Iteration: 0  Instance: /lab_verilog_example_vlg_vec_tst/tb_out
