@@ -54,10 +54,6 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
-set_global_assignment -name VERILOG_FILE seven_seg.v
-set_global_assignment -name VERILOG_FILE Test.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/modelsim/Waveform.vwf
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_location_assignment PIN_Y2 -to clk
@@ -74,3 +70,7 @@ set_location_assignment PIN_M2 -to rs_pin
 set_location_assignment PIN_M1 -to rw_pin
 set_location_assignment PIN_L5 -to power_pin
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VERILOG_FILE LCD_Interface.v
+set_global_assignment -name VERILOG_FILE seven_seg.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/modelsim/Waveform.vwf

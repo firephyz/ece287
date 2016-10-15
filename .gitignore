@@ -1,0 +1,6 @@
+*.sof
+*.fit.rpt
+*.map.rpt
+*.pin
+*.sta.rpt
+*.ddb
