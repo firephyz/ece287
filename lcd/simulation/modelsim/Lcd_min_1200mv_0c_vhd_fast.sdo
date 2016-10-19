@@ -30,7 +30,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "Lcd")
-  (DATE "10/15/2016 19:07:15")
+  (DATE "10/19/2016 08:04:22")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 64-Bit")
   (VERSION "Version 14.0.0 Build 200 06/17/2014 SJ Web Edition")
@@ -39,11 +39,91 @@
 
   (CELL
     (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE \\data_out_pin\[0\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (310:310:310) (271:271:271))
+        (IOPATH i o (1605:1605:1605) (1602:1602:1602))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE \\data_out_pin\[1\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (411:411:411) (363:363:363))
+        (IOPATH i o (1655:1655:1655) (1652:1652:1652))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE \\data_out_pin\[2\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (411:411:411) (363:363:363))
+        (IOPATH i o (1645:1645:1645) (1642:1642:1642))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE \\data_out_pin\[3\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (427:427:427) (378:378:378))
+        (IOPATH i o (1625:1625:1625) (1622:1622:1622))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE \\data_out_pin\[4\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (427:427:427) (378:378:378))
+        (IOPATH i o (1625:1625:1625) (1622:1622:1622))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE \\data_out_pin\[5\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (310:310:310) (271:271:271))
+        (IOPATH i o (1625:1625:1625) (1622:1622:1622))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE \\data_out_pin\[6\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (427:427:427) (378:378:378))
+        (IOPATH i o (1615:1615:1615) (1612:1612:1612))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE \\data_out_pin\[7\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (310:310:310) (271:271:271))
+        (IOPATH i o (1615:1615:1615) (1612:1612:1612))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
     (INSTANCE \\rw_pin\~output\\)
     (DELAY
       (ABSOLUTE
-        (PORT i (187:187:187) (226:226:226))
-        (IOPATH i o (1589:1589:1589) (1614:1614:1614))
+        (PORT i (253:253:253) (291:291:291))
+        (IOPATH i o (1622:1622:1622) (1625:1625:1625))
       )
     )
   )
@@ -79,7 +159,7 @@
     (INSTANCE busyTick)
     (DELAY
       (ABSOLUTE
-        (PORT clk (1147:1147:1147) (1159:1159:1159))
+        (PORT clk (1196:1196:1196) (1208:1208:1208))
         (PORT d (37:37:37) (50:50:50))
         (IOPATH (posedge clk) q (105:105:105) (105:105:105))
       )
@@ -89,11 +169,23 @@
     )
   )
   (CELL
-    (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\rw\~feeder\\)
+    (CELLTYPE "cycloneive_io_ibuf")
+    (INSTANCE \\data_out_pin\[7\]\~input\\)
     (DELAY
       (ABSOLUTE
-        (PORT datad (117:117:117) (154:154:154))
+        (IOPATH i o (318:318:318) (697:697:697))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_lcell_comb")
+    (INSTANCE \\rw\~0\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1601:1601:1601) (1788:1788:1788))
+        (PORT datad (128:128:128) (165:165:165))
+        (IOPATH dataa combout (170:170:170) (163:163:163))
+        (IOPATH datac combout (190:190:190) (195:195:195))
         (IOPATH datad combout (68:68:68) (63:63:63))
       )
     )
@@ -103,7 +195,7 @@
     (INSTANCE rw)
     (DELAY
       (ABSOLUTE
-        (PORT clk (1147:1147:1147) (1159:1159:1159))
+        (PORT clk (1196:1196:1196) (1208:1208:1208))
         (PORT d (37:37:37) (50:50:50))
         (IOPATH (posedge clk) q (105:105:105) (105:105:105))
       )

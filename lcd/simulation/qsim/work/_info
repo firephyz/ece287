@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dM:\ece287\lcd\simulation\qsim
+vLcd
+Z1 !s100 a:_<A^CFXMdR2f@6AB]740
+Z2 IHh0]1?1A:`S]<L;0_5Nl;2
+Z3 VWf4EVPY]FAi6YHgRXY>943
+Z4 dM:\ece287\lcd\simulation\qsim
+Z5 w1476880090
+Z6 8Lcd.vo
+Z7 FLcd.vo
+L0 32
+Z8 OV;L;10.1e;51
+r1
+31
+Z9 !s90 -work|work|Lcd.vo|
+Z10 o-work work -O0
+n@lcd
+!i10b 1
+!s85 0
+Z11 !s108 1476880091.902000
+Z12 !s107 Lcd.vo|
+!s101 -O0
+vLcd_vlg_check_tst
+!i10b 1
+Z13 !s100 0EQWPFadV1lLdAXTVHj8Z0
+Z14 I1KWOgJLc^K<CKB<LcPYhT0
+Z15 VF;_QQOSo4ccYS1L?3W7OD2
+R4
+Z16 w1476880087
+Z17 8Waveform.vwf.vt
+Z18 FWaveform.vwf.vt
+L0 60
+R8
+r1
+!s85 0
+31
+Z19 !s108 1476880092.537000
+Z20 !s107 Waveform.vwf.vt|
+Z21 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R10
+Z22 n@lcd_vlg_check_tst
+vLcd_vlg_sample_tst
+!i10b 1
+Z23 !s100 4jokei@o;J0]^SK]H8d8U0
+Z24 IB9^5:JPH46cR`6H5KQF7]1
+Z25 V>[mUjS^`e;hY>9cjMOG9O1
+R4
+R16
+R17
+R18
+L0 30
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+Z26 n@lcd_vlg_sample_tst
+vLcd_vlg_vec_tst
+!i10b 1
+Z27 !s100 Skf1;@O_HH1_CF;SYJ8Q61
+Z28 ITDB`7k<I??8YQXPND?NI91
+Z29 VF8MnG1T?e:I7@aFAA7?Kn2
+R4
+R16
+R17
+R18
+Z30 L0 832
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+Z31 n@lcd_vlg_vec_tst
