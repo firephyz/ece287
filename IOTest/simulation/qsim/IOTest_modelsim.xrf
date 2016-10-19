@@ -1,0 +1,13 @@
+vendor_name = ModelSim
+source_file = 1, M:/ece287/IOTest/IOTest.v
+source_file = 1, M:/ece287/IOTest/MakeOutput.v
+source_file = 1, M:/ece287/IOTest/Waveform.vwf
+source_file = 1, M:/ece287/IOTest/db/IOTest.cbx.xml
+design_name = IOTest
+instance = comp, \io[0]~output , io[0]~output, IOTest, 1
+instance = comp, \io[1]~output , io[1]~output, IOTest, 1
+instance = comp, \peaker[0]~output , peaker[0]~output, IOTest, 1
+instance = comp, \peaker[1]~output , peaker[1]~output, IOTest, 1
+instance = comp, \in_out~input , in_out~input, IOTest, 1
+instance = comp, \io[0]~input , io[0]~input, IOTest, 1
+instance = comp, \io[1]~input , io[1]~input, IOTest, 1

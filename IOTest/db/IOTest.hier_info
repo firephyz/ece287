@@ -1,0 +1,14 @@
+|IOTest
+in_out => io.OUTPUTSELECT
+in_out => io.OUTPUTSELECT
+io[0] <> io[0]
+io[1] <> io[1]
+peaker[0] <= peaker[0].DB_MAX_OUTPUT_PORT_TYPE
+peaker[1] <= peaker[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|IOTest|MakeOutput:out_0
+out[0] <= <VCC>
+out[1] <= <GND>
+
+

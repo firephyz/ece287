@@ -1,0 +1,12 @@
+module IOTest(in_out, io, peaker);
+
+	input in_out;
+	output [1:0] peaker;
+	inout [1:0] io;
+	
+	assign io = in_out ? 2'b11 : 2'bZ;
+	assign peaker = io;
+	
+	MakeOutput out_0(io);
+
+endmodule

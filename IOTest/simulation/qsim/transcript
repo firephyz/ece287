@@ -1,0 +1,23 @@
+# do IOTest.do 
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module IOTest
+# 
+# Top level modules:
+# 	IOTest
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module IOTest_vlg_sample_tst
+# -- Compiling module IOTest_vlg_check_tst
+# -- Compiling module IOTest_vlg_vec_tst
+# 
+# Top level modules:
+# 	IOTest_vlg_vec_tst
+# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver -c -voptargs=\"+acc\" -t 1ps -novopt work.IOTest_vlg_vec_tst 
+# Loading work.IOTest_vlg_vec_tst
+# Loading work.IOTest
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading work.IOTest_vlg_sample_tst
+# Loading work.IOTest_vlg_check_tst
+# Simulation passed !
+# ** Note: $finish    : Waveform.vwf.vt(202)
+#    Time: 1 us  Iteration: 0  Instance: /IOTest_vlg_vec_tst/tb_out

@@ -1,0 +1,158 @@
+// Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus II License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 14.0.0 Build 200 06/17/2014 SJ Web Edition"
+
+// DATE "10/19/2016 07:51:28"
+
+// 
+// Device: Altera EP4CE115F29C7 Package FBGA780
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module IOTest (
+	in_out,
+	io,
+	peaker);
+input 	in_out;
+inout 	[1:0] io;
+output 	[1:0] peaker;
+
+// Design Ports Information
+// peaker[0]	=>  Location: PIN_P26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// peaker[1]	=>  Location: PIN_H3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// io[0]	=>  Location: PIN_A17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// io[1]	=>  Location: PIN_E1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// in_out	=>  Location: PIN_H4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \io[0]~input_o ;
+wire \io[1]~input_o ;
+wire \io[0]~output_o ;
+wire \io[1]~output_o ;
+wire \peaker[0]~output_o ;
+wire \peaker[1]~output_o ;
+wire \in_out~input_o ;
+
+
+// Location: IOOBUF_X60_Y73_N2
+cycloneive_io_obuf \io[0]~output (
+	.i(vcc),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\io[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \io[0]~output .bus_hold = "false";
+defparam \io[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y61_N23
+cycloneive_io_obuf \io[1]~output (
+	.i(\in_out~input_o ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\io[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \io[1]~output .bus_hold = "false";
+defparam \io[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X115_Y40_N2
+cycloneive_io_obuf \peaker[0]~output (
+	.i(vcc),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\peaker[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \peaker[0]~output .bus_hold = "false";
+defparam \peaker[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y62_N23
+cycloneive_io_obuf \peaker[1]~output (
+	.i(\in_out~input_o ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\peaker[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \peaker[1]~output .bus_hold = "false";
+defparam \peaker[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y62_N15
+cycloneive_io_ibuf \in_out~input (
+	.i(in_out),
+	.ibar(gnd),
+	.o(\in_out~input_o ));
+// synopsys translate_off
+defparam \in_out~input .bus_hold = "false";
+defparam \in_out~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X60_Y73_N1
+cycloneive_io_ibuf \io[0]~input (
+	.i(io[0]),
+	.ibar(gnd),
+	.o(\io[0]~input_o ));
+// synopsys translate_off
+defparam \io[0]~input .bus_hold = "false";
+defparam \io[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y61_N22
+cycloneive_io_ibuf \io[1]~input (
+	.i(io[1]),
+	.ibar(gnd),
+	.o(\io[1]~input_o ));
+// synopsys translate_off
+defparam \io[1]~input .bus_hold = "false";
+defparam \io[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+assign peaker[0] = \peaker[0]~output_o ;
+
+assign peaker[1] = \peaker[1]~output_o ;
+
+assign io[0] = \io[0]~output_o ;
+
+assign io[1] = \io[1]~output_o ;
+
+endmodule
