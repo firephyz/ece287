@@ -1,4 +1,4 @@
-module Lcd(data_out_pin, rw_pin, rs_pin, power_pin, enable_pin, clk, counter_out, command_out);
+module Lcd(data_out_pin, rw_pin, rs_pin, power_pin, enable_pin, clk);
 
 	parameter
 		RS_INSTRUCTION = 0,
@@ -16,8 +16,6 @@ module Lcd(data_out_pin, rw_pin, rs_pin, power_pin, enable_pin, clk, counter_out
 	input clk;													// clock signal
 	inout [7:0]data_out_pin;								// Data lines to LCD display
 	output enable_pin, rw_pin, rs_pin, power_pin;	// Various control related wires to the display
-	output [9:0] command_out;
-	output [15:0] counter_out;
 	
 	// Connect internal regs with output wires
 	reg power;
@@ -31,23 +29,22 @@ module Lcd(data_out_pin, rw_pin, rs_pin, power_pin, enable_pin, clk, counter_out
 	
 	// Extra internal wires
 	wire busy_signal;
+	wire [9:0]com;
 	reg has_init;
 	reg busyTick;
 	reg [9:0] commands[0:15];
 	reg [15:0] instrCounter;
-	reg [15:0] next_instr;
 	reg [7:0] data_out_reg;
 	
 	// Connect the wire we will probe to see if the module is busy
 	assign data_out_pin = busyTick ? 8'bZ : data_out_reg;
-	assign busy_signal = data_out_pin[7];
-	assign command_out = commands[instrCounter];
-	assign counter_out = instrCounter;
+	assign busy_signal = busyTick? data_out_pin[7] : 1'b0;
+	assign com = commands[instrCounter];
 	
 	initial begin
 		power = 1;
 		has_init = 0;
-		data_out_reg = 8'b0;
+		data_out_reg = 8'bZ;
 		enable = 1;
 		rw = 0;
 		rs = 0;
@@ -58,10 +55,6 @@ module Lcd(data_out_pin, rw_pin, rs_pin, power_pin, enable_pin, clk, counter_out
 		commands[1] = 8'b0000000110;
 		commands[2] = 8'b0000001111;
 		commands[3] = 8'b0000110000;
-	end
-	
-	always@(*) begin
-		next_instr = instrCounter + 16'b1;
 	end
 
 	// Main data loop
@@ -74,31 +67,23 @@ module Lcd(data_out_pin, rw_pin, rs_pin, power_pin, enable_pin, clk, counter_out
 			if(busyTick) begin
 				rw = RW_READ;
 				rs = RS_INSTRUCTION;
-				data_out_reg = 8'b0;
+				data_out_reg = 8'bZ;
 				instrCounter = instrCounter;
 			end
 			else begin
 				if(!busy_signal) begin
-					rs = commands[instrCounter][9];
-					rw = commands[instrCounter][8];
-					data_out_reg = commands[instrCounter][7:0];
-					instrCounter = next_instr;
+					rs = com[9];
+					rw = com[8];
+					data_out_reg = com[7:0];
+					instrCounter = instrCounter + 16'b1;
 				end
 				else begin
-					instrCounter = instrCounter;
 					rw = RW_READ;
 					rs = RS_INSTRUCTION;
-					data_out_reg = 8'b0;
+					data_out_reg = 8'bZ;
+					instrCounter = instrCounter;
 				end
 			end
-		end
-	end
-	
-	always@(negedge clk) begin
-		// Only send data to the lcd if it isn't busy
-		if(!busy_signal) begin
-		end
-		else begin
 		end
 	end
 endmodule

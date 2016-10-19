@@ -1,19 +1,27 @@
-# do Lcd.do 
+# do Lcd.do
 # ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 12:35:14 on Oct 19,2016
+# vlog -work work Lcd.vo 
 # -- Compiling module Lcd
 # 
 # Top level modules:
 # 	Lcd
-# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# End time: 12:35:15 on Oct 19,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 12:35:15 on Oct 19,2016
+# vlog -work work Waveform.vwf.vt 
 # -- Compiling module Lcd_vlg_sample_tst
 # -- Compiling module Lcd_vlg_check_tst
 # -- Compiling module Lcd_vlg_vec_tst
 # 
 # Top level modules:
 # 	Lcd_vlg_vec_tst
-# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver -c -voptargs=\"+acc\" -t 1ps -novopt work.Lcd_vlg_vec_tst 
+# End time: 12:35:15 on Oct 19,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -c -do "Lcd.do" 
+# Start time: 12:35:15 on Oct 19,2016
 # Loading work.Lcd_vlg_vec_tst
 # Loading work.Lcd
 # Loading cycloneive_ver.cycloneive_io_obuf
@@ -27,5 +35,7 @@
 # Loading work.Lcd_vlg_check_tst
 # Loading altera_ver.PRIM_GDFF_LOW
 # Simulation passed !
-# ** Note: $finish    : Waveform.vwf.vt(828)
+# ** Note: $finish    : Waveform.vwf.vt(344)
 #    Time: 1 us  Iteration: 0  Instance: /Lcd_vlg_vec_tst/tb_out
+# End time: 12:35:15 on Oct 19,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

@@ -4,3 +4,4 @@
 *.pin
 *.sta.rpt
 *.ddb
+lcd/simulation/
