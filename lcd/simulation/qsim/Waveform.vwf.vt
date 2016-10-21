@@ -1,4 +1,4 @@
-// Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+// Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
 // Your use of Altera Corporation's design tools, logic functions 
 // and other software and tools, and its AMPP partner logic 
 // functions, and any output files from any of the foregoing 
@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "10/19/2016 12:35:11"
+// Generated on "10/20/2016 14:57:52"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    Lcd
 // 
@@ -30,27 +30,29 @@
 module Lcd_vlg_sample_tst(
 	clk,
 	data_out_pin,
+	start,
 	sampler_tx
 );
 input  clk;
 input [7:0] data_out_pin;
+input  start;
 output sampler_tx;
 
 reg sample;
 time current_time;
-always @(clk or data_out_pin)
+always @(clk or data_out_pin or start)
                                                                                 
 begin                                                 
  if ($realtime > 0)                                   
  begin                                                
-    if ($realtime == 0 || $realtime != current_time)  
-    begin                                             
-        if (sample === 1'bx)                          
-            sample = 0;                               
-        else                                          
-            sample = ~sample;                         
-    end                                               
-    current_time = $realtime;                         
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
  end                                                  
 end                                                   
 
@@ -136,18 +138,6 @@ end
 
 
 
-// expected rs_pin
-initial
-begin
-	rs_pin_expected = 1'bX;
-end 
-
-// expected rw_pin
-initial
-begin
-	rw_pin_expected = 1'bX;
-end 
-
 // expected enable_pin
 initial
 begin
@@ -158,6 +148,18 @@ end
 initial
 begin
 	power_pin_expected = 1'bX;
+end 
+
+// expected rs_pin
+initial
+begin
+	rs_pin_expected = 1'bX;
+end 
+
+// expected rw_pin
+initial
+begin
+	rw_pin_expected = 1'bX;
 end 
 // generate trigger
 always @(data_out_pin_expected or data_out_pin or enable_pin_expected or enable_pin or power_pin_expected or power_pin or rs_pin_expected or rs_pin or rw_pin_expected or rw_pin)
@@ -350,6 +352,7 @@ module Lcd_vlg_vec_tst();
 // general purpose registers
 reg clk;
 reg [7:0] treg_data_out_pin;
+reg start;
 // wires                                               
 wire [7:0] data_out_pin;
 wire enable_pin;
@@ -368,7 +371,8 @@ Lcd i1 (
 	.enable_pin(enable_pin),
 	.power_pin(power_pin),
 	.rs_pin(rs_pin),
-	.rw_pin(rw_pin)
+	.rw_pin(rw_pin),
+	.start(start)
 );
 
 // clk
@@ -385,139 +389,52 @@ begin
 	clk = #40000 1'b0;
 	clk = #40000 1'b1;
 	clk = #40000 1'b0;
-	clk = #40000 1'b1;
-	clk = #40000 1'b0;
-	clk = #40000 1'b1;
-	clk = #40000 1'b0;
-	clk = #40000 1'b1;
-	clk = #40000 1'b0;
-	clk = #40000 1'b1;
-	clk = #40000 1'b0;
 end 
 // data_out_pin[ 7 ]
 initial
 begin
 	treg_data_out_pin[7] = 1'bZ;
-	treg_data_out_pin[7] = #40000 1'b0;
-	treg_data_out_pin[7] = #80000 1'bZ;
-	treg_data_out_pin[7] = #80000 1'b1;
-	treg_data_out_pin[7] = #80000 1'bZ;
-	treg_data_out_pin[7] = #80000 1'b0;
-	treg_data_out_pin[7] = #80000 1'bZ;
-	treg_data_out_pin[7] = #80000 1'b0;
-	treg_data_out_pin[7] = #80000 1'bZ;
-	treg_data_out_pin[7] = #80000 1'b0;
-	treg_data_out_pin[7] = #80000 1'bZ;
 end 
 // data_out_pin[ 6 ]
 initial
 begin
 	treg_data_out_pin[6] = 1'bZ;
-	treg_data_out_pin[6] = #40000 1'b0;
-	treg_data_out_pin[6] = #80000 1'bZ;
-	treg_data_out_pin[6] = #80000 1'b1;
-	treg_data_out_pin[6] = #80000 1'bZ;
-	treg_data_out_pin[6] = #80000 1'b0;
-	treg_data_out_pin[6] = #80000 1'bZ;
-	treg_data_out_pin[6] = #80000 1'b0;
-	treg_data_out_pin[6] = #80000 1'bZ;
-	treg_data_out_pin[6] = #80000 1'b0;
-	treg_data_out_pin[6] = #80000 1'bZ;
 end 
 // data_out_pin[ 5 ]
 initial
 begin
 	treg_data_out_pin[5] = 1'bZ;
-	treg_data_out_pin[5] = #40000 1'b0;
-	treg_data_out_pin[5] = #80000 1'bZ;
-	treg_data_out_pin[5] = #80000 1'b1;
-	treg_data_out_pin[5] = #80000 1'bZ;
-	treg_data_out_pin[5] = #80000 1'b0;
-	treg_data_out_pin[5] = #80000 1'bZ;
-	treg_data_out_pin[5] = #80000 1'b0;
-	treg_data_out_pin[5] = #80000 1'bZ;
-	treg_data_out_pin[5] = #80000 1'b0;
-	treg_data_out_pin[5] = #80000 1'bZ;
 end 
 // data_out_pin[ 4 ]
 initial
 begin
 	treg_data_out_pin[4] = 1'bZ;
-	treg_data_out_pin[4] = #40000 1'b0;
-	treg_data_out_pin[4] = #80000 1'bZ;
-	treg_data_out_pin[4] = #80000 1'b1;
-	treg_data_out_pin[4] = #80000 1'bZ;
-	treg_data_out_pin[4] = #80000 1'b0;
-	treg_data_out_pin[4] = #80000 1'bZ;
-	treg_data_out_pin[4] = #80000 1'b0;
-	treg_data_out_pin[4] = #80000 1'bZ;
-	treg_data_out_pin[4] = #80000 1'b0;
-	treg_data_out_pin[4] = #80000 1'bZ;
 end 
 // data_out_pin[ 3 ]
 initial
 begin
 	treg_data_out_pin[3] = 1'bZ;
-	treg_data_out_pin[3] = #40000 1'b0;
-	treg_data_out_pin[3] = #80000 1'bZ;
-	treg_data_out_pin[3] = #80000 1'b1;
-	treg_data_out_pin[3] = #80000 1'bZ;
-	treg_data_out_pin[3] = #80000 1'b0;
-	treg_data_out_pin[3] = #80000 1'bZ;
-	treg_data_out_pin[3] = #80000 1'b0;
-	treg_data_out_pin[3] = #80000 1'bZ;
-	treg_data_out_pin[3] = #80000 1'b0;
-	treg_data_out_pin[3] = #80000 1'bZ;
 end 
 // data_out_pin[ 2 ]
 initial
 begin
 	treg_data_out_pin[2] = 1'bZ;
-	treg_data_out_pin[2] = #40000 1'b0;
-	treg_data_out_pin[2] = #80000 1'bZ;
-	treg_data_out_pin[2] = #80000 1'b1;
-	treg_data_out_pin[2] = #80000 1'bZ;
-	treg_data_out_pin[2] = #80000 1'b0;
-	treg_data_out_pin[2] = #80000 1'bZ;
-	treg_data_out_pin[2] = #80000 1'b0;
-	treg_data_out_pin[2] = #80000 1'bZ;
-	treg_data_out_pin[2] = #80000 1'b0;
-	treg_data_out_pin[2] = #80000 1'bZ;
 end 
 // data_out_pin[ 1 ]
 initial
 begin
 	treg_data_out_pin[1] = 1'bZ;
-	treg_data_out_pin[1] = #40000 1'b0;
-	treg_data_out_pin[1] = #80000 1'bZ;
-	treg_data_out_pin[1] = #80000 1'b1;
-	treg_data_out_pin[1] = #80000 1'bZ;
-	treg_data_out_pin[1] = #80000 1'b0;
-	treg_data_out_pin[1] = #80000 1'bZ;
-	treg_data_out_pin[1] = #80000 1'b0;
-	treg_data_out_pin[1] = #80000 1'bZ;
-	treg_data_out_pin[1] = #80000 1'b0;
-	treg_data_out_pin[1] = #80000 1'bZ;
 end 
 // data_out_pin[ 0 ]
 initial
 begin
 	treg_data_out_pin[0] = 1'bZ;
-	treg_data_out_pin[0] = #40000 1'b0;
-	treg_data_out_pin[0] = #80000 1'bZ;
-	treg_data_out_pin[0] = #80000 1'b1;
-	treg_data_out_pin[0] = #80000 1'bZ;
-	treg_data_out_pin[0] = #80000 1'b0;
-	treg_data_out_pin[0] = #80000 1'bZ;
-	treg_data_out_pin[0] = #80000 1'b0;
-	treg_data_out_pin[0] = #80000 1'bZ;
-	treg_data_out_pin[0] = #80000 1'b0;
-	treg_data_out_pin[0] = #80000 1'bZ;
 end 
 
 Lcd_vlg_sample_tst tb_sample (
 	.clk(clk),
 	.data_out_pin(data_out_pin),
+	.start(start),
 	.sampler_tx(sampler)
 );
 

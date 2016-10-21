@@ -1,90 +1,85 @@
 m255
 K3
-z0
 13
 cModel Technology
-dM:\ece287\lcd\simulation\qsim
+Z0 dM:\ece287\lcd\simulation\qsim
 vLcd
-Z0 !s110 1476894915
-!i10b 1
-!s100 A1geen<LkmG<H5b=mD[[E2
-I_Ufg6F2Wd[2B4[OXfTebC1
-Z1 V`JN@9S9cnhjKRR_L]QIcM3
-Z2 d/home/kyle/dev/verilog/ece287/lcd/simulation/qsim
-w1476894914
-8Lcd.vo
-FLcd.vo
+Z1 Il_S33kAO1k9TTd^mz?g1I0
+Z2 VaS]0I:oYa3PWZJ^Lj]REe1
+Z3 dM:\ece287\lcd\simulation\qsim
+Z4 w1476989877
+Z5 8Lcd.vo
+Z6 FLcd.vo
 L0 32
-Z3 OV;L;10.3d;59
+Z7 OV;L;10.1e;51
 r1
-!s85 0
 31
-!s108 1476894915.011448
-!s107 Lcd.vo|
-!s90 -work|work|Lcd.vo|
-!i113 1
-Z4 o-work work
+Z8 !s90 -work|work|Lcd.vo|
+Z9 o-work work -O0
 n@lcd
+!i10b 1
+Z10 !s100 RZCi32W9:Coc>IcPO_eQ52
+!s85 0
+Z11 !s108 1476989879.966000
+Z12 !s107 Lcd.vo|
+!s101 -O0
 vLcd_vlg_check_tst
-R0
 !i10b 1
-!s100 GzWg_]UZTRSGBU2aAEUKi1
-I^f?NDjN83S`3<6cDVRO:o2
-R1
-R2
-Z5 w1476894911
-Z6 8Waveform.vwf.vt
-Z7 FWaveform.vwf.vt
-L0 60
+!s100 RPWJ]I_Xe5FbYbP_f5E3f3
+IKh37JnPeESR[zAlAegce61
+VeYk0VP<bIJfZ4cP7LZAzF0
 R3
+Z13 w1476989874
+Z14 8Waveform.vwf.vt
+Z15 FWaveform.vwf.vt
+L0 62
+R7
 r1
 !s85 0
 31
-Z8 !s108 1476894915.046341
-Z9 !s107 Waveform.vwf.vt|
-Z10 !s90 -work|work|Waveform.vwf.vt|
-!i113 1
-R4
-n@lcd_vlg_check_tst
+Z16 !s108 1476989881.685000
+Z17 !s107 Waveform.vwf.vt|
+Z18 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R9
+Z19 n@lcd_vlg_check_tst
 vLcd_vlg_sample_tst
-R0
 !i10b 1
-!s100 CWd?:_3VP66QgY3I`C[f]3
-ICAQiO7XbSz3K7m`U_lG^l1
-R1
-R2
-R5
-R6
-R7
+!s100 :49CK8?kV:M5lE88XgaFK1
+IU<S=<O1;XQVGk[=>e@7`l0
+V6n=ZMSFb8d;QBklA6^5Z31
+R3
+R13
+R14
+R15
 L0 30
-R3
-r1
-!s85 0
-31
-R8
-R9
-R10
-!i113 1
-R4
-n@lcd_vlg_sample_tst
-vLcd_vlg_vec_tst
-R0
-!i10b 1
-!s100 [FR?1Fa2BacXRU7R9NfaI0
-IdWWh=>CM<zg]zdJMaMQ`U2
-R1
-R2
-R5
-R6
 R7
-L0 348
-R3
 r1
 !s85 0
 31
-R8
+R16
+R17
+R18
+!s101 -O0
 R9
-R10
-!i113 1
-R4
-n@lcd_vlg_vec_tst
+Z20 n@lcd_vlg_sample_tst
+vLcd_vlg_vec_tst
+!i10b 1
+!s100 ZLHG1bX:K9D`46K;<aOl[3
+IHRzF@cP=z@aAGABDHz9@H1
+Z21 VF8MnG1T?e:I7@aFAA7?Kn2
+R3
+R13
+R14
+R15
+L0 350
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R9
+Z22 n@lcd_vlg_vec_tst

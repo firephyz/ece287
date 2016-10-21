@@ -1,4 +1,11 @@
 |Lcd
+test << test~reg0.DB_MAX_OUTPUT_PORT_TYPE
+start => data_out_reg[7].IN1
+start => rw.ENA
+start => test~reg0.ENA
+start => busy_signal_storage.ENA
+start => rs.ENA
+start => busyTick.ENA
 data_out_pin[0] <> data_out_pin[0]
 data_out_pin[1] <> data_out_pin[1]
 data_out_pin[2] <> data_out_pin[2]
@@ -7,26 +14,11 @@ data_out_pin[4] <> data_out_pin[4]
 data_out_pin[5] <> data_out_pin[5]
 data_out_pin[6] <> data_out_pin[6]
 data_out_pin[7] <> data_out_pin[7]
-rw_pin <= rw.DB_MAX_OUTPUT_PORT_TYPE
-rs_pin <= rs.DB_MAX_OUTPUT_PORT_TYPE
-power_pin <= <VCC>
-enable_pin <= <VCC>
-clk => instrCounter[0].CLK
-clk => instrCounter[1].CLK
-clk => instrCounter[2].CLK
-clk => instrCounter[3].CLK
-clk => instrCounter[4].CLK
-clk => instrCounter[5].CLK
-clk => instrCounter[6].CLK
-clk => instrCounter[7].CLK
-clk => instrCounter[8].CLK
-clk => instrCounter[9].CLK
-clk => instrCounter[10].CLK
-clk => instrCounter[11].CLK
-clk => instrCounter[12].CLK
-clk => instrCounter[13].CLK
-clk => instrCounter[14].CLK
-clk => instrCounter[15].CLK
+rw_pin << rw.DB_MAX_OUTPUT_PORT_TYPE
+rs_pin << rs.DB_MAX_OUTPUT_PORT_TYPE
+power_pin << <VCC>
+enable_pin << <VCC>
+clk => test~reg0.CLK
 clk => data_out_reg[0].CLK
 clk => data_out_reg[0]~en.CLK
 clk => data_out_reg[1].CLK
@@ -43,8 +35,9 @@ clk => data_out_reg[6].CLK
 clk => data_out_reg[6]~en.CLK
 clk => data_out_reg[7].CLK
 clk => data_out_reg[7]~en.CLK
-clk => rs.CLK
 clk => rw.CLK
+clk => busy_signal_storage.CLK
+clk => rs.CLK
 clk => busyTick.CLK
 
 
