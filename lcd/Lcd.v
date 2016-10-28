@@ -46,7 +46,7 @@ module Lcd(test, com, go_pin, data_out_pin, rw_pin, rs_pin, power_pin, enable_pi
 	assign busy_signal = busy_signal_storage;
 	assign com = commands[instrCounter];
 	
-	output reg test;
+	output reg [1:0] test;
 	
 	initial begin
 		power <= 1;
@@ -64,11 +64,16 @@ module Lcd(test, com, go_pin, data_out_pin, rw_pin, rs_pin, power_pin, enable_pi
 		test <= 0;
 		
 		instrCounter <= 16'd0;
-		commands[0] <= 8'b0000000001;
-		commands[1] <= 8'b0000000110;
-		commands[2] <= 8'b0000001111;
-		commands[3] <= 8'b0000110000;
-		commands[4] <= 8'b1000110000;
+		commands[0] <= 10'b0000000001;
+		commands[1] <= 10'b0000000111;
+		commands[2] <= 10'b0000001111;
+		commands[3] <= 10'b0000111100;
+		commands[4] <= 10'b1000110000;
+		commands[5] <= 10'b1001000001;
+		commands[6] <= 10'b1001000001;
+		commands[7] <= 10'b1001000001;
+		commands[8] <= 10'b1001000001;
+		commands[9] <= 10'b1001000001;
 	end
 	
 	// Main data loop
@@ -83,6 +88,12 @@ module Lcd(test, com, go_pin, data_out_pin, rw_pin, rs_pin, power_pin, enable_pi
 		end
 		
 		if(start) begin
+		
+			if(test == 2'd1) begin
+				busyTick <= 0;
+				test <= 2'd2;
+			end
+		
 			counter <= counter + 8'b1;
 			
 			if (counter == 8'd30 || counter == 8'd60) begin
@@ -90,42 +101,42 @@ module Lcd(test, com, go_pin, data_out_pin, rw_pin, rs_pin, power_pin, enable_pi
 			end
 			
 			if (counter == 8'd60) begin
+			
+				if(test == 2'd2) begin
+					test <= 0;
+				end
+			
 				counter <= 8'd0;
 				
 				busyTick <= !busyTick;
 			
-				if(busyTick) begin
+				if(busyTick || test == 2'd2) begin
 					//rw = RW_READ;
 					rs <= RS_INSTRUCTION;
-					instrCounter <= instrCounter;
 					busy_signal_storage <= data_out_pin[7];
 					rw <= RW_READ;
-					data_out_reg <= data_out_reg;
 				end
 				else begin
 				
 					busy_signal_storage <= busy_signal_storage;
 				
 					if(!busy_signal) begin
-						if(instrCounter < 16'd1) begin
-							test <= 1;
+						if(instrCounter < 16'd10) begin
+							test <= 2'd1;
 							instrCounter <= instrCounter + 16'b1;
 							rs <= com[9];
 							rw <= com[8];
 							data_out_reg <= com[7:0];
 						end
 						else begin
-							instrCounter <= instrCounter;
 							rs <= RS_INSTRUCTION;
 							rw <= RW_READ;
-							data_out_reg <= data_out_reg;
 						end
 					end
 					else begin
 						rw <= RW_READ;
 						rs <= RS_INSTRUCTION;
 						data_out_reg <= 8'bZ;
-						instrCounter <= instrCounter;
 					end
 				end
 			end
