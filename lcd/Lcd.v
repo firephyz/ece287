@@ -32,8 +32,8 @@ module Lcd(test, com, go_pin, data_out_pin, rw_pin, rs_pin, power_pin, enable_pi
 	reg busy_signal_storage;
 	output wire [9:0]com;
 	reg busyTick;
-	reg [9:0] commands[0:15];
-	reg [15:0] instrCounter;
+	reg [9:0] commands[0:19];
+	reg [19:0] instrCounter;
 	reg [7:0] data_out_reg;
 	reg enable;
 	
@@ -64,16 +64,24 @@ module Lcd(test, com, go_pin, data_out_pin, rw_pin, rs_pin, power_pin, enable_pi
 		test <= 0;
 		
 		instrCounter <= 16'd0;
-		commands[0] <= 10'b0000000001;
-		commands[1] <= 10'b0000000111;
-		commands[2] <= 10'b0000001111;
-		commands[3] <= 10'b0000111100;
-		commands[4] <= 10'b1000110000;
-		commands[5] <= 10'b1001000001;
-		commands[6] <= 10'b1001000001;
-		commands[7] <= 10'b1001000001;
-		commands[8] <= 10'b1001000001;
-		commands[9] <= 10'b1001000001;
+		commands[0] <= 10'b0000111000; // set 8-bit data mode, 2 lines and 5x8 font
+		commands[1] <= 10'b0000000001; // Clear dislay
+		commands[2] <= 10'b0000001111; // Set display on, cursor on and blinking off
+		commands[3] <= 10'b0000000110; // Set cursor location to increment and no shift
+		commands[4] <= 10'b1001001000; // H
+		commands[5] <= 10'b1001100101; // e
+		commands[6] <= 10'b1001101100; // l
+		commands[7] <= 10'b1001101100; // l
+		commands[8] <= 10'b1001101111; // o
+		commands[9] <= 10'b1000100000; // 
+		commands[10] <= 10'b1001010000; // B
+		commands[11] <= 10'b1001110010; // a
+		commands[12] <= 10'b1001100001; // b
+		commands[13] <= 10'b1001110011; // e
+		commands[14] <= 10'b1001101001; // !
+		commands[15] <= 10'b1001100100; // 
+		commands[16] <= 10'b1001101000; // <
+		commands[17] <= 10'b1000100001; // 3
 	end
 	
 	// Main data loop
@@ -121,9 +129,9 @@ module Lcd(test, com, go_pin, data_out_pin, rw_pin, rs_pin, power_pin, enable_pi
 					busy_signal_storage <= busy_signal_storage;
 				
 					if(!busy_signal) begin
-						if(instrCounter < 16'd10) begin
+						if(instrCounter < 20'd18) begin
 							test <= 2'd1;
-							instrCounter <= instrCounter + 16'b1;
+							instrCounter <= instrCounter + 20'b1;
 							rs <= com[9];
 							rw <= com[8];
 							data_out_reg <= com[7:0];
