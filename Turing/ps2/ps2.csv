@@ -1,0 +1,55 @@
+# Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, the Altera Quartus II License Agreement,
+# the Altera MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Altera and sold by Altera or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+
+# Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+# File: C:\Users\burgekm\Documents\ece287\Turing\ps2\ps2.csv
+# Generated on: Tue Nov 01 07:11:47 2016
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
+
+To,Direction,Location,I/O Bank,VREF Group,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair
+PS2_CLK,Input,PIN_G6,1,B1_N0,,,,,
+PS2_DAT,Input,PIN_H5,1,B1_N1,,,,,
+a1,Output,PIN_G18,7,B7_N2,,,,,
+a2,Output,PIN_M24,6,B6_N2,,,,,
+altera_reserved_tck,Input,,,,,,,,
+altera_reserved_tdi,Input,,,,,,,,
+altera_reserved_tdo,Output,,,,,,,,
+altera_reserved_tms,Input,,,,,,,,
+b1,Output,PIN_F22,7,B7_N0,,,,,
+b2,Output,PIN_Y22,5,B5_N0,,,,,
+c1,Output,PIN_E17,7,B7_N2,,,,,
+c2,Output,PIN_W21,5,B5_N1,,,,,
+clk,Input,PIN_Y2,2,B2_N0,,,,,
+d1,Output,PIN_L26,6,B6_N1,,,,,
+d2,Output,PIN_W22,5,B5_N0,,,,,
+data[7],Output,,,,,,,,
+data[6],Output,,,,,,,,
+data[5],Output,,,,,,,,
+data[4],Output,,,,,,,,
+data[3],Output,,,,,,,,
+data[2],Output,,,,,,,,
+data[1],Output,,,,,,,,
+data[0],Output,,,,,,,,
+e1,Output,PIN_L25,6,B6_N1,,,,,
+e2,Output,PIN_W25,5,B5_N1,,,,,
+f1,Output,PIN_J22,6,B6_N0,,,,,
+f2,Output,PIN_U23,5,B5_N1,,,,,
+g1,Output,PIN_H22,6,B6_N0,,,,,
+g2,Output,PIN_U24,5,B5_N0,,,,,
+index[3],Output,,,,,,,,
+index[2],Output,,,,,,,,
+index[1],Output,,,,,,,,
+index[0],Output,EDGE_BOTTOM,,,,,,,
