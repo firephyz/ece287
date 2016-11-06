@@ -1,7 +1,16 @@
 |lab8
-green <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
-yellow <= yellow.DB_MAX_OUTPUT_PORT_TYPE
-red <= red.DB_MAX_OUTPUT_PORT_TYPE
+decider_pin[0] => decider.DATAB
+decider_pin[1] => decider.DATAB
+done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
+g0 <= g0.DB_MAX_OUTPUT_PORT_TYPE
+y0 <= y0.DB_MAX_OUTPUT_PORT_TYPE
+r0 <= r0.DB_MAX_OUTPUT_PORT_TYPE
+g1 <= g1.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= y1.DB_MAX_OUTPUT_PORT_TYPE
+r1 <= r1.DB_MAX_OUTPUT_PORT_TYPE
+clk => decider[0].CLK
+clk => decider[1].CLK
+clk => done~reg0.CLK
 clk => counter[0].CLK
 clk => counter[1].CLK
 clk => counter[2].CLK
@@ -32,6 +41,8 @@ clk => counter[26].CLK
 clk => counter[27].CLK
 clk => counter[28].CLK
 clk => counter[29].CLK
+clk => counter[30].CLK
+rst => done~reg0.ACLR
 rst => counter[0].ACLR
 rst => counter[1].ACLR
 rst => counter[2].ACLR
@@ -62,5 +73,8 @@ rst => counter[26].ACLR
 rst => counter[27].ACLR
 rst => counter[28].ACLR
 rst => counter[29].ACLR
+rst => counter[30].ACLR
+rst => decider[0].ENA
+rst => decider[1].ENA
 
 
