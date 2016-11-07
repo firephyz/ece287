@@ -1,4 +1,19 @@
 |lab8
+state[0] => state[0].IN1
+state[1] => state[1].IN1
+out_state[0] << state[0].DB_MAX_OUTPUT_PORT_TYPE
+out_state[1] << state[1].DB_MAX_OUTPUT_PORT_TYPE
+g0 << light_timing:t0.port2
+y0 << light_timing:t0.port3
+r0 << light_timing:t0.port4
+g1 << light_timing:t0.port5
+y1 << light_timing:t0.port6
+r1 << light_timing:t0.port7
+clk => clk.IN1
+rst => rst.IN1
+
+
+|lab8|light_timing:t0
 decider_pin[0] => decider.DATAB
 decider_pin[1] => decider.DATAB
 done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE

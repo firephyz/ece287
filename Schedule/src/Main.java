@@ -31,7 +31,7 @@ public class Main {
 		mbi121.addTimes("10:00-10:55", null, "10:00-10:55", null, "10:00-10:55");
 		
 		Class cse443 = new Class("CSE 443");
-		cse443.addTimes(null, "13:00-14:20", null, "13:00-14:20", null);
+		//cse443.addTimes(null, "13:00-14:20", null, "13:00-14:20", null);
 		cse443.addTimes(null, "14:30-15:50", null, "14:30-15:50", null);
 		
 		Class phy192 = new Class("PHY 192");
@@ -57,7 +57,7 @@ public class Main {
 		classes.add(chi102);
 		classes.add(mth331);
 		//classes.add(mbi121);
-		classes.add(bio121);
+		//classes.add(bio121);
 		//classes.add(mbi131);
 		classes.add(cse443);
 		//classes.add(phy192);
