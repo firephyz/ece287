@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 14.0.0 Build 200 06/17/2014 SJ Web Edition"
 
--- DATE "11/01/2016 07:56:09"
+-- DATE "11/08/2016 17:35:02"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -3097,6 +3097,8 @@ SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manage
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|last_buffer_write_address_sig\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter\ : std_logic_vector(16 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|segment_offset_config_deserialize|dffs\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|ALT_INV_lfsr[10]~1_combout\ : std_logic;
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|ALT_INV_word_counter[0]~5_combout\ : std_logic;
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ALT_INV_tdo_crc_len_reg[31]~34_combout\ : std_logic;
 SIGNAL \auto_hub|jtag_hub_gen:sld_jtag_hub_inst|shadow_jsm|ALT_INV_state\ : std_logic_vector(8 DOWNTO 8);
 SIGNAL \auto_hub|jtag_hub_gen:sld_jtag_hub_inst|ALT_INV_clr_reg~q\ : std_logic;
@@ -3119,8 +3121,6 @@ SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ALT_INV_reset_all
 SIGNAL \ALT_INV_altera_internal_jtag~TCKUTAPclkctrl_outclk\ : std_logic;
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ALT_INV_offload_shift_ena~combout\ : std_logic;
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ALT_INV_ram_shift_load~combout\ : std_logic;
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|ALT_INV_lfsr[10]~1_combout\ : std_logic;
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|ALT_INV_word_counter[0]~5_combout\ : std_logic;
 
 BEGIN
 
@@ -10069,6 +10069,8 @@ ww_devpor <= devpor;
 \altera_internal_jtag~TCKUTAPclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \altera_internal_jtag~TCKUTAP\);
 
 \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|reset_all~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|reset_all~q\);
+\auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|ALT_INV_lfsr[10]~1_combout\ <= NOT \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr[10]~1_combout\;
+\auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|ALT_INV_word_counter[0]~5_combout\ <= NOT \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|word_counter[0]~5_combout\;
 \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ALT_INV_tdo_crc_len_reg[31]~34_combout\ <= NOT \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg[31]~34_combout\;
 \auto_hub|jtag_hub_gen:sld_jtag_hub_inst|shadow_jsm|ALT_INV_state\(8) <= NOT \auto_hub|jtag_hub_gen:sld_jtag_hub_inst|shadow_jsm|state\(8);
 \auto_hub|jtag_hub_gen:sld_jtag_hub_inst|ALT_INV_clr_reg~q\ <= NOT \auto_hub|jtag_hub_gen:sld_jtag_hub_inst|clr_reg~q\;
@@ -10091,8 +10093,6 @@ ww_devpor <= devpor;
 \ALT_INV_altera_internal_jtag~TCKUTAPclkctrl_outclk\ <= NOT \altera_internal_jtag~TCKUTAPclkctrl_outclk\;
 \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ALT_INV_offload_shift_ena~combout\ <= NOT \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|offload_shift_ena~combout\;
 \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ALT_INV_ram_shift_load~combout\ <= NOT \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_shift_load~combout\;
-\auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|ALT_INV_lfsr[10]~1_combout\ <= NOT \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr[10]~1_combout\;
-\auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|ALT_INV_word_counter[0]~5_combout\ <= NOT \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|word_counter[0]~5_combout\;
 
 -- Location: FF_X66_Y23_N1
 \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|trigger_out_ff\ : dffeas
