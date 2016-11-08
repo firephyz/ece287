@@ -1,8 +1,12 @@
 |lab8
-state[0] => state[0].IN1
-state[1] => state[1].IN1
-out_state[0] << state[0].DB_MAX_OUTPUT_PORT_TYPE
-out_state[1] << state[1].DB_MAX_OUTPUT_PORT_TYPE
+sensors[0] => next_state.IN1
+sensors[0] => next_state.IN1
+sensors[1] => next_state.IN0
+sensors[1] => next_state.IN0
+sensors[2] => next_state.IN0
+sensors[2] => next_state.IN0
+sensors[2] => next_state.IN1
+sensors[2] => next_state.IN1
 g0 << light_timing:t0.port2
 y0 << light_timing:t0.port3
 r0 << light_timing:t0.port4
