@@ -7,12 +7,12 @@ sensors[2] => next_state.IN0
 sensors[2] => next_state.IN0
 sensors[2] => next_state.IN1
 sensors[2] => next_state.IN1
-g0 << light_timing:t0.port2
-y0 << light_timing:t0.port3
-r0 << light_timing:t0.port4
-g1 << light_timing:t0.port5
-y1 << light_timing:t0.port6
-r1 << light_timing:t0.port7
+g0 <= light_timing:t0.port2
+y0 <= light_timing:t0.port3
+r0 <= light_timing:t0.port4
+g1 <= light_timing:t0.port5
+y1 <= light_timing:t0.port6
+r1 <= light_timing:t0.port7
 clk => clk.IN1
 rst => rst.IN1
 

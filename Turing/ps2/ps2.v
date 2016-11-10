@@ -26,18 +26,15 @@ module ps2(data, index, isReading, PS2_CLK, PS2_DAT, clk, a1, b1, c1, d1, e1, f1
 	end
 	
 	always@(posedge clk) begin
-	
-		counter <= counter + 1;
-		oldClkValue <= PS2_CLK;
 		
 		if(oldClkValue && !PS2_CLK) begin
 			counter <= 0;
+			oldClkValue <= PS2_CLK;
 		end
-		
-		// Regulate the PS2 clk to be 12.5 kHz
-//		if(counter == 16'd2000) begin // 40 microseconds
-//			counter <= 0;
-//		end
+		else begin
+			counter <= counter + 1;
+			oldClkValue <= PS2_CLK;
+		end
 		
 		if(!PS2_CLK) begin
 			// Wait until we are half way into the low state of the clock
@@ -52,7 +49,7 @@ module ps2(data, index, isReading, PS2_CLK, PS2_DAT, clk, a1, b1, c1, d1, e1, f1
 				end
 				// Store data and increase index
 				else if(index >= 1 && index <= 8) begin
-					data[index - 1] <= PS2_DAT;
+					data <= (data >> 1) | (PS2_DAT << 7);
 					index <= index + 1;
 				end
 				// Reset index back to zero after we have went through one data transmition cycle
