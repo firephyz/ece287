@@ -1,17 +1,14 @@
 |Lcd
-test[0] <= test[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-test[1] <= test[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-com[0] <= commands.DATAOUT
-com[1] <= commands.DATAOUT1
-com[2] <= commands.DATAOUT2
-com[3] <= commands.DATAOUT3
-com[4] <= commands.DATAOUT4
-com[5] <= commands.DATAOUT5
-com[6] <= commands.DATAOUT6
-com[7] <= commands.DATAOUT7
-com[8] <= commands.DATAOUT8
-com[9] <= commands.DATAOUT9
-go_pin => start.ENA
+start_pin => start.ENA
+data_in[0] => data_out_reg.DATAA
+data_in[1] => data_out_reg.DATAA
+data_in[2] => data_out_reg.DATAA
+data_in[3] => data_out_reg.DATAA
+data_in[4] => data_out_reg.DATAA
+data_in[5] => data_out_reg.DATAA
+data_in[6] => data_out_reg.DATAA
+data_in[7] => data_out_reg.DATAA
+wreq => always0.IN1
 data_out_pin[0] <> data_out_pin[0]
 data_out_pin[1] <> data_out_pin[1]
 data_out_pin[2] <> data_out_pin[2]
@@ -24,6 +21,8 @@ rw_pin <= rw.DB_MAX_OUTPUT_PORT_TYPE
 rs_pin <= rs.DB_MAX_OUTPUT_PORT_TYPE
 power_pin <= <VCC>
 enable_pin <= enable.DB_MAX_OUTPUT_PORT_TYPE
+clk => done.CLK
+clk => has_init.CLK
 clk => data_out_reg[0].CLK
 clk => data_out_reg[0]~en.CLK
 clk => data_out_reg[1].CLK
@@ -42,24 +41,6 @@ clk => data_out_reg[7].CLK
 clk => data_out_reg[7]~en.CLK
 clk => instrCounter[0].CLK
 clk => instrCounter[1].CLK
-clk => instrCounter[2].CLK
-clk => instrCounter[3].CLK
-clk => instrCounter[4].CLK
-clk => instrCounter[5].CLK
-clk => instrCounter[6].CLK
-clk => instrCounter[7].CLK
-clk => instrCounter[8].CLK
-clk => instrCounter[9].CLK
-clk => instrCounter[10].CLK
-clk => instrCounter[11].CLK
-clk => instrCounter[12].CLK
-clk => instrCounter[13].CLK
-clk => instrCounter[14].CLK
-clk => instrCounter[15].CLK
-clk => instrCounter[16].CLK
-clk => instrCounter[17].CLK
-clk => instrCounter[18].CLK
-clk => instrCounter[19].CLK
 clk => rw.CLK
 clk => busy_signal_storage.CLK
 clk => rs.CLK
@@ -72,9 +53,8 @@ clk => counter[4].CLK
 clk => counter[5].CLK
 clk => counter[6].CLK
 clk => counter[7].CLK
-clk => test[0]~reg0.CLK
-clk => test[1]~reg0.CLK
 clk => busyTick.CLK
 clk => start.CLK
+clk => test~3.DATAIN
 
 

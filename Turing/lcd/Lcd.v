@@ -1,4 +1,4 @@
-module Lcd(test, com, go_pin, data_out_pin, rw_pin, rs_pin, power_pin, enable_pin, clk);
+module Lcd(start_pin, data_in, wreq, data_out_pin, rw_pin, rs_pin, power_pin, enable_pin, clk);
 
 	parameter
 		RS_INSTRUCTION = 0,
@@ -13,7 +13,12 @@ module Lcd(test, com, go_pin, data_out_pin, rw_pin, rs_pin, power_pin, enable_pi
 		Control_Show_Cursor_Blink 	= 8'b00001111,
 		Func_8bit_2line_NormFont	= 8'b00110000;
 	
-	input go_pin;
+	input start_pin;
+	reg start;
+	
+	input [7:0] data_in;
+	input wreq;
+	
 	input clk;													// clock signal
 	inout [7:0]data_out_pin;								// Data lines to LCD display
 	output enable_pin, rw_pin, rs_pin, power_pin;	// Various control related wires to the display
@@ -30,23 +35,23 @@ module Lcd(test, com, go_pin, data_out_pin, rw_pin, rs_pin, power_pin, enable_pi
 	// Extra internal wires
 	wire busy_signal;
 	reg busy_signal_storage;
-	output wire [9:0]com;
+	wire [9:0]com;
 	reg busyTick;
 	reg [9:0] commands[0:19];
-	reg [19:0] instrCounter;
+	reg [1:0] instrCounter;
 	reg [7:0] data_out_reg;
 	reg enable;
 	
-	reg[31:0]start_counter;
 	reg [7:0]counter;
-	reg start;
 	
 	// Connect the wire we will probe to see if the module is busy
 	assign data_out_pin = busyTick ? 8'bZ : data_out_reg;
 	assign busy_signal = busy_signal_storage;
 	assign com = commands[instrCounter];
 	
-	output reg [1:0] test;
+	reg has_init;
+	reg done;
+	reg [1:0] test;
 	
 	initial begin
 		power <= 1;
@@ -56,47 +61,29 @@ module Lcd(test, com, go_pin, data_out_pin, rw_pin, rs_pin, power_pin, enable_pi
 		busyTick <= 1;
 		busy_signal_storage <= 0;
 		enable <= 1;
-		
-		start <= 0;
+
 		counter <= 8'd0;
-		start_counter <= 32'd0;
 		
 		test <= 0;
+		done = 0;
+		has_init = 0;
+		start = 0;
 		
-		instrCounter <= 16'd0;
+		instrCounter <= 2'd0;
 		commands[0] <= 10'b0000111000; // set 8-bit data mode, 2 lines and 5x8 font
 		commands[1] <= 10'b0000000001; // Clear dislay
 		commands[2] <= 10'b0000001111; // Set display on, cursor on and blinking off
 		commands[3] <= 10'b0000000110; // Set cursor location to increment and no shift
-		commands[4] <= 10'b1001001000; // H
-		commands[5] <= 10'b1001100101; // e
-		commands[6] <= 10'b1001101100; // l
-		commands[7] <= 10'b1001101100; // l
-		commands[8] <= 10'b1001101111; // o
-		commands[9] <= 10'b1000100000; // 
-		commands[10] <= 10'b1001010000; // B
-		commands[11] <= 10'b1001110010; // a
-		commands[12] <= 10'b1001100001; // b
-		commands[13] <= 10'b1001110011; // e
-		commands[14] <= 10'b1001101001; // !
-		commands[15] <= 10'b1001100100; // 
-		commands[16] <= 10'b1001101000; // <
-		commands[17] <= 10'b1000100001; // 3
 	end
 	
 	// Main data loop
 	always @(posedge clk) begin
-		
-		// Wait for the switch to start the init process
-		if(go_pin == 1) begin
+	
+		if(start_pin) begin
 			start <= 1;
 		end
-		else begin
-			start <= start;
-		end
-		
+	
 		if(start) begin
-		
 			if(test == 2'd1) begin
 				busyTick <= 0;
 				test <= 2'd2;
@@ -109,11 +96,6 @@ module Lcd(test, com, go_pin, data_out_pin, rw_pin, rs_pin, power_pin, enable_pi
 			end
 			
 			if (counter == 8'd60) begin
-			
-				if(test == 2'd2) begin
-					test <= 0;
-				end
-			
 				counter <= 8'd0;
 				
 				busyTick <= !busyTick;
@@ -123,22 +105,42 @@ module Lcd(test, com, go_pin, data_out_pin, rw_pin, rs_pin, power_pin, enable_pi
 					rs <= RS_INSTRUCTION;
 					busy_signal_storage <= data_out_pin[7];
 					rw <= RW_READ;
+					test <= 0;
 				end
 				else begin
 				
 					busy_signal_storage <= busy_signal_storage;
 				
+					// Write data if requested
 					if(!busy_signal) begin
-						if(instrCounter < 20'd18) begin
+						// Init the module
+						if(!has_init) begin
+							if(instrCounter <= 2'd3) begin
+								test <= 2'd1;
+								instrCounter <= instrCounter + 2'b1;
+								rs <= com[9];
+								rw <= com[8];
+								data_out_reg <= com[7:0];
+							end
+							else begin
+								has_init <= 1;
+								rs <= RS_INSTRUCTION;
+								rw <= RW_READ;
+							end
+						end
+						// Write from given data
+						else if(wreq && !done) begin
 							test <= 2'd1;
-							instrCounter <= instrCounter + 20'b1;
 							rs <= com[9];
 							rw <= com[8];
 							data_out_reg <= com[7:0];
+							done <= 1;
 						end
 						else begin
-							rs <= RS_INSTRUCTION;
-							rw <= RW_READ;
+							rs <= RS_DATA;
+							rw <= RW_WRITE;
+							data_out_reg <= data_in;
+							done <= 0;
 						end
 					end
 					else begin

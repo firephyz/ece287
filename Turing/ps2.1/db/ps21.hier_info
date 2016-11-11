@@ -1,0 +1,32 @@
+|ps21
+keycode[0] << keycode[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[1] << keycode[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[2] << keycode[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[3] << keycode[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[4] << keycode[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[5] << keycode[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[6] << keycode[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[7] << keycode[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PS2_DATA => Selector3.IN2
+PS2_CLOCK => keycode[0]~reg0.CLK
+PS2_CLOCK => keycode[1]~reg0.CLK
+PS2_CLOCK => keycode[2]~reg0.CLK
+PS2_CLOCK => keycode[3]~reg0.CLK
+PS2_CLOCK => keycode[4]~reg0.CLK
+PS2_CLOCK => keycode[5]~reg0.CLK
+PS2_CLOCK => keycode[6]~reg0.CLK
+PS2_CLOCK => keycode[7]~reg0.CLK
+PS2_CLOCK => index[0].CLK
+PS2_CLOCK => index[1].CLK
+PS2_CLOCK => index[2].CLK
+PS2_CLOCK => data[0].CLK
+PS2_CLOCK => data[1].CLK
+PS2_CLOCK => data[2].CLK
+PS2_CLOCK => data[3].CLK
+PS2_CLOCK => data[4].CLK
+PS2_CLOCK => data[5].CLK
+PS2_CLOCK => data[6].CLK
+PS2_CLOCK => data[7].CLK
+PS2_CLOCK => state~5.DATAIN
+
+

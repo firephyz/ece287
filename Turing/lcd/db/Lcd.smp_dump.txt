@@ -1,0 +1,6 @@
+
+State Machine - |Lcd|test
+Name test.00 test.10 test.01 
+test.00 0 0 0 
+test.01 1 0 1 
+test.10 1 1 0 
