@@ -1,0 +1,17 @@
+
+State Machine - |lcd_controller|state
+Name state.TIMER_SET state.EX_SPIN state.EX_SEND state.EX_SETUP state.EX_START state.DATA_WAIT state.INC_INSTR state.INIT_SEND state.INC_ADDR state.TURN_ON state.FUNC_SET state.CLEAR state.WTI state.INIT_START 
+state.INIT_START 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.WTI 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.CLEAR 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.FUNC_SET 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.TURN_ON 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.INC_ADDR 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.INIT_SEND 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.INC_INSTR 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.DATA_WAIT 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.EX_START 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.EX_SETUP 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.EX_SEND 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.EX_SPIN 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.TIMER_SET 1 0 0 0 0 0 0 0 0 0 0 0 0 1 

@@ -1,0 +1,94 @@
+module lcd_controller(data, ex, ready, en, rs, rw, io, rst, clk);
+
+	// Module control IO
+	input [7:0] data;
+	input ex;
+	output ready;
+	
+	// LCD control IO
+	output en, rs, rw;
+	inout [7:0] io;
+	
+	// System IO
+	input rst, clk;
+	
+	// Internal state variables
+	reg [3:0] state;
+	reg [3:0] next_state;
+	reg [1:0] instr;
+	wire busy;
+	
+	reg [7:0] io_buffer;
+	reg rw_reg, rs_reg, en_reg, ready_reg;
+	
+	// Connect the IO pins to the internal variables above
+	assign busy = io[7];
+	assign io = (state == INIT_START) ||
+					(state == INC_ADDR) ||
+					(state == EX_START)
+					? 8'bZ : io_buffer;
+	assign rw = rw_reg;
+	assign rs = rs_reg;
+	assign en = en_reg;
+	assign ready = ready_reg;
+	
+	// States
+	parameter // Init states
+				 INIT_START = 4'h0,
+				 WTI			= 4'h1,
+				 CLEAR		= 4'h2,
+				 FUNC_SET	= 4'h3,
+				 TURN_ON		= 4'h4,
+				 INC_ADDR	= 4'h5,
+				 INIT_SEND	= 4'h6,
+				 INC_INSTR	= 4'h7,
+				 
+				 // Idle state
+				 DATA_WAIT	= 4'h8,
+				 
+				 // Execute states
+				 EX_START	= 4'h9,
+				 EX_SETUP	= 4'hA,
+				 EX_SEND		= 4'hB,
+				 EX_SPIN		= 4'hC;
+	
+	// Reset and state transition
+	always@(posedge clk or negedge rst) begin
+		if(rst == 0) begin
+			state <= INIT_START;
+			instr <= 2'b00;
+			io_buffer <= 8'bZ;
+			en_reg = 1'b1;
+			rs_reg = 1'b0;
+			rw_reg = 1'b1;
+		end
+		else begin
+			state <= next_state;
+		end
+	end
+	
+	// Fins the next state
+	always@(*) begin
+		case(state)
+			INIT_START:
+			WTI:
+			CLEAR:
+			FUNC_SET:
+			TURN_ON:
+			INC_ADDR:
+			INIT_SEND:
+			INC_INSTR:
+			DATA_WAIT:
+			EX_START:
+			EX_SETUP:
+			EX_SEND:
+			EX_SPIN:
+		endcase
+	end
+	
+	// Set regs and variables
+	always@(posedge clk) begin
+	
+	end
+	
+endmodule
