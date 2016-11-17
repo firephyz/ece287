@@ -1,4 +1,6 @@
 |Lcd
+test[0] << test[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+test[1] << test[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 start_pin => start.ENA
 data_in[0] => data_out_reg.DATAA
 data_in[1] => data_out_reg.DATAA
@@ -17,10 +19,10 @@ data_out_pin[4] <> data_out_pin[4]
 data_out_pin[5] <> data_out_pin[5]
 data_out_pin[6] <> data_out_pin[6]
 data_out_pin[7] <> data_out_pin[7]
-rw_pin <= rw.DB_MAX_OUTPUT_PORT_TYPE
-rs_pin <= rs.DB_MAX_OUTPUT_PORT_TYPE
-power_pin <= <VCC>
-enable_pin <= enable.DB_MAX_OUTPUT_PORT_TYPE
+rw_pin << rw.DB_MAX_OUTPUT_PORT_TYPE
+rs_pin << rs.DB_MAX_OUTPUT_PORT_TYPE
+power_pin << <VCC>
+enable_pin << enable.DB_MAX_OUTPUT_PORT_TYPE
 clk => done.CLK
 clk => has_init.CLK
 clk => data_out_reg[0].CLK
@@ -53,8 +55,9 @@ clk => counter[4].CLK
 clk => counter[5].CLK
 clk => counter[6].CLK
 clk => counter[7].CLK
+clk => test[0]~reg0.CLK
+clk => test[1]~reg0.CLK
 clk => busyTick.CLK
 clk => start.CLK
-clk => test~3.DATAIN
 
 

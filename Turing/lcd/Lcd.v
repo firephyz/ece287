@@ -1,4 +1,4 @@
-module Lcd(start_pin, data_in, wreq, data_out_pin, rw_pin, rs_pin, power_pin, enable_pin, clk);
+module Lcd(test, start_pin, data_in, wreq, data_out_pin, rw_pin, rs_pin, power_pin, enable_pin, clk);
 
 	parameter
 		RS_INSTRUCTION = 0,
@@ -51,7 +51,7 @@ module Lcd(start_pin, data_in, wreq, data_out_pin, rw_pin, rs_pin, power_pin, en
 	
 	reg has_init;
 	reg done;
-	reg [1:0] test;
+	output reg [1:0] test;
 	
 	initial begin
 		power <= 1;
