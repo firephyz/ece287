@@ -1,4 +1,11 @@
 
+State Machine - |lcd_controller|instr
+Name instr.11 instr.10 instr.01 instr.00 
+instr.00 0 0 0 0 
+instr.01 0 0 1 1 
+instr.10 0 1 0 1 
+instr.11 1 0 0 1 
+
 State Machine - |lcd_controller|state
 Name state.TIMER_SET state.EX_SPIN state.EX_SEND state.EX_SETUP state.EX_START state.DATA_WAIT state.INC_INSTR state.INIT_SEND state.INC_ADDR state.TURN_ON state.FUNC_SET state.CLEAR state.WTI state.INIT_START 
 state.INIT_START 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
