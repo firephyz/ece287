@@ -23,6 +23,10 @@ module timer(max, start, done, clk);
 			done_reg <= 1;
 			count <= 0;
 		end
+		else if (done_reg == 1) begin
+			done_reg <= 0;
+			count <= 0;
+		end
 	end
 	
 endmodule

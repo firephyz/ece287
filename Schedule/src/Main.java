@@ -31,8 +31,8 @@ public class Main {
 		mbi121.addTimes("10:00-10:55", null, "10:00-10:55", null, "10:00-10:55");
 		
 		Class cse443 = new Class("CSE 443");
-		//cse443.addTimes(null, "13:00-14:20", null, "13:00-14:20", null);
-		cse443.addTimes(null, "14:30-15:50", null, "14:30-15:50", null);
+		cse443.addTimes(null, "13:00-14:20", null, "13:00-14:20", null);
+		//cse443.addTimes(null, "14:30-15:50", null, "14:30-15:50", null);
 		
 		Class phy192 = new Class("PHY 192");
 		phy192.addTimes("08:00-09:50", "08:00-10:00", "08:00-09:50", null, "08:00-09:50");
@@ -69,11 +69,11 @@ public class Main {
 			++count;
 			s.printByClass(count);
 		}
-		count = 0;
-		for(Schedule s : schedules) {
-			++count;
-			s.printByTime(count);
-		}
+//		count = 0;
+//		for(Schedule s : schedules) {
+//			++count;
+//			s.printByTime(count);
+//		}
 	}
 	
 	public void findGoodTimes(ArrayList<Class> classes, ArrayList<Schedule> schedules) {
