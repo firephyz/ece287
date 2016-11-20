@@ -1,6 +1,7 @@
-module lcd_controller(data, ex, ready, en, rs, rw, io, rst, clk, a, b, c, d, e, f, g, state, next_state, instr, timer_done);
+module lcd_controller(rs_in, rw_in, data, ex, ready, en, rs, rw, io, rst, clk, state);
 
 	// Module control IO
+	input rs_in, rw_in;
 	input [7:0] data;
 	input ex;
 	output ready;
@@ -14,8 +15,8 @@ module lcd_controller(data, ex, ready, en, rs, rw, io, rst, clk, a, b, c, d, e, 
 	
 	// Internal state variables
 	output reg [3:0] state;
-	output reg [3:0] next_state;
-	output reg [1:0] instr;
+	reg [3:0] next_state;
+	reg [1:0] instr;
 	wire busy;
 	
 	reg [7:0] io_buffer;
@@ -33,12 +34,8 @@ module lcd_controller(data, ex, ready, en, rs, rw, io, rst, clk, a, b, c, d, e, 
 	
 	// Timer module
 	reg timer_start;
-	output wire timer_done;
+	wire timer_done;
 	timer nano_500(32'd30, timer_start, timer_done, clk);
-	
-	// Seven Seg Stuff
-	output a, b, c, d, e, f, g;
-	seven_seg display(state[0], state[1], state[2], state[3], a, b, c, d, e, f, g);
 	
 	// States
 	parameter // Init states
@@ -280,8 +277,8 @@ module lcd_controller(data, ex, ready, en, rs, rw, io, rst, clk, a, b, c, d, e, 
 					en_reg <= 0;
 				end
 				EX_SETUP: begin
-					rs_reg <= 1;
-					rw_reg <= 0;
+					rs_reg <= rs_in;
+					rw_reg <= rw_in;
 					io_buffer <= data;
 				end
 				EX_SEND: en_reg <= 1;

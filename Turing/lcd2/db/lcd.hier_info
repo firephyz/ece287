@@ -1,12 +1,30 @@
-|lcd_controller
-data[0] => Mux12.IN4
-data[1] => Mux11.IN4
-data[2] => Mux10.IN4
-data[3] => Mux9.IN4
-data[4] => Mux8.IN4
-data[5] => Mux7.IN4
-data[6] => Mux6.IN4
-data[7] => Mux5.IN4
+|lcd_interface
+en << lcd_controller:lcd_module.port5
+rs << lcd_controller:lcd_module.port6
+rw << lcd_controller:lcd_module.port7
+io[0] <> lcd_controller:lcd_module.port8
+io[1] <> lcd_controller:lcd_module.port8
+io[2] <> lcd_controller:lcd_module.port8
+io[3] <> lcd_controller:lcd_module.port8
+io[4] <> lcd_controller:lcd_module.port8
+io[5] <> lcd_controller:lcd_module.port8
+io[6] <> lcd_controller:lcd_module.port8
+io[7] <> lcd_controller:lcd_module.port8
+rst => rst.IN1
+clk => clk.IN1
+
+
+|lcd_interface|lcd_controller:lcd_module
+rs_in => Selector1.IN4
+rw_in => Mux5.IN5
+data[0] => Mux13.IN4
+data[1] => Mux12.IN4
+data[2] => Mux11.IN4
+data[3] => Mux10.IN4
+data[4] => Mux9.IN4
+data[5] => Mux8.IN4
+data[6] => Mux7.IN4
+data[7] => Mux6.IN4
 ex => timer_start.DATAA
 ex => Mux1.IN12
 ex => next_state.DATAA
@@ -26,12 +44,10 @@ rst => Mux0.IN15
 rst => rw_reg.PRESET
 rst => rs_reg.ACLR
 rst => en_reg.PRESET
-rst => instr[0]~reg0.ACLR
-rst => instr[1]~reg0.ACLR
-rst => next_state.OUTPUTSELECT
-rst => next_state.OUTPUTSELECT
-rst => next_state.OUTPUTSELECT
-rst => next_state.OUTPUTSELECT
+rst => next_state[3].OUTPUTSELECT
+rst => next_state[2].OUTPUTSELECT
+rst => next_state[1].OUTPUTSELECT
+rst => next_state[0].OUTPUTSELECT
 rst => timer_start.OUTPUTSELECT
 rst => state[0]~reg0.ACLR
 rst => state[1]~reg0.ACLR
@@ -39,6 +55,7 @@ rst => state[2]~reg0.ACLR
 rst => state[3]~reg0.ACLR
 rst => next_state.OUTPUTSELECT
 rst => timer_start.OUTPUTSELECT
+rst => instr~4.DATAIN
 rst => io_buffer[0].ENA
 rst => ready_reg.ENA
 rst => io_buffer[7].ENA
@@ -49,27 +66,13 @@ rst => io_buffer[3].ENA
 rst => io_buffer[2].ENA
 rst => io_buffer[1].ENA
 clk => clk.IN1
-a <= seven_seg:display.port4
-b <= seven_seg:display.port5
-c <= seven_seg:display.port6
-d <= seven_seg:display.port7
-e <= seven_seg:display.port8
-f <= seven_seg:display.port9
-g <= seven_seg:display.port10
-state[0] <= state[0].DB_MAX_OUTPUT_PORT_TYPE
-state[1] <= state[1].DB_MAX_OUTPUT_PORT_TYPE
-state[2] <= state[2].DB_MAX_OUTPUT_PORT_TYPE
-state[3] <= state[3].DB_MAX_OUTPUT_PORT_TYPE
-next_state[0] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
-next_state[1] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
-next_state[2] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
-next_state[3] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
-instr[0] <= instr[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-instr[1] <= instr[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-timer_done <= timer:nano_500.port2
+state[0] <= state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[1] <= state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[2] <= state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[3] <= state[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lcd_controller|timer:nano_500
+|lcd_interface|lcd_controller:lcd_module|timer:nano_500
 max[0] => Equal0.IN32
 max[1] => Equal0.IN31
 max[2] => Equal0.IN30
@@ -172,65 +175,5 @@ clk => count[30].CLK
 clk => count[31].CLK
 clk => count[32].CLK
 clk => done_reg.CLK
-
-
-|lcd_controller|seven_seg:display
-in0 => a.IN1
-in0 => b.IN1
-in0 => b.IN1
-in0 => c.IN1
-in0 => c.IN0
-in0 => d.IN1
-in0 => d.IN1
-in0 => g.IN1
-in0 => a.IN1
-in0 => a.IN0
-in0 => b.IN1
-in0 => b.IN1
-in0 => d.IN1
-in0 => d.IN1
-in0 => d.IN1
-in0 => e.IN0
-in0 => f.IN0
-in1 => a.IN0
-in1 => a.IN0
-in1 => b.IN0
-in1 => c.IN1
-in1 => d.IN1
-in1 => e.IN1
-in1 => e.IN0
-in1 => a.IN0
-in1 => a.IN1
-in1 => b.IN0
-in1 => b.IN0
-in1 => c.IN1
-in1 => d.IN0
-in1 => d.IN1
-in1 => f.IN1
-in2 => a.IN1
-in2 => a.IN0
-in2 => d.IN1
-in2 => e.IN0
-in2 => f.IN1
-in2 => a.IN1
-in2 => a.IN0
-in2 => b.IN1
-in2 => b.IN0
-in3 => a.IN1
-in3 => a.IN1
-in3 => b.IN1
-in3 => e.IN1
-in3 => e.IN1
-in3 => a.IN1
-in3 => a.IN1
-in3 => b.IN1
-in3 => b.IN1
-a <= a.DB_MAX_OUTPUT_PORT_TYPE
-b <= b.DB_MAX_OUTPUT_PORT_TYPE
-c <= c.DB_MAX_OUTPUT_PORT_TYPE
-d <= d.DB_MAX_OUTPUT_PORT_TYPE
-e <= e.DB_MAX_OUTPUT_PORT_TYPE
-f <= f.DB_MAX_OUTPUT_PORT_TYPE
-g <= g.DB_MAX_OUTPUT_PORT_TYPE
 
 

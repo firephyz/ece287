@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="6597106f5c36efc5a9d4"/>
+    <hash md5_digest_80b="7ad3fe21ec470a365f41"/>
   </project>
   <file_info>
     <file device="EP4CE115F29C7" path="lcd.sof" usercode="0xFFFFFFFF"/>
@@ -14,8 +14,8 @@
         <parameter name="SLD_IP_VERSION" type="dec" value="6"/>
         <parameter name="SLD_IP_MINOR_VERSION" type="dec" value="0"/>
         <parameter name="SLD_COMMON_IP_VERSION" type="dec" value="0"/>
-        <parameter name="sld_data_bits" type="unknown" value="116"/>
-        <parameter name="sld_trigger_bits" type="unknown" value="116"/>
+        <parameter name="sld_data_bits" type="unknown" value="62"/>
+        <parameter name="sld_trigger_bits" type="unknown" value="62"/>
         <parameter name="SLD_NODE_CRC_BITS" type="dec" value="32"/>
         <parameter name="SLD_NODE_CRC_HIWORD" type="dec" value="41394"/>
         <parameter name="SLD_NODE_CRC_LOWORD" type="dec" value="50132"/>
@@ -33,7 +33,7 @@
         <parameter name="SLD_HPS_TRIGGER_OUT_ENABLED" type="dec" value="0"/>
         <parameter name="SLD_HPS_EVENT_ENABLED" type="dec" value="0"/>
         <parameter name="SLD_HPS_EVENT_ID" type="dec" value="0"/>
-        <parameter name="sld_advanced_trigger_entity" type="unknown" value="sld_reserved_lcd_auto_signaltap_0_1_de50,"/>
+        <parameter name="sld_advanced_trigger_entity" type="unknown" value="sld_reserved_lcd_auto_signaltap_0_1_c08a,"/>
         <parameter name="sld_trigger_level_pipeline" type="unknown" value="1"/>
         <parameter name="sld_enable_advanced_trigger" type="unknown" value="1"/>
         <parameter name="SLD_ADVANCED_TRIGGER_1" type="string" value="NONE"/>
@@ -53,7 +53,7 @@
         <parameter name="sld_state_flow_use_generated" type="unknown" value="0"/>
         <parameter name="sld_current_resource_width" type="unknown" value="1"/>
         <parameter name="sld_attribute_mem_mode" type="unknown" value="OFF"/>
-        <parameter name="sld_storage_qualifier_bits" type="unknown" value="116"/>
+        <parameter name="sld_storage_qualifier_bits" type="unknown" value="62"/>
         <parameter name="SLD_STORAGE_QUALIFIER_GAP_RECORD" type="dec" value="0"/>
         <parameter name="SLD_STORAGE_QUALIFIER_MODE" type="string" value="OFF"/>
         <parameter name="SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION" type="dec" value="0"/>

@@ -1,5 +1,5 @@
 EDA Netlist Writer report for lcd
-Sat Nov 19 20:54:48 2016
+Sat Nov 19 21:46:46 2016
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -37,9 +37,9 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat Nov 19 20:54:48 2016 ;
+; EDA Netlist Writer Status ; Successful - Sat Nov 19 21:46:46 2016 ;
 ; Revision Name             ; lcd                                   ;
-; Top-level Entity Name     ; lcd_controller                        ;
+; Top-level Entity Name     ; lcd_interface                         ;
 ; Family                    ; Cyclone IV E                          ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -89,7 +89,7 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Sat Nov 19 20:54:44 2016
+    Info: Processing started: Sat Nov 19 21:46:43 2016
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off lcd -c lcd
 Info (204019): Generated file lcd_7_1200mv_85c_slow.vho in folder "C:/Users/burgekm/Documents/ece287/Turing/lcd2/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file lcd_7_1200mv_0c_slow.vho in folder "C:/Users/burgekm/Documents/ece287/Turing/lcd2/simulation/modelsim/" for EDA simulation tool
@@ -100,9 +100,9 @@ Info (204019): Generated file lcd_7_1200mv_0c_vhd_slow.sdo in folder "C:/Users/b
 Info (204019): Generated file lcd_min_1200mv_0c_vhd_fast.sdo in folder "C:/Users/burgekm/Documents/ece287/Turing/lcd2/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file lcd_vhd.sdo in folder "C:/Users/burgekm/Documents/ece287/Turing/lcd2/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 511 megabytes
-    Info: Processing ended: Sat Nov 19 20:54:48 2016
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 506 megabytes
+    Info: Processing ended: Sat Nov 19 21:46:46 2016
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 
