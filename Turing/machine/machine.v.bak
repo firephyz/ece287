@@ -1,0 +1,63 @@
+module turing_machine(execute, print_start, print_done, mem_rw, mem_addr, state_rw, state_addr, clk, rst);
+
+	// Tape symbols
+	parameter SYM_BLANK = 	2'b00,
+				 SYM_ZERO = 	2'b01,
+				 SYM_ONE = 		2'b10,
+				 SYM_HASH = 	2'b11;
+	
+	// State names
+	parameter STATE_PRINT = 	3'h0,
+				 STATE_READ = 		3'h1,
+				 STATE_FETCH = 	3'h2,
+				 STATE_WRITE = 	3'h3,
+				 STATE_UPDATE = 	3'h4,
+				 STATE_DONE = 		3'h5;
+
+	// Clock and reset
+	input clk, rst;
+	
+	// Control wires
+	input execute;
+
+	// Interfacing with the lcd control module
+	input 		print_done;
+	input 		mem_rw,
+					state_rw;
+	input [9:0] mem_addr;
+	input [9:0] state_addr;
+	
+	output 		print_start;
+	
+	// Memories
+	reg [9:0] memory[1:0];
+	reg [9:0] states[10:0];
+	
+	// Internal state registeres
+	reg [2:0] 	state;
+	reg [2:0] 	next_state;
+	reg [1:0]	read;
+	reg [9:0] 	head;
+	reg [10:0] 	instr;
+	
+	// Update the state
+	always@(posedge clk or negedge rst) begin
+		if(rst == 0) begin
+			state <= STATE_PRINT;
+		end
+		else begin
+			state <= next_state;
+		end
+	end
+	
+	// Toggle wires and regs
+	always@(posedge clk or negedge rst) begin
+	
+	end
+	
+	// Compute the next state
+	always@(*) begin
+	
+	end
+	
+endmodule

@@ -41,9 +41,13 @@ io[5] <> io[5]
 io[6] <> io[6]
 io[7] <> io[7]
 rst => Mux0.IN15
+rst => ready_reg.ACLR
 rst => rw_reg.PRESET
 rst => rs_reg.ACLR
 rst => en_reg.PRESET
+rst => instr[0]~reg0.ACLR
+rst => instr[1]~reg0.ACLR
+rst => done_init.ACLR
 rst => next_state[3].OUTPUTSELECT
 rst => next_state[2].OUTPUTSELECT
 rst => next_state[1].OUTPUTSELECT
@@ -55,9 +59,7 @@ rst => state[2]~reg0.ACLR
 rst => state[3]~reg0.ACLR
 rst => next_state.OUTPUTSELECT
 rst => timer_start.OUTPUTSELECT
-rst => instr~4.DATAIN
 rst => io_buffer[0].ENA
-rst => ready_reg.ENA
 rst => io_buffer[7].ENA
 rst => io_buffer[6].ENA
 rst => io_buffer[5].ENA
@@ -70,6 +72,9 @@ state[0] <= state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 state[1] <= state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 state[2] <= state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 state[3] <= state[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer_done <= timer:nano_500.port2
+instr[0] <= instr[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+instr[1] <= instr[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |lcd_interface|lcd_controller:lcd_module|timer:nano_500
