@@ -1,4 +1,4 @@
-module turing_machine(execute, print_start, print_done, mem_rw, mem_addr, state_rw, state_addr, clk, rst);
+module turing_machine(execute, print_start, print_done, mem_rw, mem_addr, state_rw, state_addr, clk, rst, state, next_state, test);
 
 	parameter TURING_MEMORY_SIZE = 1024;
 
@@ -36,11 +36,14 @@ module turing_machine(execute, print_start, print_done, mem_rw, mem_addr, state_
 	
 	// Memories
 	reg [1:0] memory[9:0];
-	reg [10:0] t_states[9:0];
+	reg [10:0] t_states[10:0];
+	
+	output wire [7:0]test;
+	assign test[7] = memory[1:0][TURING_MEMORY_SIZE / 2 - 7] == 2'b01 ? 0 : memory[1:0][TURING_MEMORY_SIZE / 2 - 7] == 2'b10 ? 1 : 0;
 	
 	// Internal state registeres
-	reg [2:0] 	state; // This FSM state
-	reg [2:0] 	next_state;
+	output reg [2:0] 	state; // This FSM state
+	output reg [2:0] 	next_state;
 	reg [1:0]	read;
 	reg [9:0] 	head;
 	reg [7:0]	t_state; // Turing machine state
@@ -50,6 +53,15 @@ module turing_machine(execute, print_start, print_done, mem_rw, mem_addr, state_
 	always@(posedge clk or negedge rst) begin
 		if(rst == 0) begin
 			state <= STATE_PRINT;
+			
+			t_states[{8'h00, 2'b01}] <= {2'b10, 1'b1, 8'h01};
+			t_states[{8'h00, 2'b10}] <= {2'b01, 1'b0, 8'h02};
+			t_states[{8'h01, 2'b00}] <= {2'b00, 1'b0, 8'h00};
+			t_states[{8'h01, 2'b01}] <= {2'b01, 1'b1, 8'h01};
+			t_states[{8'h01, 2'b10}] <= {2'b10, 1'b1, 8'h01};
+			t_states[{8'h02, 2'b00}] <= {2'b10, 1'b1, 8'h01};
+			t_states[{8'h02, 2'b01}] <= {2'b10, 1'b1, 8'h01};
+			t_states[10] <= {2'b01, 1'b0, 8'h02};
 		end
 		else begin
 			state <= next_state;
@@ -64,6 +76,8 @@ module turing_machine(execute, print_start, print_done, mem_rw, mem_addr, state_
 			instr <= 0;
 			
 			print_start <= 0;
+			
+			memory[TURING_MEMORY_SIZE / 2] <= SYM_ZERO;
 		end
 		else begin
 			case(state)
