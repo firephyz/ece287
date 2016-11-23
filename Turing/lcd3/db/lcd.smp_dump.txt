@@ -1,0 +1,13 @@
+
+State Machine - |lcd_controller|state
+Name state.SPIN state.DATA_RELEASE state.DATA_DISABLE state.DATA_ENABLE state.DATA_SETUP state.BUSY_RELEASE state.BUSY_DISABLE state.BUSY_ENABLE state.WTI state.BUSY_SETUP 
+state.BUSY_SETUP 0 0 0 0 0 0 0 0 0 0 
+state.WTI 0 0 0 0 0 0 0 0 1 1 
+state.BUSY_ENABLE 0 0 0 0 0 0 0 1 0 1 
+state.BUSY_DISABLE 0 0 0 0 0 0 1 0 0 1 
+state.BUSY_RELEASE 0 0 0 0 0 1 0 0 0 1 
+state.DATA_SETUP 0 0 0 0 1 0 0 0 0 1 
+state.DATA_ENABLE 0 0 0 1 0 0 0 0 0 1 
+state.DATA_DISABLE 0 0 1 0 0 0 0 0 0 1 
+state.DATA_RELEASE 0 1 0 0 0 0 0 0 0 1 
+state.SPIN 1 0 0 0 0 0 0 0 0 1 
