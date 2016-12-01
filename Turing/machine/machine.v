@@ -1,4 +1,4 @@
-module turing_machine(execute, print_start, print_done, mem_rw, mem_addr, state_rw, state_addr, clk, rst, state, next_state, test);
+module turing_machine(execute, print_start, mem_rw, mem_addr, state_rw, state_addr, clk, rst, state, next_state);
 
 	parameter TURING_MEMORY_SIZE = 1024;
 
@@ -26,7 +26,7 @@ module turing_machine(execute, print_start, print_done, mem_rw, mem_addr, state_
 	input execute;
 
 	// Interfacing with the lcd control module
-	input 		print_done;
+	wire 		print_done;
 	input 		mem_rw,
 					state_rw;
 	input [9:0] mem_addr;
@@ -35,11 +35,9 @@ module turing_machine(execute, print_start, print_done, mem_rw, mem_addr, state_
 	output reg	print_start;
 	
 	// Memories
-	reg [1:0] memory[9:0];
-	reg [10:0] t_states[10:0];
-	
-	output wire [7:0]test;
-	assign test[7] = memory[1:0][TURING_MEMORY_SIZE / 2 - 7] == 2'b01 ? 0 : memory[1:0][TURING_MEMORY_SIZE / 2 - 7] == 2'b10 ? 1 : 0;
+	reg [10:0] index; // Used to initialize the memory contents in a for loop
+	reg [1:0] memory[TURING_MEMORY_SIZE - 1:0];
+	reg [10:0] t_states[2047:0];
 	
 	// Internal state registeres
 	output reg [2:0] 	state; // This FSM state
@@ -48,6 +46,8 @@ module turing_machine(execute, print_start, print_done, mem_rw, mem_addr, state_
 	reg [9:0] 	head;
 	reg [7:0]	t_state; // Turing machine state
 	reg [10:0] 	instr;
+	
+	timer(30, print_start, print_done, clk);
 	
 	// Update the state
 	always@(posedge clk or negedge rst) begin
@@ -61,7 +61,7 @@ module turing_machine(execute, print_start, print_done, mem_rw, mem_addr, state_
 			t_states[{8'h01, 2'b10}] <= {2'b10, 1'b1, 8'h01};
 			t_states[{8'h02, 2'b00}] <= {2'b10, 1'b1, 8'h01};
 			t_states[{8'h02, 2'b01}] <= {2'b10, 1'b1, 8'h01};
-			t_states[10] <= {2'b01, 1'b0, 8'h02};
+			t_states[{8'h02, 2'b10}] <= {2'b01, 1'b0, 8'h02};
 		end
 		else begin
 			state <= next_state;
@@ -74,10 +74,15 @@ module turing_machine(execute, print_start, print_done, mem_rw, mem_addr, state_
 			read <= 0;
 			head <= TURING_MEMORY_SIZE / 2;
 			instr <= 0;
-			
+			t_state <= 0;
 			print_start <= 0;
 			
-			memory[TURING_MEMORY_SIZE / 2] <= SYM_ZERO;
+			for(index = 0; index < TURING_MEMORY_SIZE; index = index + 1) begin
+				if(index == TURING_MEMORY_SIZE / 2)
+					memory[index] <= SYM_ZERO;
+				else
+					memory[index] <= SYM_BLANK;
+			end
 		end
 		else begin
 			case(state)
@@ -89,7 +94,7 @@ module turing_machine(execute, print_start, print_done, mem_rw, mem_addr, state_
 				STATE_FETCH: 	instr <= t_states[{t_state, read}];
 				STATE_WRITE: 	memory[head] <= instr[10:9];
 				STATE_UPDATE: begin
-					if(instr[8] == RIGHT) head <= head + 10'b1;
+					if(instr[8] == LEFT) head <= head + 10'b1;
 					else head <= head - 10'b1;
 					t_state <= instr[7:0];
 				end

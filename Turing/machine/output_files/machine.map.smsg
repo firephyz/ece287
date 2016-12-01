@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at machine.v(103): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at machine.v(108): always construct contains both blocking and non-blocking assignments
