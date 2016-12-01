@@ -1,0 +1,9 @@
+
+State Machine - |Super|turing_machine:turing_machine|state
+Name state.STATE_DONE state.STATE_UPDATE state.STATE_WRITE state.STATE_FETCH state.STATE_READ state.STATE_PRINT 
+state.STATE_PRINT 0 0 0 0 0 0 
+state.STATE_READ 0 0 0 0 1 1 
+state.STATE_FETCH 0 0 0 1 0 1 
+state.STATE_WRITE 0 0 1 0 0 1 
+state.STATE_UPDATE 0 1 0 0 0 1 
+state.STATE_DONE 1 0 0 0 0 1 
