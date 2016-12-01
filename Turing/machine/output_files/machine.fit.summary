@@ -1,16 +1,16 @@
-Fitter Status : Successful - Thu Dec 01 15:39:52 2016
+Fitter Status : Successful - Thu Dec 01 16:36:50 2016
 Quartus II 64-Bit Version : 14.0.0 Build 200 06/17/2014 SJ Web Edition
 Revision Name : machine
 Top-level Entity Name : turing_machine
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 4,912 / 114,480 ( 4 % )
-    Total combinational functions : 3,209 / 114,480 ( 3 % )
-    Dedicated logic registers : 3,289 / 114,480 ( 3 % )
-Total registers : 3289
-Total pins : 32 / 529 ( 6 % )
+Total logic elements : 6,751 / 114,480 ( 6 % )
+    Total combinational functions : 5,727 / 114,480 ( 5 % )
+    Dedicated logic registers : 3,319 / 114,480 ( 3 % )
+Total registers : 3319
+Total pins : 45 / 529 ( 9 % )
 Total virtual pins : 0
-Total memory bits : 483,328 / 3,981,312 ( 12 % )
+Total memory bits : 505,856 / 3,981,312 ( 13 % )
 Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )

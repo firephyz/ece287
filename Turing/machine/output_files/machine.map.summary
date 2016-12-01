@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu Dec 01 15:39:30 2016
+Analysis & Synthesis Status : Successful - Thu Dec 01 16:36:22 2016
 Quartus II 64-Bit Version : 14.0.0 Build 200 06/17/2014 SJ Web Edition
 Revision Name : machine
 Top-level Entity Name : turing_machine
 Family : Cyclone IV E
-Total logic elements : 6,012
-    Total combinational functions : 3,207
-    Dedicated logic registers : 3,289
-Total registers : 3289
-Total pins : 32
+Total logic elements : 8,571
+    Total combinational functions : 5,724
+    Dedicated logic registers : 3,319
+Total registers : 3319
+Total pins : 45
 Total virtual pins : 0
-Total memory bits : 483,328
+Total memory bits : 505,856
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

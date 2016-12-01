@@ -1,5 +1,5 @@
 Flow report for machine
-Thu Dec 01 15:40:12 2016
+Thu Dec 01 16:37:13 2016
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -41,20 +41,20 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Thu Dec 01 15:40:12 2016      ;
+; Flow Status                        ; Successful - Thu Dec 01 16:37:13 2016      ;
 ; Quartus II 64-Bit Version          ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
 ; Revision Name                      ; machine                                    ;
 ; Top-level Entity Name              ; turing_machine                             ;
 ; Family                             ; Cyclone IV E                               ;
 ; Device                             ; EP4CE115F29C7                              ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 4,912 / 114,480 ( 4 % )                    ;
-;     Total combinational functions  ; 3,209 / 114,480 ( 3 % )                    ;
-;     Dedicated logic registers      ; 3,289 / 114,480 ( 3 % )                    ;
-; Total registers                    ; 3289                                       ;
-; Total pins                         ; 32 / 529 ( 6 % )                           ;
+; Total logic elements               ; 6,751 / 114,480 ( 6 % )                    ;
+;     Total combinational functions  ; 5,727 / 114,480 ( 5 % )                    ;
+;     Dedicated logic registers      ; 3,319 / 114,480 ( 3 % )                    ;
+; Total registers                    ; 3319                                       ;
+; Total pins                         ; 45 / 529 ( 9 % )                           ;
 ; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 483,328 / 3,981,312 ( 12 % )               ;
+; Total memory bits                  ; 505,856 / 3,981,312 ( 13 % )               ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                            ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
 +------------------------------------+--------------------------------------------+
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/01/2016 15:39:18 ;
+; Start date & time ; 12/01/2016 16:36:05 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; machine             ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+----------------+------------------+
 ; Assignment Name                     ; Value                                                                                                                                                                                                                           ; Default Value ; Entity Name    ; Section Id       ;
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+----------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 57277344073066.148062475801004                                                                                                                                                                                                  ; --            ; --             ; --               ;
+; COMPILER_SIGNATURE_ID               ; 57277344073066.148062816505912                                                                                                                                                                                                  ; --            ; --             ; --               ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                                                                                                                                                                                            ; --            ; --             ; eda_simulation   ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                                                                                                                                                                                          ; <None>        ; --             ; --               ;
 ; ENABLE_SIGNALTAP                    ; On                                                                                                                                                                                                                              ; --            ; --             ; --               ;
@@ -124,12 +124,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:11     ; 1.0                     ; 675 MB              ; 00:00:11                           ;
-; Fitter                    ; 00:00:20     ; 1.9                     ; 1484 MB             ; 00:00:28                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 544 MB              ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 2.0                     ; 698 MB              ; 00:00:04                           ;
-; EDA Netlist Writer        ; 00:00:06     ; 1.0                     ; 523 MB              ; 00:00:04                           ;
-; Total                     ; 00:00:44     ; --                      ; --                  ; 00:00:51                           ;
+; Analysis & Synthesis      ; 00:00:18     ; 1.0                     ; 699 MB              ; 00:00:17                           ;
+; Fitter                    ; 00:00:26     ; 1.7                     ; 1522 MB             ; 00:00:38                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 535 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 720 MB              ; 00:00:05                           ;
+; EDA Netlist Writer        ; 00:00:07     ; 1.0                     ; 533 MB              ; 00:00:06                           ;
+; Total                     ; 00:01:01     ; --                      ; --                  ; 00:01:10                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
