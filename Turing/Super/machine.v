@@ -1,4 +1,4 @@
-module turing_machine(execute, print_start, print_done, mem_access, mem_io_pin, mem_rw, mem_addr, head_dir, move_head, state_access, state_addr, state_in, clk, rst);
+module turing_machine(execute, execute_is_done, print_start, print_done, mem_access, mem_io_pin, mem_rw, mem_addr, head_loc, head_dir, move_head, state_access, state_addr, state_in, clk, rst);
 
 	parameter TURING_MEMORY_SIZE = 1024;
 
@@ -24,6 +24,7 @@ module turing_machine(execute, print_start, print_done, mem_access, mem_io_pin, 
 	
 	// Control wires
 	input execute;
+	output reg execute_is_done;
 
 	// Interfacing with the lcd control module
 	input 		print_done;	// Lets this module know when the lcd is done printing tape contents
@@ -35,6 +36,7 @@ module turing_machine(execute, print_start, print_done, mem_access, mem_io_pin, 
 					state_access; // Pulse set by super module
 	input [10:0] state_in;
 	input [10:0] state_addr; // Set by super module to edit a state
+	output wire [9:0] head_loc; // Always outputs the location of the head on the tape
 	input 		head_dir;	// Set by super module to move the head in a certain direction
 	input 		move_head; // Pulse used by the super module to move the head to starting position
 	
@@ -54,6 +56,7 @@ module turing_machine(execute, print_start, print_done, mem_access, mem_io_pin, 
 	reg [10:0] 	instr;
 	
 	assign mem_io_pin = mem_rw ? mem_out : 2'bZ;
+	assign head_loc = head;
 	
 	// Update the state
 	always@(posedge clk or negedge rst) begin
@@ -82,6 +85,7 @@ module turing_machine(execute, print_start, print_done, mem_access, mem_io_pin, 
 			instr <= 0;
 			t_state <= 0;
 			print_start <= 0;
+			execute_is_done <= 0;
 			
 			// Clear the tape to all blanks
 			for(index = 0; index < TURING_MEMORY_SIZE; index = index + 1) begin
@@ -113,6 +117,7 @@ module turing_machine(execute, print_start, print_done, mem_access, mem_io_pin, 
 						instr <= 0;
 						head <= head;
 						t_state <= 0;
+						execute_is_done <= 1;
 					end
 					default:;
 				endcase
