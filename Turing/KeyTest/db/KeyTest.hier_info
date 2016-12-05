@@ -1,0 +1,68 @@
+|keyboard_wrapper
+keycode[0] << keycode[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[1] << keycode[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[2] << keycode[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[3] << keycode[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[4] << keycode[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[5] << keycode[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[6] << keycode[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[7] << keycode[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[0] << breakcode[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[1] << breakcode[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[2] << breakcode[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[3] << breakcode[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[4] << breakcode[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[5] << breakcode[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[6] << breakcode[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[7] << breakcode[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[8] << breakcode[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[9] << breakcode[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[10] << breakcode[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[11] << breakcode[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[12] << breakcode[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[13] << breakcode[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[14] << breakcode[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+breakcode[15] << breakcode[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+is_pressed << keyboard:keyboard.port1
+PS2_DATA => PS2_DATA.IN1
+PS2_CLOCK => PS2_CLOCK.IN1
+clk => clk.IN1
+state[0] << state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[1] << state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|keyboard_wrapper|keyboard:keyboard
+keycode[0] <= keycode[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[1] <= keycode[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[2] <= keycode[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[3] <= keycode[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[4] <= keycode[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[5] <= keycode[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[6] <= keycode[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+keycode[7] <= keycode[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+is_pressed <= is_pressed~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PS2_DATA => Selector3.IN2
+PS2_CLOCK => keycode[0]~reg0.CLK
+PS2_CLOCK => keycode[1]~reg0.CLK
+PS2_CLOCK => keycode[2]~reg0.CLK
+PS2_CLOCK => keycode[3]~reg0.CLK
+PS2_CLOCK => keycode[4]~reg0.CLK
+PS2_CLOCK => keycode[5]~reg0.CLK
+PS2_CLOCK => keycode[6]~reg0.CLK
+PS2_CLOCK => keycode[7]~reg0.CLK
+PS2_CLOCK => index[0].CLK
+PS2_CLOCK => index[1].CLK
+PS2_CLOCK => index[2].CLK
+PS2_CLOCK => data[0].CLK
+PS2_CLOCK => data[1].CLK
+PS2_CLOCK => data[2].CLK
+PS2_CLOCK => data[3].CLK
+PS2_CLOCK => data[4].CLK
+PS2_CLOCK => data[5].CLK
+PS2_CLOCK => data[6].CLK
+PS2_CLOCK => data[7].CLK
+PS2_CLOCK => state~4.DATAIN
+clk => is_pressed~reg0.CLK
+clk => prev_state~1.DATAIN
+
+
