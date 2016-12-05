@@ -46,6 +46,8 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 	reg [4:0] state;
 	reg [4:0] next_state;
 	reg [4:0] prev_state;
+	reg [9:0] t_state_addr;
+	reg [10:0] t_state_contents;
 	
 	/* TODO
 	 * Must complete this assign statement
@@ -87,12 +89,34 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 			
 	parameter KEY_ZERO 	= 8'h45,
 				 KEY_ONE	 	= 8'h16,
+				 KEY_TWO		= 8'h1E,
+				 KEY_THREE	= 8'h26,
+				 KEY_FOUR	= 8'h25,
+				 KEY_FIVE	= 8'h2E,
+				 KEY_SIX		= 8'h36,
+				 KEY_SEVEN	= 8'h3D,
+				 KEY_EIGHT	= 8'h3E,
+				 KEY_NINE	= 8'h46,
+				 KEY_A		= 8'h1C,
+				 KEY_B		= 8'h32,
+				 KEY_C		= 8'h21,
+				 KEY_D		= 8'h23,
+				 KEY_E		= 8'h24,
+				 KEY_F		= 8'h2B,
 				 KEY_HASH	= 8'h26,
 				 KEY_SPACE	= 8'h29,
 				 KEY_LEFT	= 8'h1C,
 				 KEY_RIGHT	= 8'h23,
 				 KEY_ENTER	= 8'h5A,
 				 KEY_BACK	= 8'h66;
+				 
+	parameter SYM_BLANK = 	2'b00,
+				 SYM_ZERO = 	2'b01,
+				 SYM_ONE = 		2'b10,
+				 SYM_HASH = 	2'b11;
+				 
+	parameter LEFT = 	1'b0,
+				 RIGHT = 1'b1;
 				 
 	parameter 	GET_STATE_STRING 		= 5'h0,
 					GET_STATE_0_STRING 	= 5'h1,
@@ -164,27 +188,147 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 					string_num <= GET_STATE_STRING;
 					timer_start <= 0;
 				end
+				GET_STATE_0: begin
+					if(is_pressed) begin
+						case(keycode)
+							KEY_ZERO: t_state_addr[9:6] <= 8'h0;
+							KEY_ONE: t_state_addr[9:6] <= 8'h1;
+							KEY_TWO: t_state_addr[9:6] <= 8'h2;
+							KEY_THREE: t_state_addr[9:6] <= 8'h3;
+							KEY_FOUR: t_state_addr[9:6] <= 8'h4;
+							KEY_FIVE: t_state_addr[9:6] <= 8'h5;
+							KEY_SIX: t_state_addr[9:6] <= 8'h6;
+							KEY_SEVEN: t_state_addr[9:6] <= 8'h7;
+							KEY_EIGHT: t_state_addr[9:6] <= 8'h8;
+							KEY_NINE: t_state_addr[9:6] <= 8'h9;
+							KEY_A: t_state_addr[9:6] <= 8'hA;
+							KEY_B: t_state_addr[9:6] <= 8'hB;
+							KEY_C: t_state_addr[9:6] <= 8'hC;
+							KEY_D: t_state_addr[9:6] <= 8'hD;
+							KEY_E: t_state_addr[9:6] <= 8'hE;
+							KEY_F: t_state_addr[9:6] <= 8'hF;
+						endcase
+					end
+				end
+				GET_STATE_1: begin
+					if(is_pressed) begin
+						case(keycode)
+							KEY_ZERO: 	t_state_addr[5:2] <= 8'h0;
+							KEY_ONE: 	t_state_addr[5:2] <= 8'h1;
+							KEY_TWO: 	t_state_addr[5:2] <= 8'h2;
+							KEY_THREE: 	t_state_addr[5:2] <= 8'h3;
+							KEY_FOUR: 	t_state_addr[5:2] <= 8'h4;
+							KEY_FIVE: 	t_state_addr[5:2] <= 8'h5;
+							KEY_SIX: 	t_state_addr[5:2] <= 8'h6;
+							KEY_SEVEN: 	t_state_addr[5:2] <= 8'h7;
+							KEY_EIGHT: 	t_state_addr[5:2] <= 8'h8;
+							KEY_NINE: 	t_state_addr[5:2] <= 8'h9;
+							KEY_A: 		t_state_addr[5:2] <= 8'hA;
+							KEY_B: 		t_state_addr[5:2] <= 8'hB;
+							KEY_C: 		t_state_addr[5:2] <= 8'hC;
+							KEY_D: 		t_state_addr[5:2] <= 8'hD;
+							KEY_E: 		t_state_addr[5:2] <= 8'hE;
+							KEY_F: 		t_state_addr[5:2] <= 8'hF;
+						endcase
+					end
+				end
 				GET_READ: begin
 					print_start <= 1;
 					string_num <= GET_READ_STRING;
 					timer_start <= 0;
+				end
+				GET_READ_0: begin
+					if(is_pressed) begin
+						case(keycode)
+							KEY_SPACE: 	t_state_addr[1:0] <= SYM_BLANK;
+							KEY_ZERO: 	t_state_addr[1:0] <= SYM_ZERO;
+							KEY_ONE: 	t_state_addr[1:0] <= SYM_ONE;
+							KEY_THREE: 	t_state_addr[1:0] <= SYM_HASH;
+						endcase
+					end
 				end
 				GET_WRITE: begin
 					print_start <= 1;
 					string_num <= GET_WRITE_STRING;
 					timer_start <= 0;
 				end
+				GET_WRITE_0: begin
+					if(is_pressed) begin
+						case(keycode)
+							KEY_SPACE: 	t_state_contents[10:9] <= SYM_BLANK;
+							KEY_ZERO: 	t_state_contents[10:9] <= SYM_ZERO;
+							KEY_ONE: 	t_state_contents[10:9] <= SYM_ONE;
+							KEY_THREE: 	t_state_contents[10:9] <= SYM_HASH;
+						endcase
+					end
+				end
 				GET_DIR: begin
 					print_start <= 1;
 					string_num <= GET_DIR_STRING;
 					timer_start <= 0;
+				end
+				GET_DIR_0: begin
+					if(is_pressed) begin
+						case(keycode)
+							KEY_A: t_state_contents[8] <= LEFT;
+							KEY_D: t_state_contents[8] <= RIGHT;
+						endcase
+					end
 				end
 				GET_NS: begin
 					print_start <= 1;
 					string_num <= GET_NS_STRING;
 					timer_start <= 0;
 				end
-				WRITE_STATE:;
+				GET_NS_0: begin
+					if(is_pressed) begin
+						case(keycode)
+							KEY_ZERO: 	t_state_contents[7:4] <= 8'h0;
+							KEY_ONE: 	t_state_contents[7:4] <= 8'h1;
+							KEY_TWO: 	t_state_contents[7:4] <= 8'h2;
+							KEY_THREE: 	t_state_contents[7:4] <= 8'h3;
+							KEY_FOUR: 	t_state_contents[7:4] <= 8'h4;
+							KEY_FIVE: 	t_state_contents[7:4] <= 8'h5;
+							KEY_SIX: 	t_state_contents[7:4] <= 8'h6;
+							KEY_SEVEN: 	t_state_contents[7:4] <= 8'h7;
+							KEY_EIGHT: 	t_state_contents[7:4] <= 8'h8;
+							KEY_NINE: 	t_state_contents[7:4] <= 8'h9;
+							KEY_A: 		t_state_contents[7:4] <= 8'hA;
+							KEY_B: 		t_state_contents[7:4] <= 8'hB;
+							KEY_C: 		t_state_contents[7:4] <= 8'hC;
+							KEY_D: 		t_state_contents[7:4] <= 8'hD;
+							KEY_E: 		t_state_contents[7:4] <= 8'hE;
+							KEY_F: 		t_state_contents[7:4] <= 8'hF;
+						endcase
+					end
+				end
+				GET_NS_1: begin
+					if(is_pressed) begin
+						case(keycode)
+							KEY_ZERO: 	t_state_contents[3:0] <= 8'h0;
+							KEY_ONE: 	t_state_contents[3:0] <= 8'h1;
+							KEY_TWO: 	t_state_contents[3:0] <= 8'h2;
+							KEY_THREE: 	t_state_contents[3:0] <= 8'h3;
+							KEY_FOUR: 	t_state_contents[3:0] <= 8'h4;
+							KEY_FIVE: 	t_state_contents[3:0] <= 8'h5;
+							KEY_SIX: 	t_state_contents[3:0] <= 8'h6;
+							KEY_SEVEN: 	t_state_contents[3:0] <= 8'h7;
+							KEY_EIGHT: 	t_state_contents[3:0] <= 8'h8;
+							KEY_NINE: 	t_state_contents[3:0] <= 8'h9;
+							KEY_A: 		t_state_contents[3:0] <= 8'hA;
+							KEY_B: 		t_state_contents[3:0] <= 8'hB;
+							KEY_C: 		t_state_contents[3:0] <= 8'hC;
+							KEY_D: 		t_state_contents[3:0] <= 8'hD;
+							KEY_E: 		t_state_contents[3:0] <= 8'hE;
+							KEY_F: 		t_state_contents[3:0] <= 8'hF;
+						endcase
+					end
+				end
+				WRITE_STATE: begin
+					state_in <= t_state_contents;
+					state_addr <= t_state_addr;
+					state_access <= 1;
+				end
 				PRINT_TAPE:;
 				GET_KEY:;
 				DELETE_TAPE:;
@@ -278,7 +422,11 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 			GET_STATE_0: begin
 				if(is_pressed) begin
 					if(keycode == KEY_ENTER)
-						next_state = TURING_START;
+						next_state = TURING_START;	
+					// Make sure this movement back to CHOICE state actually
+					// works and the lcd prints the prompt
+					else if(keycode == KEY_BACK)
+						next_state = CHOICE;
 					else
 						next_state = LCD_OFF_TIMER_START;
 				end
