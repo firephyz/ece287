@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 14.0.0 Build 200 06/17/2014 SJ Web Edition"
 
--- DATE "12/05/2016 11:48:34"
+-- DATE "12/05/2016 18:58:45"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -2902,6 +2902,10 @@ SIGNAL \auto_hub|jtag_hub_gen:sld_jtag_hub_inst|tdo~q\ : std_logic;
 SIGNAL \auto_hub|jtag_hub_gen:sld_jtag_hub_inst|tdo~_wirecell_combout\ : std_logic;
 SIGNAL \altera_internal_jtag~TDO\ : std_logic;
 SIGNAL \keyboard|keycode\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count\ : std_logic_vector(16 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|last_buffer_write_address_sig\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter\ : std_logic_vector(16 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|segment_offset_config_deserialize|dffs\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \auto_hub|jtag_hub_gen:sld_jtag_hub_inst|shadow_jsm|state\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \auto_hub|jtag_hub_gen:sld_jtag_hub_inst|jtag_ir_reg\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \auto_hub|jtag_hub_gen:sld_jtag_hub_inst|irsr_reg\ : std_logic_vector(10 DOWNTO 0);
@@ -2916,6 +2920,18 @@ SIGNAL \auto_hub|jtag_hub_gen:sld_jtag_hub_inst|identity_contrib_shift_reg\ : st
 SIGNAL \keyboard|index\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \auto_hub|jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \auto_hub|jtag_hub_gen:sld_jtag_hub_inst|hub_info_reg|WORD_SR\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|builtin:ela_trigger_flow_mgr_entity|trigger_config_deserialize|dffs\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_reg_bit\ : std_logic_vector(5 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|counter_reg_bit\ : std_logic_vector(4 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|word_counter\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_data_shift_out|dffs\ : std_logic_vector(29 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs\ : std_logic_vector(32 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_read_pointer_counter|auto_generated|counter_reg_bit\ : std_logic_vector(0 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs\ : std_logic_vector(32 DOWNTO 0);
+SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs\ : std_logic_vector(16 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_102|dffs\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_23|dffs\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_35|dffs\ : std_logic_vector(2 DOWNTO 0);
@@ -2928,9 +2944,6 @@ SIGNAL \auto_signaltap_0|acq_data_in_reg\ : std_logic_vector(29 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|current_segment_delayed\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_100|dffs\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|decode2|w_anode1422w\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|info_data_shift_out|dffs\ : std_logic_vector(32 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_read_pointer_counter|auto_generated|counter_reg_bit\ : std_logic_vector(0 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_gen:tdo_crc_calc|lfsr\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_20|dffs\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_32|dffs\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_42|dffs\ : std_logic_vector(0 DOWNTO 0);
@@ -2940,7 +2953,6 @@ SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_87|dffs\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_97|dffs\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|decode2|w_anode1442w\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|ram_data_shift_out|dffs\ : std_logic_vector(29 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_21|dffs\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_33|dffs\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_43|dffs\ : std_logic_vector(2 DOWNTO 0);
@@ -2952,7 +2964,6 @@ SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|last_trigger_address_delayed\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|output103a\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|decode2|w_anode1432w\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|status_register|dffs\ : std_logic_vector(16 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_12|dffs\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_24|dffs\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_36|dffs\ : std_logic_vector(0 DOWNTO 0);
@@ -2975,7 +2986,6 @@ SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_91|dffs\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|buffer_write_address_delayed\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|decode2|w_anode1482w\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_data_shift_out|dffs\ : std_logic_vector(32 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_15|dffs\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_27|dffs\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_39|dffs\ : std_logic_vector(0 DOWNTO 0);
@@ -2986,7 +2996,6 @@ SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_93|dffs\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|decode2|w_anode1472w\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xraddr\ : std_logic_vector(0 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|adv_point_3_and_more:advance_pointer_counter|auto_generated|counter_reg_bit\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_16|dffs\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_29|dffs\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_4|dffs\ : std_logic_vector(2 DOWNTO 0);
@@ -2999,8 +3008,6 @@ SIGNAL \auto_signaltap_0|acq_trigger_in_reg\ : std_logic_vector(29 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_val_shift_reg\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|decode2|w_anode1462w\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|xq\ : std_logic_vector(32 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit\ : std_logic_vector(15 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|word_counter\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_17|dffs\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_30|dffs\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_41|dffs\ : std_logic_vector(2 DOWNTO 0);
@@ -3011,14 +3018,7 @@ SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|multi_level_advanced_trigger_gen:advanced_trigger_wrapper|auto_generated|mgl_prim1|config_shiftreg_95|dffs\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|tdo_crc_len_reg\ : std_logic_vector(31 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|trigger_config_deserialize|dffs\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ela_control|builtin:ela_trigger_flow_mgr_entity|trigger_config_deserialize|dffs\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_ram_gen:stp_buffer_ram|auto_generated|decode2|w_anode1452w\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|status_advance_pointer_counter|auto_generated|counter_reg_bit\ : std_logic_vector(5 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|crc_rom_sr|WORD_SR\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|modified_post_count\ : std_logic_vector(16 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|last_buffer_write_address_sig\ : std_logic_vector(15 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|sld_buffer_manager_inst|counter\ : std_logic_vector(16 DOWNTO 0);
-SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|segment_offset_config_deserialize|dffs\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \auto_signaltap_0|sld_signaltap_body|sld_signaltap_body|ALT_INV_reset_all~clkctrl_outclk\ : std_logic;
 SIGNAL \ALT_INV_altera_internal_jtag~TCKUTAPclkctrl_outclk\ : std_logic;
 SIGNAL \ALT_INV_PS2_CLOCK~input_o\ : std_logic;
