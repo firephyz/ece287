@@ -1,14 +1,16 @@
-module keyboard(keycode, is_pressed, PS2_DATA, PS2_CLOCK);
+module keyboard(keycode, is_pressed, PS2_DATA, PS2_CLOCK, clk);
 
 	parameter READY = 2'b00,
 				 GRAB  = 2'b01,
 				 PARITY = 2'b10,
 				 DONE  = 2'b11;
 	
+	input clk;
 	input PS2_DATA, PS2_CLOCK;
 	output reg [7:0] keycode;
 	output reg is_pressed;
-				 
+	
+	reg [1:0] prev_state;
 	reg [1:0] state;
 	reg [2:0] index;
 	reg [7:0] data;
@@ -20,12 +22,18 @@ module keyboard(keycode, is_pressed, PS2_DATA, PS2_CLOCK);
 		data <= 0;
 		is_pressed <= 0;
 	end
+	
+	always@(posedge clk) begin
+		prev_state <= state;
+		
+		if(state == READY && prev_state == DONE) is_pressed <= 1;
+		else is_pressed <= 0;
+	end
 				 
 	always@(negedge PS2_CLOCK) begin
 		case (state)
 			READY: begin
 				state <= GRAB;
-				is_pressed <= 0;
 			end
 			GRAB: begin
 				if(index == 7) begin
@@ -43,7 +51,6 @@ module keyboard(keycode, is_pressed, PS2_DATA, PS2_CLOCK);
 			end
 			DONE: begin
 				state <= READY;
-				is_pressed <= 1;
 				keycode <= data;
 				data <= 0;
 				index <= 0;
