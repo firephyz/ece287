@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu Dec 08 15:44:32 2016
+Analysis & Synthesis Status : Successful - Thu Dec 08 17:34:11 2016
 Quartus II 64-Bit Version : 14.0.0 Build 200 06/17/2014 SJ Web Edition
 Revision Name : Super
 Top-level Entity Name : lcd_interface
 Family : Cyclone IV E
-Total logic elements : 1,333
-    Total combinational functions : 739
-    Dedicated logic registers : 1,047
-Total registers : 1047
-Total pins : 63
+Total logic elements : 87
+    Total combinational functions : 85
+    Dedicated logic registers : 59
+Total registers : 59
+Total pins : 52
 Total virtual pins : 0
-Total memory bits : 352,256
+Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

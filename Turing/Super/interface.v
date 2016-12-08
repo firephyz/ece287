@@ -1,4 +1,4 @@
-module lcd_interface(print_start, print_done, string_num, keycode, head_loc, mem_access, mem_in, mem_rw, mem_addr, en, rs, rw, io, rst, clk, did_print, data, is_ready);
+module lcd_interface(print_start, print_done, string_num, keycode, head_loc, mem_access, mem_in, mem_rw, mem_addr, en, rs, rw, io, rst, clk);
 
 	input clk;
 	input rst;
@@ -19,56 +19,45 @@ module lcd_interface(print_start, print_done, string_num, keycode, head_loc, mem
 	output mem_rw;
 	output [9:0] mem_addr;
 	
-	// LCD control wires
-	reg rs_sel, rw_sel;
-	output reg [7:0] data;
-	reg execute;
-	output wire is_ready;
-	output reg [1:0] did_print;
-	
-	assign print_done = is_ready;
+	reg [127:0] line1;
+	reg [127:0] line2;
 	
 	// Instantiate the lcd module
-	lcd_controller lcd_module(rs_sel, rw_sel, data, execute, is_ready, en, rs, rw, io, rst, clk);
+	LCD_Display lcd_module(clk, rst, line2, line1, rs, en, rw, io);
+	
+	reg [3:0] line_index;
+	
+	parameter KEY_ZERO 	= 8'h45,
+				 KEY_ONE	 	= 8'h16,
+				 KEY_HASH	= 8'h26,
+				 KEY_SPACE	= 8'h29;
+	
+	parameter SYM_BLANK = 	2'b00,
+				 SYM_ZERO = 	2'b01,
+				 SYM_ONE = 		2'b10,
+				 SYM_HASH = 	2'b11;
 	
 	always@(posedge clk or negedge rst) begin
 		if(rst == 0) begin
-			rs_sel <= 0;
-			rw_sel <= 0;
-			data <= 0;
-			execute <= 0;
-			did_print <= 0;
+			line_index <= 0;
 		end
 		else begin
-			if(did_print == 2'h3) begin
-				execute <= 0;
-			end
-			else if(is_ready) begin
-				execute <= 1;
-				case(did_print)
-					2'h0: begin
-						rs_sel <= 1;
-						rw_sel <= 0;
-						data <= 8'h41;
-						did_print <= 2'h1;
-					end
-					2'h1: begin
-						rs_sel <= 1;
-						rw_sel <= 0;
-						data <= 8'h42;
-						did_print <= 2'h2;
-					end
-					2'h2: begin
-						rs_sel <= 1;
-						rw_sel <= 0;
-						data <= 8'h43;
-						did_print <= 2'h3;
-					end
-				endcase
-			end
-			else begin
-				execute <= 0;
-			end
+			case(state)
+				TURING_MEM_SETUP: begin
+					mem_addr <= head_loc - 4'h8 + line_index;
+					mem_rw <= 1;
+					mem_access <= 1;
+					state <= TURING_MEM_RECORD;
+				end
+				TURING_MEM_RECORD: begin
+					case(mem_in)
+						SYM_BLANK:	line1[127:120] = KEY_SPACE;
+						SYM_ZERO:	line1[127:120] = KEY_ZERO;
+						SYM_ONE:		line1[127:120] = KEY_ONE;
+						SYM_HASH:	line1[127:120] = KEY_HASH;
+					endcase
+				end
+			endcase
 		end
 	end
 

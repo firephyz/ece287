@@ -1,4 +1,4 @@
-module lcd_controller(rs_in, rw_in, data_in, execute, is_ready, en, rs, rw, io, rst, clk, state, next_state, busy, );
+module lcd_controller(rs_in, rw_in, data_in, execute, is_ready, en, rs, rw, io, rst, clk);
 
 	// Clock and reset
 	input rst;
@@ -25,14 +25,14 @@ module lcd_controller(rs_in, rw_in, data_in, execute, is_ready, en, rs, rw, io, 
 	
 	// FSM data
 	reg has_init;
-	output reg [3:0] state;
-	output reg [3:0] next_state;
+	reg [3:0] state;
+	reg [3:0] next_state;
 	
 	reg rs_reg;
 	reg rw_reg;
 	reg [7:0] io_reg;
 	reg en_reg;
-	output reg busy;
+	reg busy;
 	
 	assign rs = rs_reg;
 	assign rw = rw_reg;
@@ -94,7 +94,7 @@ module lcd_controller(rs_in, rw_in, data_in, execute, is_ready, en, rs, rw, io, 
 					rw_reg <= READ;
 					busy <= 0;
 					
-					timer_target <= 5;
+					timer_target <= 8;
 					timer_start <= 1;
 				end
 				BUSY_ENABLE: begin
@@ -106,7 +106,7 @@ module lcd_controller(rs_in, rw_in, data_in, execute, is_ready, en, rs, rw, io, 
 					en_reg <= 0;
 					busy <= io[7];
 					
-					timer_target <= 5;
+					timer_target <= 8;
 				end
 				BUSY_RELEASE: begin
 					rs_reg <= INSTRUCTION;
@@ -119,7 +119,7 @@ module lcd_controller(rs_in, rw_in, data_in, execute, is_ready, en, rs, rw, io, 
 					rw_reg <= rw_in;
 					busy <= 0;
 					
-					timer_target <= 5;
+					timer_target <= 8;
 				end
 				DATA_ENABLE: begin
 					en_reg <= 1;
@@ -130,7 +130,7 @@ module lcd_controller(rs_in, rw_in, data_in, execute, is_ready, en, rs, rw, io, 
 				DATA_DISABLE: begin
 					en_reg <= 0;
 					
-					timer_target <= 5;
+					timer_target <= 8;
 				end
 				DATA_RELEASE: begin
 					rs_reg <= INSTRUCTION;
