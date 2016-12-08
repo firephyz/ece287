@@ -1,49 +1,51 @@
 
 State Machine - |Super|prev_state
-Name prev_state.LCD_OFF_TIMER_START prev_state.TURING_START prev_state.WRITE_TAPE prev_state.DELETE_TAPE prev_state.GET_KEY prev_state.PRINT_TAPE prev_state.WRITE_STATE prev_state.GET_NS_1 prev_state.GET_NS_0 prev_state.GET_NS prev_state.GET_DIR_0 prev_state.GET_DIR prev_state.GET_WRITE_0 prev_state.GET_WRITE prev_state.GET_READ_0 prev_state.GET_READ prev_state.GET_STATE_1 prev_state.GET_STATE_0 prev_state.GET_STATE prev_state.CHOICE 
-prev_state.CHOICE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-prev_state.GET_STATE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-prev_state.GET_STATE_0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-prev_state.GET_STATE_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-prev_state.GET_READ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-prev_state.GET_READ_0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-prev_state.GET_WRITE 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-prev_state.GET_WRITE_0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-prev_state.GET_DIR 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-prev_state.GET_DIR_0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-prev_state.GET_NS 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-prev_state.GET_NS_0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-prev_state.GET_NS_1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-prev_state.WRITE_STATE 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
-prev_state.PRINT_TAPE 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-prev_state.GET_KEY 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-prev_state.DELETE_TAPE 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-prev_state.WRITE_TAPE 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-prev_state.TURING_START 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-prev_state.LCD_OFF_TIMER_START 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Name prev_state.TURING_WAIT prev_state.LCD_OFF_TIMER_START prev_state.TURING_START prev_state.WRITE_TAPE prev_state.DELETE_TAPE prev_state.GET_KEY prev_state.PRINT_TAPE prev_state.WRITE_STATE prev_state.GET_NS_1 prev_state.GET_NS_0 prev_state.GET_NS prev_state.GET_DIR_0 prev_state.GET_DIR prev_state.GET_WRITE_0 prev_state.GET_WRITE prev_state.GET_READ_0 prev_state.GET_READ prev_state.GET_STATE_1 prev_state.GET_STATE_0 prev_state.GET_STATE prev_state.CHOICE 
+prev_state.CHOICE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+prev_state.GET_STATE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+prev_state.GET_STATE_0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+prev_state.GET_STATE_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+prev_state.GET_READ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+prev_state.GET_READ_0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+prev_state.GET_WRITE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+prev_state.GET_WRITE_0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+prev_state.GET_DIR 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+prev_state.GET_DIR_0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+prev_state.GET_NS 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+prev_state.GET_NS_0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+prev_state.GET_NS_1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_state.WRITE_STATE 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_state.PRINT_TAPE 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_state.GET_KEY 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_state.DELETE_TAPE 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_state.WRITE_TAPE 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_state.TURING_START 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_state.LCD_OFF_TIMER_START 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_state.TURING_WAIT 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |Super|state
-Name state.LCD_OFF_TIMER_START state.TURING_START state.WRITE_TAPE state.DELETE_TAPE state.GET_KEY state.PRINT_TAPE state.WRITE_STATE state.GET_NS_1 state.GET_NS_0 state.GET_NS state.GET_DIR_0 state.GET_DIR state.GET_WRITE_0 state.GET_WRITE state.GET_READ_0 state.GET_READ state.GET_STATE_1 state.GET_STATE_0 state.GET_STATE state.00000 
-state.00000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-state.GET_STATE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-state.GET_STATE_0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-state.GET_STATE_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-state.GET_READ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-state.GET_READ_0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-state.GET_WRITE 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-state.GET_WRITE_0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-state.GET_DIR 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-state.GET_DIR_0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-state.GET_NS 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-state.GET_NS_0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-state.GET_NS_1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-state.WRITE_STATE 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.PRINT_TAPE 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.GET_KEY 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.DELETE_TAPE 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.WRITE_TAPE 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.TURING_START 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.LCD_OFF_TIMER_START 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Name state.TURING_WAIT state.LCD_OFF_TIMER_START state.TURING_START state.WRITE_TAPE state.DELETE_TAPE state.GET_KEY state.PRINT_TAPE state.WRITE_STATE state.GET_NS_1 state.GET_NS_0 state.GET_NS state.GET_DIR_0 state.GET_DIR state.GET_WRITE_0 state.GET_WRITE state.GET_READ_0 state.GET_READ state.GET_STATE_1 state.GET_STATE_0 state.GET_STATE state.CHOICE 
+state.CHOICE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.GET_STATE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.GET_STATE_0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.GET_STATE_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.GET_READ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.GET_READ_0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.GET_WRITE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.GET_WRITE_0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.GET_DIR 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.GET_DIR_0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.GET_NS 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.GET_NS_0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.GET_NS_1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.WRITE_STATE 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.PRINT_TAPE 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.GET_KEY 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DELETE_TAPE 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.WRITE_TAPE 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.TURING_START 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.LCD_OFF_TIMER_START 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.TURING_WAIT 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |Super|keyboard_wrapper:keyboard_wrapper|keyboard:keyboard|state
 Name state.DONE state.PARITY state.GRAB state.READY 
@@ -51,6 +53,13 @@ state.READY 0 0 0 0
 state.GRAB 0 0 1 1 
 state.PARITY 0 1 0 1 
 state.DONE 1 0 0 1 
+
+State Machine - |Super|keyboard_wrapper:keyboard_wrapper|keyboard:keyboard|prev_state
+Name prev_state.DONE prev_state.PARITY prev_state.GRAB prev_state.READY 
+prev_state.READY 0 0 0 0 
+prev_state.GRAB 0 0 1 1 
+prev_state.PARITY 0 1 0 1 
+prev_state.DONE 1 0 0 1 
 
 State Machine - |Super|turing_machine:turing_machine|state
 Name state.STATE_DONE state.STATE_UPDATE state.STATE_WRITE state.STATE_FETCH state.STATE_READ state.STATE_PRINT 

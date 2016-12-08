@@ -21,7 +21,7 @@ module keyboard_wrapper(keycode, breakcode, is_valid, PS2_DATA, PS2_CLOCK, clk, 
 					GET_MAKE_END 	= 2'h2;
 	
 	keyboard keyboard(keycode_wire, is_pressed, PS2_DATA, PS2_CLOCK, clk);
-	timer(4000, timer_start, timer_done, clk);
+	timer time_keeper(4000, timer_start, timer_done, clk);
 	
 	initial begin
 		state <= GET_MAKE;
