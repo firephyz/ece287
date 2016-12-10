@@ -62,15 +62,6 @@ module turing_machine(execute, execute_is_done, print_start, print_done, mem_acc
 	always@(posedge clk or negedge rst) begin
 		if(rst == 0) begin
 			state <= STATE_PRINT;
-			
-//			t_states[{8'h00, 2'b01}] <= {2'b10, 1'b1, 8'h01};
-//			t_states[{8'h00, 2'b10}] <= {2'b01, 1'b0, 8'h02};
-//			t_states[{8'h01, 2'b00}] <= {2'b00, 1'b0, 8'h00};
-//			t_states[{8'h01, 2'b01}] <= {2'b01, 1'b1, 8'h01};
-//			t_states[{8'h01, 2'b10}] <= {2'b10, 1'b1, 8'h01};
-//			t_states[{8'h02, 2'b00}] <= {2'b10, 1'b1, 8'h01};
-//			t_states[{8'h02, 2'b01}] <= {2'b10, 1'b1, 8'h01};
-//			t_states[{8'h02, 2'b10}] <= {2'b01, 1'b0, 8'h02};
 		end
 		else begin
 			state <= next_state;
@@ -87,19 +78,35 @@ module turing_machine(execute, execute_is_done, print_start, print_done, mem_acc
 			print_start <= 0;
 			execute_is_done <= 0;
 			
+			t_states[{8'h00, 2'b01}] <= {2'b10, 1'b1, 8'h01};
+			t_states[{8'h00, 2'b10}] <= {2'b01, 1'b0, 8'h02};
+			t_states[{8'h01, 2'b00}] <= {2'b00, 1'b0, 8'h00};
+			t_states[{8'h01, 2'b01}] <= {2'b01, 1'b1, 8'h01};
+			t_states[{8'h01, 2'b10}] <= {2'b10, 1'b1, 8'h01};
+			t_states[{8'h02, 2'b00}] <= {2'b10, 1'b1, 8'h01};
+			t_states[{8'h02, 2'b01}] <= {2'b10, 1'b1, 8'h01};
+			t_states[{8'h02, 2'b10}] <= {2'b01, 1'b0, 8'h02};
+			t_states[{8'h02, 2'b11}] <= {2'b00, 1'b1, 8'h03};
+			t_states[{8'h03, 2'b01}] <= {2'b00, 1'b1, 8'h03};
+			t_states[{8'h03, 2'b10}] <= {2'b00, 1'b1, 8'h03};
+			t_states[{8'h03, 2'b00}] <= {2'b00, 1'b1, 8'hFF};
+			
 			// Clear the tape to all blanks
 			for(index = 0; index < TURING_MEMORY_SIZE; index = index + 1) begin
 				if(index == TURING_MEMORY_SIZE / 2)
-					memory[index] <= SYM_BLANK;
-				else
 					memory[index] <= SYM_ZERO;
+				else
+					memory[index] <= SYM_BLANK;
 			end
 		end
 		else begin
 			// Execute the actual machine
 			if(execute) begin
 				case(state)
-					STATE_PRINT: 	print_start <= 1;
+					STATE_PRINT: begin
+						print_start <= 1;
+						execute_is_done <= 0;
+					end
 					STATE_READ: begin
 						print_start <= 0;
 						read <= memory[head];
@@ -107,9 +114,10 @@ module turing_machine(execute, execute_is_done, print_start, print_done, mem_acc
 					STATE_FETCH: 	instr <= t_states[{t_state, read}];
 					STATE_WRITE: 	memory[head] <= instr[10:9];
 					STATE_UPDATE: begin
-						if(instr[8] == LEFT) head <= head + 10'b1;
+						if(instr[8] == RIGHT) head <= head + 10'b1;
 						else head <= head - 10'b1;
 						t_state <= instr[7:0];
+						execute_is_done <= 1;
 					end
 					STATE_DONE: begin
 						print_start <= 0;
@@ -126,16 +134,17 @@ module turing_machine(execute, execute_is_done, print_start, print_done, mem_acc
 			else if(move_head) begin
 				head <= head_dir == 0 ? head + 10'b1 : head - 10'b1;
 			end
-			else if(mem_access) begin
+			else if(state_access) begin
+				t_states[state_addr] <= state_in;
+			end
+			
+			if(mem_access) begin
 				if(mem_rw)
 					mem_out <= memory[mem_addr];
 				else begin
 					memory[mem_addr] <= mem_io_pin;
 					head <= head_dir == 0 ? head + 10'b1 : head - 10'b1; 
 				end
-			end
-			else if(state_access) begin
-				t_states[state_addr] <= state_in;
 			end
 		end
 	end

@@ -84,7 +84,7 @@ always @(posedge iCLK_50MHZ or negedge iRST_N)
        CLK_COUNT_400HZ <= 20'h00000;
        CLK_400HZ <= 1'b0;
     end
-    else if (CLK_COUNT_400HZ < 20'h0F424)
+    else if (CLK_COUNT_400HZ < 20'h03D09)
     begin
        CLK_COUNT_400HZ <= CLK_COUNT_400HZ + 1'b1;
     end
