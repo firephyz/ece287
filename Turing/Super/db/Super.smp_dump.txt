@@ -1,5 +1,5 @@
 
-State Machine - |lcd_interface|LCD_Display:lcd_module|next_command
+State Machine - |Super|lcd_interface:lcd_interface|LCD_Display:lcd_module|next_command
 Name next_command.DISPLAY_CLEAR next_command.DISPLAY_OFF next_command.RESET3 next_command.RESET2 next_command.RETURN_HOME next_command.LINE2 next_command.Print_String next_command.MODE_SET next_command.DISPLAY_ON next_command.FUNC_SET 
 next_command.FUNC_SET 0 0 0 0 0 0 0 0 0 0 
 next_command.DISPLAY_ON 0 0 0 0 0 0 0 0 1 1 
@@ -12,7 +12,7 @@ next_command.RESET3 0 0 1 0 0 0 0 0 0 1
 next_command.DISPLAY_OFF 0 1 0 0 0 0 0 0 0 1 
 next_command.DISPLAY_CLEAR 1 0 0 0 0 0 0 0 0 1 
 
-State Machine - |lcd_interface|LCD_Display:lcd_module|state
+State Machine - |Super|lcd_interface:lcd_interface|LCD_Display:lcd_module|state
 Name state.DISPLAY_CLEAR state.DISPLAY_OFF state.RESET3 state.RESET2 state.HOLD state.DROP_LCD_E state.RETURN_HOME state.LINE2 state.Print_String state.MODE_SET state.DISPLAY_ON state.FUNC_SET state.RESET1 
 state.RESET1 0 0 0 0 0 0 0 0 0 0 0 0 0 
 state.FUNC_SET 0 0 0 0 0 0 0 0 0 0 0 1 1 
@@ -27,3 +27,23 @@ state.RESET2 0 0 0 1 0 0 0 0 0 0 0 0 1
 state.RESET3 0 0 1 0 0 0 0 0 0 0 0 0 1 
 state.DISPLAY_OFF 0 1 0 0 0 0 0 0 0 0 0 0 1 
 state.DISPLAY_CLEAR 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Super|keyboard_wrapper:keyboard_wrapper|state
+Name state.GET_MAKE state.GET_MAKE_END state.GET_BREAK 
+state.GET_MAKE 0 0 0 
+state.GET_BREAK 1 0 1 
+state.GET_MAKE_END 1 1 0 
+
+State Machine - |Super|keyboard_wrapper:keyboard_wrapper|keyboard:keyboard|state
+Name state.DONE state.PARITY state.GRAB state.READY 
+state.READY 0 0 0 0 
+state.GRAB 0 0 1 1 
+state.PARITY 0 1 0 1 
+state.DONE 1 0 0 1 
+
+State Machine - |Super|keyboard_wrapper:keyboard_wrapper|keyboard:keyboard|prev_state
+Name prev_state.DONE prev_state.PARITY prev_state.GRAB prev_state.READY 
+prev_state.READY 0 0 0 0 
+prev_state.GRAB 0 0 1 1 
+prev_state.PARITY 0 1 0 1 
+prev_state.DONE 1 0 0 1 

@@ -1,4 +1,4 @@
-module turing_machine(execute, execute_is_done, print_start, print_done, mem_access, mem_io_pin, mem_rw, mem_addr, head_loc, head_dir, move_head, state_access, state_addr, state_in, clk, rst);
+module turing_machine(execute, execute_is_done, print_start, print_done, mem_access, mem_io_pin, mem_rw, mem_addr, head_loc, head_dir, move_head, state_access, state_addr, state_in, clk, rst, state);
 
 	parameter TURING_MEMORY_SIZE = 1024;
 
@@ -48,7 +48,7 @@ module turing_machine(execute, execute_is_done, print_start, print_done, mem_acc
 	reg [10:0] 	t_states[2047:0];
 	
 	// Internal state registeres
-	reg [2:0] 	state; // This FSM state
+	output reg [2:0] 	state; // This FSM state
 	reg [2:0] 	next_state;
 	reg [1:0]	read;
 	reg [9:0] 	head;
@@ -89,10 +89,10 @@ module turing_machine(execute, execute_is_done, print_start, print_done, mem_acc
 			
 			// Clear the tape to all blanks
 			for(index = 0; index < TURING_MEMORY_SIZE; index = index + 1) begin
-//				if(index == TURING_MEMORY_SIZE / 2)
-//					memory[index] <= SYM_ZERO;
-//				else
+				if(index == TURING_MEMORY_SIZE / 2)
 					memory[index] <= SYM_BLANK;
+				else
+					memory[index] <= SYM_ZERO;
 			end
 		end
 		else begin

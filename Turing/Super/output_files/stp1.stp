@@ -6,223 +6,607 @@
     <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
     <position_info>
       <single attribute="active tab" value="1"/>
-      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data horizontal scroll position" value="481"/>
       <single attribute="data vertical scroll position" value="0"/>
       <single attribute="setup horizontal scroll position" value="0"/>
-      <single attribute="setup vertical scroll position" value="0"/>
-      <single attribute="zoom level denominator" value="64"/>
+      <single attribute="setup vertical scroll position" value="1"/>
+      <single attribute="zoom level denominator" value="1"/>
       <single attribute="zoom level numerator" value="1"/>
       <single attribute="zoom offset denominator" value="1"/>
-      <single attribute="zoom offset numerator" value="8380416"/>
+      <single attribute="zoom offset numerator" value="130944"/>
     </position_info>
-    <signal_set global_temp="1" name="signal_set: 2016/12/08 16:30:48  #0">
+    <signal_set global_temp="1" name="signal_set: 2016/12/09 20:35:16  #0">
       <clock name="clk" polarity="posedge" tap_mode="classic"/>
-      <config ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="8192" trigger_in_enable="no" trigger_out_enable="no"/>
+      <config ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="4096" trigger_in_enable="no" trigger_out_enable="no"/>
       <top_entity/>
       <signal_vec>
         <trigger_input_vec>
-          <wire name="data[0]" tap_mode="classic"/>
-          <wire name="data[1]" tap_mode="classic"/>
-          <wire name="data[2]" tap_mode="classic"/>
-          <wire name="data[3]" tap_mode="classic"/>
-          <wire name="data[4]" tap_mode="classic"/>
-          <wire name="data[5]" tap_mode="classic"/>
-          <wire name="data[6]" tap_mode="classic"/>
-          <wire name="data[7]" tap_mode="classic"/>
-          <wire name="did_print[0]" tap_mode="classic"/>
-          <wire name="did_print[1]" tap_mode="classic"/>
-          <wire name="did_print[2]" tap_mode="classic"/>
-          <wire name="en" tap_mode="classic"/>
-          <wire name="execute" tap_mode="classic"/>
-          <wire name="io[0]" tap_mode="classic"/>
-          <wire name="io[1]" tap_mode="classic"/>
-          <wire name="io[2]" tap_mode="classic"/>
-          <wire name="io[3]" tap_mode="classic"/>
-          <wire name="io[4]" tap_mode="classic"/>
-          <wire name="io[5]" tap_mode="classic"/>
-          <wire name="io[6]" tap_mode="classic"/>
-          <wire name="io[7]" tap_mode="classic"/>
-          <wire name="is_ready" tap_mode="classic"/>
-          <wire name="print_done" tap_mode="classic"/>
-          <wire name="rs" tap_mode="classic"/>
-          <wire name="rst" tap_mode="classic"/>
-          <wire name="rw" tap_mode="classic"/>
+          <wire name="is_pressed" tap_mode="classic"/>
+          <wire name="key_valid" tap_mode="classic"/>
+          <wire name="keycode[0]" tap_mode="classic"/>
+          <wire name="keycode[1]" tap_mode="classic"/>
+          <wire name="keycode[2]" tap_mode="classic"/>
+          <wire name="keycode[3]" tap_mode="classic"/>
+          <wire name="keycode[4]" tap_mode="classic"/>
+          <wire name="keycode[5]" tap_mode="classic"/>
+          <wire name="keycode[6]" tap_mode="classic"/>
+          <wire name="keycode[7]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[4]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[5]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[6]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[7]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[8]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[9]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[4]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[5]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[6]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[7]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|line_index[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|line_index[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|line_index[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|line_index[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_access" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[4]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[5]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[6]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[7]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[8]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[9]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_rw" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|print_done" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|print_start" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|state[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|state[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|state[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|state[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[4]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|test[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|test[1]" tap_mode="classic"/>
+          <wire name="next_state[0]" tap_mode="classic"/>
+          <wire name="next_state[1]" tap_mode="classic"/>
+          <wire name="next_state[2]" tap_mode="classic"/>
+          <wire name="next_state[3]" tap_mode="classic"/>
+          <wire name="next_state[4]" tap_mode="classic"/>
+          <wire name="prev_state[0]" tap_mode="classic"/>
+          <wire name="prev_state[1]" tap_mode="classic"/>
+          <wire name="prev_state[2]" tap_mode="classic"/>
+          <wire name="prev_state[3]" tap_mode="classic"/>
+          <wire name="prev_state[4]" tap_mode="classic"/>
+          <wire name="print_start" tap_mode="classic"/>
+          <wire name="print_start_turing_wire" tap_mode="classic"/>
+          <wire name="print_start_wire" tap_mode="classic"/>
+          <wire name="state[0]" tap_mode="classic"/>
+          <wire name="state[1]" tap_mode="classic"/>
+          <wire name="state[2]" tap_mode="classic"/>
+          <wire name="state[3]" tap_mode="classic"/>
+          <wire name="state[4]" tap_mode="classic"/>
+          <wire name="string_num[0]" tap_mode="classic"/>
+          <wire name="string_num[1]" tap_mode="classic"/>
+          <wire name="string_num[2]" tap_mode="classic"/>
+          <wire name="string_num[3]" tap_mode="classic"/>
+          <wire name="string_num[4]" tap_mode="classic"/>
+          <wire name="timer_start" tap_mode="classic"/>
         </trigger_input_vec>
         <data_input_vec>
-          <wire name="data[0]" tap_mode="classic"/>
-          <wire name="data[1]" tap_mode="classic"/>
-          <wire name="data[2]" tap_mode="classic"/>
-          <wire name="data[3]" tap_mode="classic"/>
-          <wire name="data[4]" tap_mode="classic"/>
-          <wire name="data[5]" tap_mode="classic"/>
-          <wire name="data[6]" tap_mode="classic"/>
-          <wire name="data[7]" tap_mode="classic"/>
-          <wire name="did_print[0]" tap_mode="classic"/>
-          <wire name="did_print[1]" tap_mode="classic"/>
-          <wire name="did_print[2]" tap_mode="classic"/>
-          <wire name="en" tap_mode="classic"/>
-          <wire name="execute" tap_mode="classic"/>
-          <wire name="io[0]" tap_mode="classic"/>
-          <wire name="io[1]" tap_mode="classic"/>
-          <wire name="io[2]" tap_mode="classic"/>
-          <wire name="io[3]" tap_mode="classic"/>
-          <wire name="io[4]" tap_mode="classic"/>
-          <wire name="io[5]" tap_mode="classic"/>
-          <wire name="io[6]" tap_mode="classic"/>
-          <wire name="io[7]" tap_mode="classic"/>
-          <wire name="is_ready" tap_mode="classic"/>
-          <wire name="print_done" tap_mode="classic"/>
-          <wire name="rs" tap_mode="classic"/>
-          <wire name="rst" tap_mode="classic"/>
-          <wire name="rw" tap_mode="classic"/>
+          <wire name="is_pressed" tap_mode="classic"/>
+          <wire name="key_valid" tap_mode="classic"/>
+          <wire name="keycode[0]" tap_mode="classic"/>
+          <wire name="keycode[1]" tap_mode="classic"/>
+          <wire name="keycode[2]" tap_mode="classic"/>
+          <wire name="keycode[3]" tap_mode="classic"/>
+          <wire name="keycode[4]" tap_mode="classic"/>
+          <wire name="keycode[5]" tap_mode="classic"/>
+          <wire name="keycode[6]" tap_mode="classic"/>
+          <wire name="keycode[7]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[4]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[5]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[6]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[7]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[8]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[9]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[4]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[5]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[6]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[7]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|line_index[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|line_index[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|line_index[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|line_index[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_access" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[4]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[5]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[6]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[7]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[8]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[9]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_rw" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|print_done" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|print_start" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|state[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|state[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|state[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|state[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[4]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|test[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|test[1]" tap_mode="classic"/>
+          <wire name="next_state[0]" tap_mode="classic"/>
+          <wire name="next_state[1]" tap_mode="classic"/>
+          <wire name="next_state[2]" tap_mode="classic"/>
+          <wire name="next_state[3]" tap_mode="classic"/>
+          <wire name="next_state[4]" tap_mode="classic"/>
+          <wire name="prev_state[0]" tap_mode="classic"/>
+          <wire name="prev_state[1]" tap_mode="classic"/>
+          <wire name="prev_state[2]" tap_mode="classic"/>
+          <wire name="prev_state[3]" tap_mode="classic"/>
+          <wire name="prev_state[4]" tap_mode="classic"/>
+          <wire name="print_start" tap_mode="classic"/>
+          <wire name="print_start_turing_wire" tap_mode="classic"/>
+          <wire name="print_start_wire" tap_mode="classic"/>
+          <wire name="state[0]" tap_mode="classic"/>
+          <wire name="state[1]" tap_mode="classic"/>
+          <wire name="state[2]" tap_mode="classic"/>
+          <wire name="state[3]" tap_mode="classic"/>
+          <wire name="state[4]" tap_mode="classic"/>
+          <wire name="string_num[0]" tap_mode="classic"/>
+          <wire name="string_num[1]" tap_mode="classic"/>
+          <wire name="string_num[2]" tap_mode="classic"/>
+          <wire name="string_num[3]" tap_mode="classic"/>
+          <wire name="string_num[4]" tap_mode="classic"/>
+          <wire name="timer_start" tap_mode="classic"/>
         </data_input_vec>
         <storage_qualifier_input_vec>
-          <wire name="data[0]" tap_mode="classic"/>
-          <wire name="data[1]" tap_mode="classic"/>
-          <wire name="data[2]" tap_mode="classic"/>
-          <wire name="data[3]" tap_mode="classic"/>
-          <wire name="data[4]" tap_mode="classic"/>
-          <wire name="data[5]" tap_mode="classic"/>
-          <wire name="data[6]" tap_mode="classic"/>
-          <wire name="data[7]" tap_mode="classic"/>
-          <wire name="did_print[0]" tap_mode="classic"/>
-          <wire name="did_print[1]" tap_mode="classic"/>
-          <wire name="did_print[2]" tap_mode="classic"/>
-          <wire name="en" tap_mode="classic"/>
-          <wire name="execute" tap_mode="classic"/>
-          <wire name="io[0]" tap_mode="classic"/>
-          <wire name="io[1]" tap_mode="classic"/>
-          <wire name="io[2]" tap_mode="classic"/>
-          <wire name="io[3]" tap_mode="classic"/>
-          <wire name="io[4]" tap_mode="classic"/>
-          <wire name="io[5]" tap_mode="classic"/>
-          <wire name="io[6]" tap_mode="classic"/>
-          <wire name="io[7]" tap_mode="classic"/>
-          <wire name="is_ready" tap_mode="classic"/>
-          <wire name="print_done" tap_mode="classic"/>
-          <wire name="rs" tap_mode="classic"/>
-          <wire name="rst" tap_mode="classic"/>
-          <wire name="rw" tap_mode="classic"/>
+          <wire name="is_pressed" tap_mode="classic"/>
+          <wire name="key_valid" tap_mode="classic"/>
+          <wire name="keycode[0]" tap_mode="classic"/>
+          <wire name="keycode[1]" tap_mode="classic"/>
+          <wire name="keycode[2]" tap_mode="classic"/>
+          <wire name="keycode[3]" tap_mode="classic"/>
+          <wire name="keycode[4]" tap_mode="classic"/>
+          <wire name="keycode[5]" tap_mode="classic"/>
+          <wire name="keycode[6]" tap_mode="classic"/>
+          <wire name="keycode[7]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[4]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[5]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[6]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[7]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[8]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|head_loc[9]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[4]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[5]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[6]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|keycode[7]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|line_index[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|line_index[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|line_index[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|line_index[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_access" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[4]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[5]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[6]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[7]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[8]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_addr[9]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|mem_rw" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|print_done" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|print_start" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|state[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|state[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|state[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|state[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[1]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[2]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[3]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|string_num[4]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|test[0]" tap_mode="classic"/>
+          <wire name="lcd_interface:lcd_interface|test[1]" tap_mode="classic"/>
+          <wire name="next_state[0]" tap_mode="classic"/>
+          <wire name="next_state[1]" tap_mode="classic"/>
+          <wire name="next_state[2]" tap_mode="classic"/>
+          <wire name="next_state[3]" tap_mode="classic"/>
+          <wire name="next_state[4]" tap_mode="classic"/>
+          <wire name="prev_state[0]" tap_mode="classic"/>
+          <wire name="prev_state[1]" tap_mode="classic"/>
+          <wire name="prev_state[2]" tap_mode="classic"/>
+          <wire name="prev_state[3]" tap_mode="classic"/>
+          <wire name="prev_state[4]" tap_mode="classic"/>
+          <wire name="print_start" tap_mode="classic"/>
+          <wire name="print_start_turing_wire" tap_mode="classic"/>
+          <wire name="print_start_wire" tap_mode="classic"/>
+          <wire name="state[0]" tap_mode="classic"/>
+          <wire name="state[1]" tap_mode="classic"/>
+          <wire name="state[2]" tap_mode="classic"/>
+          <wire name="state[3]" tap_mode="classic"/>
+          <wire name="state[4]" tap_mode="classic"/>
+          <wire name="string_num[0]" tap_mode="classic"/>
+          <wire name="string_num[1]" tap_mode="classic"/>
+          <wire name="string_num[2]" tap_mode="classic"/>
+          <wire name="string_num[3]" tap_mode="classic"/>
+          <wire name="string_num[4]" tap_mode="classic"/>
+          <wire name="timer_start" tap_mode="classic"/>
         </storage_qualifier_input_vec>
       </signal_vec>
       <presentation>
         <unified_setup_data_view>
-          <node is_selected="false" level-0="alt_or" name="data[7..0]" order="msb_to_lsb" type="output pin">
-            <node data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[7]" storage_index="7" tap_mode="classic" trigger_index="7" type="unknown"/>
-            <node data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[6]" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
-            <node data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[5]" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
-            <node data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[4]" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
-            <node data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[3]" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
-            <node data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[2]" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
-            <node data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[1]" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
-            <node data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[0]" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <node is_selected="false" level-0="alt_or" name="next_state[4..0]" order="msb_to_lsb" type="output pin">
+            <node data_index="59" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[4]" storage_index="59" tap_mode="classic" trigger_index="59" type="unknown"/>
+            <node data_index="58" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[3]" storage_index="58" tap_mode="classic" trigger_index="58" type="unknown"/>
+            <node data_index="57" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[2]" storage_index="57" tap_mode="classic" trigger_index="57" type="unknown"/>
+            <node data_index="56" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[1]" storage_index="56" tap_mode="classic" trigger_index="56" type="unknown"/>
+            <node data_index="55" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[0]" storage_index="55" tap_mode="classic" trigger_index="55" type="unknown"/>
           </node>
-          <node data_index="10" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="en" storage_index="10" tap_mode="classic" trigger_index="10" type="unknown"/>
-          <node data_index="11" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="execute" storage_index="11" tap_mode="classic" trigger_index="11" type="unknown"/>
-          <node is_selected="false" level-0="alt_or" name="io[7..0]" order="msb_to_lsb" type="bidir pin">
-            <node data_index="19" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[7]" storage_index="19" tap_mode="classic" trigger_index="19" type="unknown"/>
-            <node data_index="18" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[6]" storage_index="18" tap_mode="classic" trigger_index="18" type="unknown"/>
-            <node data_index="17" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[5]" storage_index="17" tap_mode="classic" trigger_index="17" type="unknown"/>
-            <node data_index="16" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[4]" storage_index="16" tap_mode="classic" trigger_index="16" type="unknown"/>
-            <node data_index="15" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[3]" storage_index="15" tap_mode="classic" trigger_index="15" type="unknown"/>
-            <node data_index="14" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[2]" storage_index="14" tap_mode="classic" trigger_index="14" type="unknown"/>
-            <node data_index="13" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[1]" storage_index="13" tap_mode="classic" trigger_index="13" type="unknown"/>
-            <node data_index="12" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[0]" storage_index="12" tap_mode="classic" trigger_index="12" type="unknown"/>
+          <node is_selected="false" level-0="alt_or" name="state[4..0]" order="msb_to_lsb" type="register">
+            <node data_index="72" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[4]" storage_index="72" tap_mode="classic" trigger_index="72" type="unknown"/>
+            <node data_index="71" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[3]" storage_index="71" tap_mode="classic" trigger_index="71" type="unknown"/>
+            <node data_index="70" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[2]" storage_index="70" tap_mode="classic" trigger_index="70" type="unknown"/>
+            <node data_index="69" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[1]" storage_index="69" tap_mode="classic" trigger_index="69" type="unknown"/>
+            <node data_index="68" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[0]" storage_index="68" tap_mode="classic" trigger_index="68" type="unknown"/>
           </node>
-          <node data_index="20" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="is_ready" storage_index="20" tap_mode="classic" trigger_index="20" type="unknown"/>
-          <node data_index="21" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="print_done" storage_index="21" tap_mode="classic" trigger_index="21" type="unknown"/>
-          <node data_index="22" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="rs" storage_index="22" tap_mode="classic" trigger_index="22" type="unknown"/>
-          <node data_index="24" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="rw" storage_index="24" tap_mode="classic" trigger_index="24" type="unknown"/>
-          <node data_index="23" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="rst" storage_index="23" tap_mode="classic" trigger_index="23" type="unknown"/>
-          <node is_selected="false" level-0="alt_or" name="did_print[2..0]" order="msb_to_lsb" state="expand" type="output pin">
-            <node duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="did_print[2]" tap_mode="classic" type="output pin"/>
-            <node duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="did_print[1]" tap_mode="classic" type="output pin"/>
-            <node duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="true" is_storage_input="true" is_trigger_input="true" level-0="rising edge" name="did_print[0]" tap_mode="classic" type="output pin"/>
+          <node is_selected="false" level-0="alt_or" name="prev_state[4..0]" order="msb_to_lsb" type="register">
+            <node data_index="64" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[4]" storage_index="64" tap_mode="classic" trigger_index="64" type="unknown"/>
+            <node data_index="63" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[3]" storage_index="63" tap_mode="classic" trigger_index="63" type="unknown"/>
+            <node data_index="62" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[2]" storage_index="62" tap_mode="classic" trigger_index="62" type="unknown"/>
+            <node data_index="61" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[1]" storage_index="61" tap_mode="classic" trigger_index="61" type="unknown"/>
+            <node data_index="60" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[0]" storage_index="60" tap_mode="classic" trigger_index="60" type="unknown"/>
+          </node>
+          <node is_selected="false" level-0="alt_or" name="string_num[4..0]" order="msb_to_lsb" type="register">
+            <node data_index="77" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[4]" storage_index="77" tap_mode="classic" trigger_index="77" type="unknown"/>
+            <node data_index="76" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[3]" storage_index="76" tap_mode="classic" trigger_index="76" type="unknown"/>
+            <node data_index="75" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[2]" storage_index="75" tap_mode="classic" trigger_index="75" type="unknown"/>
+            <node data_index="74" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[1]" storage_index="74" tap_mode="classic" trigger_index="74" type="unknown"/>
+            <node data_index="73" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[0]" storage_index="73" tap_mode="classic" trigger_index="73" type="unknown"/>
+          </node>
+          <node data_index="66" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="print_start_turing_wire" storage_index="66" tap_mode="classic" trigger_index="66" type="unknown"/>
+          <node data_index="67" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="print_start_wire" storage_index="67" tap_mode="classic" trigger_index="67" type="unknown"/>
+          <node data_index="65" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="print_start" storage_index="65" tap_mode="classic" trigger_index="65" type="unknown"/>
+          <node data_index="78" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="timer_start" storage_index="78" tap_mode="classic" trigger_index="78" type="unknown"/>
+          <node is_selected="false" level-0="alt_or" name="keycode[7..0]" order="msb_to_lsb" state="collapse" type="output pin">
+            <node data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[7]" storage_index="9" tap_mode="classic" trigger_index="9" type="unknown"/>
+            <node data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="keycode[6]" storage_index="8" tap_mode="classic" trigger_index="8" type="unknown"/>
+            <node data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[5]" storage_index="7" tap_mode="classic" trigger_index="7" type="unknown"/>
+            <node data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[4]" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
+            <node data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[3]" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
+            <node data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="keycode[2]" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
+            <node data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[1]" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
+            <node data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="keycode[0]" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
+          </node>
+          <node data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="key_valid" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
+          <node data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="is_pressed" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <node is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|string_num[4..0]" order="msb_to_lsb" type="combinatorial">
+            <node data_index="54" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[4]" storage_index="54" tap_mode="classic" trigger_index="54" type="unknown"/>
+            <node data_index="53" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[3]" storage_index="53" tap_mode="classic" trigger_index="53" type="unknown"/>
+            <node data_index="52" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[2]" storage_index="52" tap_mode="classic" trigger_index="52" type="unknown"/>
+            <node data_index="51" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[1]" storage_index="51" tap_mode="classic" trigger_index="51" type="unknown"/>
+            <node data_index="50" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[0]" storage_index="50" tap_mode="classic" trigger_index="50" type="unknown"/>
+          </node>
+          <node data_index="45" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|print_start" storage_index="45" tap_mode="classic" trigger_index="45" type="unknown"/>
+          <node data_index="44" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|print_done" storage_index="44" tap_mode="classic" trigger_index="44" type="unknown"/>
+          <node is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|state[3..0]" order="msb_to_lsb" type="combinatorial">
+            <node data_index="49" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|state[3]" storage_index="49" tap_mode="classic" trigger_index="49" type="unknown"/>
+            <node data_index="48" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|state[2]" storage_index="48" tap_mode="classic" trigger_index="48" type="unknown"/>
+            <node data_index="47" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|state[1]" storage_index="47" tap_mode="classic" trigger_index="47" type="unknown"/>
+            <node data_index="46" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|state[0]" storage_index="46" tap_mode="classic" trigger_index="46" type="unknown"/>
+          </node>
+          <node is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|keycode[7..0]" order="msb_to_lsb" type="combinatorial">
+            <node data_index="27" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[7]" storage_index="27" tap_mode="classic" trigger_index="27" type="unknown"/>
+            <node data_index="26" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[6]" storage_index="26" tap_mode="classic" trigger_index="26" type="unknown"/>
+            <node data_index="25" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[5]" storage_index="25" tap_mode="classic" trigger_index="25" type="unknown"/>
+            <node data_index="24" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[4]" storage_index="24" tap_mode="classic" trigger_index="24" type="unknown"/>
+            <node data_index="23" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[3]" storage_index="23" tap_mode="classic" trigger_index="23" type="unknown"/>
+            <node data_index="22" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[2]" storage_index="22" tap_mode="classic" trigger_index="22" type="unknown"/>
+            <node data_index="21" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[1]" storage_index="21" tap_mode="classic" trigger_index="21" type="unknown"/>
+            <node data_index="20" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[0]" storage_index="20" tap_mode="classic" trigger_index="20" type="unknown"/>
+          </node>
+          <node is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|head_loc[9..0]" order="msb_to_lsb" type="combinatorial">
+            <node data_index="19" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[9]" storage_index="19" tap_mode="classic" trigger_index="19" type="unknown"/>
+            <node data_index="18" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[8]" storage_index="18" tap_mode="classic" trigger_index="18" type="unknown"/>
+            <node data_index="17" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[7]" storage_index="17" tap_mode="classic" trigger_index="17" type="unknown"/>
+            <node data_index="16" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[6]" storage_index="16" tap_mode="classic" trigger_index="16" type="unknown"/>
+            <node data_index="15" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[5]" storage_index="15" tap_mode="classic" trigger_index="15" type="unknown"/>
+            <node data_index="14" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[4]" storage_index="14" tap_mode="classic" trigger_index="14" type="unknown"/>
+            <node data_index="13" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[3]" storage_index="13" tap_mode="classic" trigger_index="13" type="unknown"/>
+            <node data_index="12" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[2]" storage_index="12" tap_mode="classic" trigger_index="12" type="unknown"/>
+            <node data_index="11" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[1]" storage_index="11" tap_mode="classic" trigger_index="11" type="unknown"/>
+            <node data_index="10" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[0]" storage_index="10" tap_mode="classic" trigger_index="10" type="unknown"/>
+          </node>
+          <node is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|line_index[3..0]" order="msb_to_lsb" type="register">
+            <node data_index="31" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|line_index[3]" storage_index="31" tap_mode="classic" trigger_index="31" type="unknown"/>
+            <node data_index="30" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|line_index[2]" storage_index="30" tap_mode="classic" trigger_index="30" type="unknown"/>
+            <node data_index="29" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|line_index[1]" storage_index="29" tap_mode="classic" trigger_index="29" type="unknown"/>
+            <node data_index="28" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|line_index[0]" storage_index="28" tap_mode="classic" trigger_index="28" type="unknown"/>
+          </node>
+          <node is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|mem_addr[9..0]" order="msb_to_lsb" type="combinatorial">
+            <node data_index="42" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[9]" storage_index="42" tap_mode="classic" trigger_index="42" type="unknown"/>
+            <node data_index="41" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[8]" storage_index="41" tap_mode="classic" trigger_index="41" type="unknown"/>
+            <node data_index="40" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[7]" storage_index="40" tap_mode="classic" trigger_index="40" type="unknown"/>
+            <node data_index="39" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[6]" storage_index="39" tap_mode="classic" trigger_index="39" type="unknown"/>
+            <node data_index="38" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[5]" storage_index="38" tap_mode="classic" trigger_index="38" type="unknown"/>
+            <node data_index="37" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[4]" storage_index="37" tap_mode="classic" trigger_index="37" type="unknown"/>
+            <node data_index="36" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[3]" storage_index="36" tap_mode="classic" trigger_index="36" type="unknown"/>
+            <node data_index="35" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[2]" storage_index="35" tap_mode="classic" trigger_index="35" type="unknown"/>
+            <node data_index="34" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[1]" storage_index="34" tap_mode="classic" trigger_index="34" type="unknown"/>
+            <node data_index="33" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[0]" storage_index="33" tap_mode="classic" trigger_index="33" type="unknown"/>
+          </node>
+          <node data_index="32" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_access" storage_index="32" tap_mode="classic" trigger_index="32" type="unknown"/>
+          <node data_index="43" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_rw" storage_index="43" tap_mode="classic" trigger_index="43" type="unknown"/>
+          <node is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|test[1..0]" order="msb_to_lsb" type="combinatorial">
+            <node duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|test[1]" tap_mode="classic" type="combinatorial"/>
+            <node duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|test[0]" tap_mode="classic" type="combinatorial"/>
           </node>
         </unified_setup_data_view>
         <data_view>
-          <bus is_selected="false" level-0="alt_or" name="data[7..0]" order="msb_to_lsb" type="output pin">
-            <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[7]" storage_index="7" tap_mode="classic" trigger_index="7" type="unknown"/>
-            <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[6]" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
-            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[5]" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
-            <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[4]" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
-            <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[3]" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
-            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[2]" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
-            <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[1]" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
-            <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[0]" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="next_state[4..0]" order="msb_to_lsb" type="output pin">
+            <net data_index="61" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[4]" storage_index="61" tap_mode="classic" trigger_index="61" type="unknown"/>
+            <net data_index="60" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[3]" storage_index="60" tap_mode="classic" trigger_index="60" type="unknown"/>
+            <net data_index="59" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[2]" storage_index="59" tap_mode="classic" trigger_index="59" type="unknown"/>
+            <net data_index="58" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[1]" storage_index="58" tap_mode="classic" trigger_index="58" type="unknown"/>
+            <net data_index="57" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[0]" storage_index="57" tap_mode="classic" trigger_index="57" type="unknown"/>
           </bus>
-          <net data_index="11" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="en" storage_index="11" tap_mode="classic" trigger_index="11" type="unknown"/>
-          <net data_index="12" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="execute" storage_index="12" tap_mode="classic" trigger_index="12" type="unknown"/>
-          <bus is_selected="false" level-0="alt_or" name="io[7..0]" order="msb_to_lsb" type="bidir pin">
-            <net data_index="20" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[7]" storage_index="20" tap_mode="classic" trigger_index="20" type="unknown"/>
-            <net data_index="19" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[6]" storage_index="19" tap_mode="classic" trigger_index="19" type="unknown"/>
-            <net data_index="18" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[5]" storage_index="18" tap_mode="classic" trigger_index="18" type="unknown"/>
-            <net data_index="17" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[4]" storage_index="17" tap_mode="classic" trigger_index="17" type="unknown"/>
-            <net data_index="16" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[3]" storage_index="16" tap_mode="classic" trigger_index="16" type="unknown"/>
-            <net data_index="15" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[2]" storage_index="15" tap_mode="classic" trigger_index="15" type="unknown"/>
-            <net data_index="14" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[1]" storage_index="14" tap_mode="classic" trigger_index="14" type="unknown"/>
-            <net data_index="13" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[0]" storage_index="13" tap_mode="classic" trigger_index="13" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="state[4..0]" order="msb_to_lsb" type="register">
+            <net data_index="74" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[4]" storage_index="74" tap_mode="classic" trigger_index="74" type="unknown"/>
+            <net data_index="73" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[3]" storage_index="73" tap_mode="classic" trigger_index="73" type="unknown"/>
+            <net data_index="72" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[2]" storage_index="72" tap_mode="classic" trigger_index="72" type="unknown"/>
+            <net data_index="71" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[1]" storage_index="71" tap_mode="classic" trigger_index="71" type="unknown"/>
+            <net data_index="70" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[0]" storage_index="70" tap_mode="classic" trigger_index="70" type="unknown"/>
           </bus>
-          <net data_index="21" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="is_ready" storage_index="21" tap_mode="classic" trigger_index="21" type="unknown"/>
-          <net data_index="22" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="print_done" storage_index="22" tap_mode="classic" trigger_index="22" type="unknown"/>
-          <net data_index="23" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="rs" storage_index="23" tap_mode="classic" trigger_index="23" type="unknown"/>
-          <net data_index="25" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="rw" storage_index="25" tap_mode="classic" trigger_index="25" type="unknown"/>
-          <net data_index="24" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="rst" storage_index="24" tap_mode="classic" trigger_index="24" type="unknown"/>
-          <bus is_selected="false" level-0="alt_or" name="did_print[2..0]" order="msb_to_lsb" state="expand" type="output pin">
-            <net data_index="10" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="did_print[2]" storage_index="10" tap_mode="classic" trigger_index="10" type="unknown"/>
-            <net data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="did_print[1]" storage_index="9" tap_mode="classic" trigger_index="9" type="unknown"/>
-            <net data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="true" is_storage_input="true" is_trigger_input="true" level-0="rising edge" name="did_print[0]" storage_index="8" tap_mode="classic" trigger_index="8" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="prev_state[4..0]" order="msb_to_lsb" type="register">
+            <net data_index="66" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[4]" storage_index="66" tap_mode="classic" trigger_index="66" type="unknown"/>
+            <net data_index="65" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[3]" storage_index="65" tap_mode="classic" trigger_index="65" type="unknown"/>
+            <net data_index="64" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[2]" storage_index="64" tap_mode="classic" trigger_index="64" type="unknown"/>
+            <net data_index="63" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[1]" storage_index="63" tap_mode="classic" trigger_index="63" type="unknown"/>
+            <net data_index="62" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[0]" storage_index="62" tap_mode="classic" trigger_index="62" type="unknown"/>
+          </bus>
+          <bus is_selected="false" level-0="alt_or" name="string_num[4..0]" order="msb_to_lsb" type="register">
+            <net data_index="79" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[4]" storage_index="79" tap_mode="classic" trigger_index="79" type="unknown"/>
+            <net data_index="78" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[3]" storage_index="78" tap_mode="classic" trigger_index="78" type="unknown"/>
+            <net data_index="77" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[2]" storage_index="77" tap_mode="classic" trigger_index="77" type="unknown"/>
+            <net data_index="76" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[1]" storage_index="76" tap_mode="classic" trigger_index="76" type="unknown"/>
+            <net data_index="75" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[0]" storage_index="75" tap_mode="classic" trigger_index="75" type="unknown"/>
+          </bus>
+          <net data_index="68" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="print_start_turing_wire" storage_index="68" tap_mode="classic" trigger_index="68" type="unknown"/>
+          <net data_index="69" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="print_start_wire" storage_index="69" tap_mode="classic" trigger_index="69" type="unknown"/>
+          <net data_index="67" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="print_start" storage_index="67" tap_mode="classic" trigger_index="67" type="unknown"/>
+          <net data_index="80" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="timer_start" storage_index="80" tap_mode="classic" trigger_index="80" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="keycode[7..0]" order="msb_to_lsb" state="collapse" type="output pin">
+            <net data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[7]" storage_index="9" tap_mode="classic" trigger_index="9" type="unknown"/>
+            <net data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="keycode[6]" storage_index="8" tap_mode="classic" trigger_index="8" type="unknown"/>
+            <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[5]" storage_index="7" tap_mode="classic" trigger_index="7" type="unknown"/>
+            <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[4]" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
+            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[3]" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
+            <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="keycode[2]" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
+            <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[1]" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
+            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="keycode[0]" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
+          </bus>
+          <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="key_valid" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
+          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="is_pressed" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|string_num[4..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="54" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[4]" storage_index="54" tap_mode="classic" trigger_index="54" type="unknown"/>
+            <net data_index="53" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[3]" storage_index="53" tap_mode="classic" trigger_index="53" type="unknown"/>
+            <net data_index="52" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[2]" storage_index="52" tap_mode="classic" trigger_index="52" type="unknown"/>
+            <net data_index="51" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[1]" storage_index="51" tap_mode="classic" trigger_index="51" type="unknown"/>
+            <net data_index="50" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[0]" storage_index="50" tap_mode="classic" trigger_index="50" type="unknown"/>
+          </bus>
+          <net data_index="45" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|print_start" storage_index="45" tap_mode="classic" trigger_index="45" type="unknown"/>
+          <net data_index="44" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|print_done" storage_index="44" tap_mode="classic" trigger_index="44" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|state[3..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="49" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|state[3]" storage_index="49" tap_mode="classic" trigger_index="49" type="unknown"/>
+            <net data_index="48" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|state[2]" storage_index="48" tap_mode="classic" trigger_index="48" type="unknown"/>
+            <net data_index="47" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|state[1]" storage_index="47" tap_mode="classic" trigger_index="47" type="unknown"/>
+            <net data_index="46" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|state[0]" storage_index="46" tap_mode="classic" trigger_index="46" type="unknown"/>
+          </bus>
+          <bus is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|keycode[7..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="27" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[7]" storage_index="27" tap_mode="classic" trigger_index="27" type="unknown"/>
+            <net data_index="26" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[6]" storage_index="26" tap_mode="classic" trigger_index="26" type="unknown"/>
+            <net data_index="25" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[5]" storage_index="25" tap_mode="classic" trigger_index="25" type="unknown"/>
+            <net data_index="24" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[4]" storage_index="24" tap_mode="classic" trigger_index="24" type="unknown"/>
+            <net data_index="23" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[3]" storage_index="23" tap_mode="classic" trigger_index="23" type="unknown"/>
+            <net data_index="22" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[2]" storage_index="22" tap_mode="classic" trigger_index="22" type="unknown"/>
+            <net data_index="21" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[1]" storage_index="21" tap_mode="classic" trigger_index="21" type="unknown"/>
+            <net data_index="20" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[0]" storage_index="20" tap_mode="classic" trigger_index="20" type="unknown"/>
+          </bus>
+          <bus is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|head_loc[9..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="19" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[9]" storage_index="19" tap_mode="classic" trigger_index="19" type="unknown"/>
+            <net data_index="18" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[8]" storage_index="18" tap_mode="classic" trigger_index="18" type="unknown"/>
+            <net data_index="17" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[7]" storage_index="17" tap_mode="classic" trigger_index="17" type="unknown"/>
+            <net data_index="16" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[6]" storage_index="16" tap_mode="classic" trigger_index="16" type="unknown"/>
+            <net data_index="15" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[5]" storage_index="15" tap_mode="classic" trigger_index="15" type="unknown"/>
+            <net data_index="14" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[4]" storage_index="14" tap_mode="classic" trigger_index="14" type="unknown"/>
+            <net data_index="13" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[3]" storage_index="13" tap_mode="classic" trigger_index="13" type="unknown"/>
+            <net data_index="12" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[2]" storage_index="12" tap_mode="classic" trigger_index="12" type="unknown"/>
+            <net data_index="11" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[1]" storage_index="11" tap_mode="classic" trigger_index="11" type="unknown"/>
+            <net data_index="10" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[0]" storage_index="10" tap_mode="classic" trigger_index="10" type="unknown"/>
+          </bus>
+          <bus is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|line_index[3..0]" order="msb_to_lsb" type="register">
+            <net data_index="31" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|line_index[3]" storage_index="31" tap_mode="classic" trigger_index="31" type="unknown"/>
+            <net data_index="30" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|line_index[2]" storage_index="30" tap_mode="classic" trigger_index="30" type="unknown"/>
+            <net data_index="29" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|line_index[1]" storage_index="29" tap_mode="classic" trigger_index="29" type="unknown"/>
+            <net data_index="28" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|line_index[0]" storage_index="28" tap_mode="classic" trigger_index="28" type="unknown"/>
+          </bus>
+          <bus is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|mem_addr[9..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="42" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[9]" storage_index="42" tap_mode="classic" trigger_index="42" type="unknown"/>
+            <net data_index="41" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[8]" storage_index="41" tap_mode="classic" trigger_index="41" type="unknown"/>
+            <net data_index="40" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[7]" storage_index="40" tap_mode="classic" trigger_index="40" type="unknown"/>
+            <net data_index="39" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[6]" storage_index="39" tap_mode="classic" trigger_index="39" type="unknown"/>
+            <net data_index="38" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[5]" storage_index="38" tap_mode="classic" trigger_index="38" type="unknown"/>
+            <net data_index="37" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[4]" storage_index="37" tap_mode="classic" trigger_index="37" type="unknown"/>
+            <net data_index="36" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[3]" storage_index="36" tap_mode="classic" trigger_index="36" type="unknown"/>
+            <net data_index="35" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[2]" storage_index="35" tap_mode="classic" trigger_index="35" type="unknown"/>
+            <net data_index="34" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[1]" storage_index="34" tap_mode="classic" trigger_index="34" type="unknown"/>
+            <net data_index="33" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[0]" storage_index="33" tap_mode="classic" trigger_index="33" type="unknown"/>
+          </bus>
+          <net data_index="32" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_access" storage_index="32" tap_mode="classic" trigger_index="32" type="unknown"/>
+          <net data_index="43" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_rw" storage_index="43" tap_mode="classic" trigger_index="43" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|test[1..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="56" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|test[1]" storage_index="56" tap_mode="classic" trigger_index="56" type="unknown"/>
+            <net data_index="55" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|test[0]" storage_index="55" tap_mode="classic" trigger_index="55" type="unknown"/>
           </bus>
         </data_view>
         <setup_view>
-          <bus is_selected="false" level-0="alt_or" name="data[7..0]" order="msb_to_lsb" type="output pin">
-            <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[7]" storage_index="7" tap_mode="classic" trigger_index="7" type="unknown"/>
-            <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[6]" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
-            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[5]" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
-            <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[4]" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
-            <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[3]" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
-            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[2]" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
-            <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[1]" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
-            <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="data[0]" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="next_state[4..0]" order="msb_to_lsb" type="output pin">
+            <net data_index="61" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[4]" storage_index="61" tap_mode="classic" trigger_index="61" type="unknown"/>
+            <net data_index="60" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[3]" storage_index="60" tap_mode="classic" trigger_index="60" type="unknown"/>
+            <net data_index="59" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[2]" storage_index="59" tap_mode="classic" trigger_index="59" type="unknown"/>
+            <net data_index="58" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[1]" storage_index="58" tap_mode="classic" trigger_index="58" type="unknown"/>
+            <net data_index="57" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="next_state[0]" storage_index="57" tap_mode="classic" trigger_index="57" type="unknown"/>
           </bus>
-          <net data_index="11" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="en" storage_index="11" tap_mode="classic" trigger_index="11" type="unknown"/>
-          <net data_index="12" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="execute" storage_index="12" tap_mode="classic" trigger_index="12" type="unknown"/>
-          <bus is_selected="false" level-0="alt_or" name="io[7..0]" order="msb_to_lsb" type="bidir pin">
-            <net data_index="20" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[7]" storage_index="20" tap_mode="classic" trigger_index="20" type="unknown"/>
-            <net data_index="19" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[6]" storage_index="19" tap_mode="classic" trigger_index="19" type="unknown"/>
-            <net data_index="18" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[5]" storage_index="18" tap_mode="classic" trigger_index="18" type="unknown"/>
-            <net data_index="17" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[4]" storage_index="17" tap_mode="classic" trigger_index="17" type="unknown"/>
-            <net data_index="16" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[3]" storage_index="16" tap_mode="classic" trigger_index="16" type="unknown"/>
-            <net data_index="15" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[2]" storage_index="15" tap_mode="classic" trigger_index="15" type="unknown"/>
-            <net data_index="14" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[1]" storage_index="14" tap_mode="classic" trigger_index="14" type="unknown"/>
-            <net data_index="13" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="io[0]" storage_index="13" tap_mode="classic" trigger_index="13" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="state[4..0]" order="msb_to_lsb" type="register">
+            <net data_index="74" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[4]" storage_index="74" tap_mode="classic" trigger_index="74" type="unknown"/>
+            <net data_index="73" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[3]" storage_index="73" tap_mode="classic" trigger_index="73" type="unknown"/>
+            <net data_index="72" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[2]" storage_index="72" tap_mode="classic" trigger_index="72" type="unknown"/>
+            <net data_index="71" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[1]" storage_index="71" tap_mode="classic" trigger_index="71" type="unknown"/>
+            <net data_index="70" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="state[0]" storage_index="70" tap_mode="classic" trigger_index="70" type="unknown"/>
           </bus>
-          <net data_index="21" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="is_ready" storage_index="21" tap_mode="classic" trigger_index="21" type="unknown"/>
-          <net data_index="22" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="print_done" storage_index="22" tap_mode="classic" trigger_index="22" type="unknown"/>
-          <net data_index="23" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="rs" storage_index="23" tap_mode="classic" trigger_index="23" type="unknown"/>
-          <net data_index="25" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="rw" storage_index="25" tap_mode="classic" trigger_index="25" type="unknown"/>
-          <net data_index="24" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="rst" storage_index="24" tap_mode="classic" trigger_index="24" type="unknown"/>
-          <bus is_selected="false" level-0="alt_or" name="did_print[2..0]" order="msb_to_lsb" state="expand" type="output pin">
-            <net data_index="10" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="did_print[2]" storage_index="10" tap_mode="classic" trigger_index="10" type="unknown"/>
-            <net data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="did_print[1]" storage_index="9" tap_mode="classic" trigger_index="9" type="unknown"/>
-            <net data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="true" is_storage_input="true" is_trigger_input="true" level-0="rising edge" name="did_print[0]" storage_index="8" tap_mode="classic" trigger_index="8" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="prev_state[4..0]" order="msb_to_lsb" type="register">
+            <net data_index="66" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[4]" storage_index="66" tap_mode="classic" trigger_index="66" type="unknown"/>
+            <net data_index="65" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[3]" storage_index="65" tap_mode="classic" trigger_index="65" type="unknown"/>
+            <net data_index="64" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[2]" storage_index="64" tap_mode="classic" trigger_index="64" type="unknown"/>
+            <net data_index="63" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[1]" storage_index="63" tap_mode="classic" trigger_index="63" type="unknown"/>
+            <net data_index="62" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="prev_state[0]" storage_index="62" tap_mode="classic" trigger_index="62" type="unknown"/>
+          </bus>
+          <bus is_selected="false" level-0="alt_or" name="string_num[4..0]" order="msb_to_lsb" type="register">
+            <net data_index="79" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[4]" storage_index="79" tap_mode="classic" trigger_index="79" type="unknown"/>
+            <net data_index="78" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[3]" storage_index="78" tap_mode="classic" trigger_index="78" type="unknown"/>
+            <net data_index="77" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[2]" storage_index="77" tap_mode="classic" trigger_index="77" type="unknown"/>
+            <net data_index="76" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[1]" storage_index="76" tap_mode="classic" trigger_index="76" type="unknown"/>
+            <net data_index="75" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="string_num[0]" storage_index="75" tap_mode="classic" trigger_index="75" type="unknown"/>
+          </bus>
+          <net data_index="68" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="print_start_turing_wire" storage_index="68" tap_mode="classic" trigger_index="68" type="unknown"/>
+          <net data_index="69" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="print_start_wire" storage_index="69" tap_mode="classic" trigger_index="69" type="unknown"/>
+          <net data_index="67" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="print_start" storage_index="67" tap_mode="classic" trigger_index="67" type="unknown"/>
+          <net data_index="80" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="timer_start" storage_index="80" tap_mode="classic" trigger_index="80" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="keycode[7..0]" order="msb_to_lsb" state="collapse" type="output pin">
+            <net data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[7]" storage_index="9" tap_mode="classic" trigger_index="9" type="unknown"/>
+            <net data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="keycode[6]" storage_index="8" tap_mode="classic" trigger_index="8" type="unknown"/>
+            <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[5]" storage_index="7" tap_mode="classic" trigger_index="7" type="unknown"/>
+            <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[4]" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
+            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[3]" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
+            <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="keycode[2]" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
+            <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="keycode[1]" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
+            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="keycode[0]" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
+          </bus>
+          <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="key_valid" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
+          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="is_pressed" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|string_num[4..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="54" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[4]" storage_index="54" tap_mode="classic" trigger_index="54" type="unknown"/>
+            <net data_index="53" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[3]" storage_index="53" tap_mode="classic" trigger_index="53" type="unknown"/>
+            <net data_index="52" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[2]" storage_index="52" tap_mode="classic" trigger_index="52" type="unknown"/>
+            <net data_index="51" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[1]" storage_index="51" tap_mode="classic" trigger_index="51" type="unknown"/>
+            <net data_index="50" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|string_num[0]" storage_index="50" tap_mode="classic" trigger_index="50" type="unknown"/>
+          </bus>
+          <net data_index="45" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|print_start" storage_index="45" tap_mode="classic" trigger_index="45" type="unknown"/>
+          <net data_index="44" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|print_done" storage_index="44" tap_mode="classic" trigger_index="44" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|state[3..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="49" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|state[3]" storage_index="49" tap_mode="classic" trigger_index="49" type="unknown"/>
+            <net data_index="48" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|state[2]" storage_index="48" tap_mode="classic" trigger_index="48" type="unknown"/>
+            <net data_index="47" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|state[1]" storage_index="47" tap_mode="classic" trigger_index="47" type="unknown"/>
+            <net data_index="46" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|state[0]" storage_index="46" tap_mode="classic" trigger_index="46" type="unknown"/>
+          </bus>
+          <bus is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|keycode[7..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="27" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[7]" storage_index="27" tap_mode="classic" trigger_index="27" type="unknown"/>
+            <net data_index="26" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[6]" storage_index="26" tap_mode="classic" trigger_index="26" type="unknown"/>
+            <net data_index="25" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[5]" storage_index="25" tap_mode="classic" trigger_index="25" type="unknown"/>
+            <net data_index="24" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[4]" storage_index="24" tap_mode="classic" trigger_index="24" type="unknown"/>
+            <net data_index="23" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[3]" storage_index="23" tap_mode="classic" trigger_index="23" type="unknown"/>
+            <net data_index="22" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[2]" storage_index="22" tap_mode="classic" trigger_index="22" type="unknown"/>
+            <net data_index="21" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[1]" storage_index="21" tap_mode="classic" trigger_index="21" type="unknown"/>
+            <net data_index="20" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|keycode[0]" storage_index="20" tap_mode="classic" trigger_index="20" type="unknown"/>
+          </bus>
+          <bus is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|head_loc[9..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="19" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[9]" storage_index="19" tap_mode="classic" trigger_index="19" type="unknown"/>
+            <net data_index="18" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[8]" storage_index="18" tap_mode="classic" trigger_index="18" type="unknown"/>
+            <net data_index="17" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[7]" storage_index="17" tap_mode="classic" trigger_index="17" type="unknown"/>
+            <net data_index="16" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[6]" storage_index="16" tap_mode="classic" trigger_index="16" type="unknown"/>
+            <net data_index="15" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[5]" storage_index="15" tap_mode="classic" trigger_index="15" type="unknown"/>
+            <net data_index="14" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[4]" storage_index="14" tap_mode="classic" trigger_index="14" type="unknown"/>
+            <net data_index="13" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[3]" storage_index="13" tap_mode="classic" trigger_index="13" type="unknown"/>
+            <net data_index="12" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[2]" storage_index="12" tap_mode="classic" trigger_index="12" type="unknown"/>
+            <net data_index="11" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[1]" storage_index="11" tap_mode="classic" trigger_index="11" type="unknown"/>
+            <net data_index="10" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|head_loc[0]" storage_index="10" tap_mode="classic" trigger_index="10" type="unknown"/>
+          </bus>
+          <bus is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|line_index[3..0]" order="msb_to_lsb" type="register">
+            <net data_index="31" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|line_index[3]" storage_index="31" tap_mode="classic" trigger_index="31" type="unknown"/>
+            <net data_index="30" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|line_index[2]" storage_index="30" tap_mode="classic" trigger_index="30" type="unknown"/>
+            <net data_index="29" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|line_index[1]" storage_index="29" tap_mode="classic" trigger_index="29" type="unknown"/>
+            <net data_index="28" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|line_index[0]" storage_index="28" tap_mode="classic" trigger_index="28" type="unknown"/>
+          </bus>
+          <bus is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|mem_addr[9..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="42" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[9]" storage_index="42" tap_mode="classic" trigger_index="42" type="unknown"/>
+            <net data_index="41" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[8]" storage_index="41" tap_mode="classic" trigger_index="41" type="unknown"/>
+            <net data_index="40" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[7]" storage_index="40" tap_mode="classic" trigger_index="40" type="unknown"/>
+            <net data_index="39" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[6]" storage_index="39" tap_mode="classic" trigger_index="39" type="unknown"/>
+            <net data_index="38" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[5]" storage_index="38" tap_mode="classic" trigger_index="38" type="unknown"/>
+            <net data_index="37" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[4]" storage_index="37" tap_mode="classic" trigger_index="37" type="unknown"/>
+            <net data_index="36" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[3]" storage_index="36" tap_mode="classic" trigger_index="36" type="unknown"/>
+            <net data_index="35" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[2]" storage_index="35" tap_mode="classic" trigger_index="35" type="unknown"/>
+            <net data_index="34" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[1]" storage_index="34" tap_mode="classic" trigger_index="34" type="unknown"/>
+            <net data_index="33" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_addr[0]" storage_index="33" tap_mode="classic" trigger_index="33" type="unknown"/>
+          </bus>
+          <net data_index="32" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_access" storage_index="32" tap_mode="classic" trigger_index="32" type="unknown"/>
+          <net data_index="43" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|mem_rw" storage_index="43" tap_mode="classic" trigger_index="43" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="lcd_interface:lcd_interface|test[1..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="56" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|test[1]" storage_index="56" tap_mode="classic" trigger_index="56" type="unknown"/>
+            <net data_index="55" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="lcd_interface:lcd_interface|test[0]" storage_index="55" tap_mode="classic" trigger_index="55" type="unknown"/>
           </bus>
         </setup_view>
         <trigger_in_editor/>
         <trigger_out_editor/>
       </presentation>
-      <trigger attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2016/12/08 16:30:48  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="64" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+      <trigger attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2016/12/09 20:35:16  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="4096" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
-          <level enabled="yes" name="condition1" type="basic">'did_print[0]' == rising edge &amp;&amp; 'did_print[1]' == low &amp;&amp; 'did_print[2]' == low
+          <level enabled="yes" name="condition1" type="basic">'is_pressed' == high &amp;&amp; 'keycode[0]' == high &amp;&amp; 'keycode[1]' == low &amp;&amp; 'keycode[2]' == high &amp;&amp; 'keycode[3]' == low &amp;&amp; 'keycode[4]' == low &amp;&amp; 'keycode[5]' == low &amp;&amp; 'keycode[6]' == high &amp;&amp; 'keycode[7]' == low
             <power_up enabled="yes">
             </power_up>
             <op_node/>
           </level>
         </events>
         <storage_qualifier_events>
-          <transitional>11111111111111111111111111
-            <pwr_up_transitional>11111111111111111111111111</pwr_up_transitional>
+          <transitional>111111111111111111111111111111111111111111111111111111111111111111111111111111111
+            <pwr_up_transitional>111111111111111111111111111111111111111111111111111111111111111111111111111111111</pwr_up_transitional>
           </transitional>
           <storage_qualifier_level type="basic">
             <power_up>
@@ -253,7 +637,7 @@
     <single attribute="instance widget visible" value="1"/>
     <single attribute="jtag widget visible" value="1"/>
     <single attribute="lock mode" value="0"/>
-    <multi attribute="frame size" size="2" value="1920,1027"/>
+    <multi attribute="frame size" size="2" value="1280,971"/>
     <multi attribute="jtag widget size" size="2" value="334,120"/>
   </global_info>
 </session>

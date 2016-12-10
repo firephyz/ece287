@@ -1,4 +1,4 @@
-module keyboard_wrapper(keycode, breakcode, is_valid, PS2_DATA, PS2_CLOCK, clk, state);
+module keyboard_wrapper(keycode, breakcode, is_valid, PS2_DATA, PS2_CLOCK, clk);
 
 	input clk;
 	input PS2_DATA;
@@ -9,7 +9,7 @@ module keyboard_wrapper(keycode, breakcode, is_valid, PS2_DATA, PS2_CLOCK, clk, 
 	output reg [7:0] keycode;
 	output reg [15:0] breakcode;
 	
-	output reg [1:0] state;
+	reg [1:0] state;
 	reg [1:0] next_state;
 	
 	reg timer_start;

@@ -1,27 +1,33 @@
-module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst);
+module Super(seg_0, seg_1, seg_2, seg_3, key_valid, lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst, is_pressed, next_state, print_start_turing_wire, timer_start, keycode, string_num);
 
 	input clk, rst;
 
-	inout lcd_data;
+	inout [7:0] lcd_data;
 	output lcd_enable;
 	output lcd_rw;
 	output lcd_rs;
 	
 	input key_clock;
 	input key_data;
-	wire is_pressed;
-	wire [7:0] keycode;
+	output wire is_pressed;
+	output wire [7:0] keycode;
 	wire [7:0] break_code;
 	
 	reg [31:0] timer_max;
-	reg timer_start;
+	output reg timer_start;
 	wire timer_done;
+	
+	output [6:0] seg_0, seg_1;
+	output [6:0] seg_2, seg_3;
+	output key_valid;
+	assign key_valid = is_pressed;
 	
 	// Interface with the turing machine module
 	reg execute;
 	wire execute_is_done;
-	reg print_start;
-	wire print_start_wire;
+	reg print_start;	// Reg set by this module to toggle when to print
+	wire print_start_wire; // Wire that joins print_start and print_start_turing_wire and moves it to the lcd module
+	output wire print_start_turing_wire; // Wire set by turing module to toggle when to print
 	wire print_done;
 	
 	reg mem_access; // Set by super to access memory
@@ -40,11 +46,11 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 	reg [10:0] state_addr;
 	reg [10:0] state_in;
 	
-	reg [4:0] string_num;
+	output reg [4:0] string_num;
 	
 	// Internal state stuff
 	reg [4:0] state;
-	reg [4:0] next_state;
+	output reg [4:0] next_state;
 	reg [4:0] prev_state;
 	reg [9:0] t_state_addr;
 	reg [10:0] t_state_contents;
@@ -56,12 +62,18 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 	assign mem_rw_wire = 		(state == PRINT_TAPE || state == TURING_START) ? 1'hZ : mem_rw;
 	assign mem_addr_wire = 		(state == PRINT_TAPE || state == TURING_START) ? 10'hZ : mem_addr;
 	
-	assign print_start_wire = 	(state == TURING_START) ? 1'hZ : print_start;
+	assign print_start_wire = 	(state == TURING_START) ? print_start_turing_wire : print_start;
 	
-	turing_machine turing_machine(execute, execute_is_done, print_start_wire, print_done, mem_access, mem_io_wire, mem_rw, mem_addr, head_loc, head_dir, move_head, state_access, state_addr, state_in, clk, rst);
-	keyboard_wrapper keyboard_wrapper(keycode, break_code, is_pressed, key_data, key_clock);
+	turing_machine turing_machine(execute, execute_is_done, print_start_turing_wire, print_done, mem_access, mem_io_wire, mem_rw, mem_addr, head_loc, head_dir, move_head, state_access, state_addr, state_in, clk, rst);
+	keyboard_wrapper keyboard_wrapper(keycode, break_code, is_pressed, key_data, key_clock, clk);
 	timer timer(timer_max, timer_start, timer_done, clk);
 	lcd_interface lcd_interface(print_start_wire, print_done, string_num, keycode, head_loc, mem_access_wire, mem_io_wire, mem_rw_wire, mem_addr_wire, lcd_enable, lcd_rs, lcd_rw, lcd_data, rst, clk);
+	
+	seven_seg seven_seg_0(keycode[3:0], seg_0[0], seg_0[1], seg_0[2], seg_0[3], seg_0[4], seg_0[5], seg_0[6]);
+	seven_seg seven_seg_1(keycode[7:4], seg_1[0], seg_1[1], seg_1[2], seg_1[3], seg_1[4], seg_1[5], seg_1[6]);
+	
+	seven_seg seven_seg_2(state[3:0], seg_2[0], seg_2[1], seg_2[2], seg_2[3], seg_2[4], seg_2[5], seg_2[6]);
+	seven_seg seven_seg_3({3'h0, keycode[4]}, seg_3[0], seg_3[1], seg_3[2], seg_3[3], seg_3[4], seg_3[5], seg_3[6]);
 	
 	parameter CHOICE 			= 5'h0,
 				 GET_STATE 		= 5'h1,
@@ -82,8 +94,9 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 				 DELETE_TAPE 	= 5'h10,
 				 WRITE_TAPE 	= 5'h11,
 				 TURING_START  = 5'h12,
-				 LCD_OFF_TIMER_START	= 5'h13,
-				 TURING_WAIT	= 5'h14;
+				 LCD_ON_TIMER_START	= 5'h13,
+				 TURING_WAIT	= 5'h14,
+				 LCD_OFF			= 5'h15;
 			
 	parameter KEY_ZERO 	= 8'h45,
 				 KEY_ONE	 	= 8'h16,
@@ -102,7 +115,7 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 				 KEY_E		= 8'h24,
 				 KEY_F		= 8'h2B,
 				 KEY_HASH	= 8'h26,
-				 KEY_SPACE	= 8'h29,
+				 KEY_SPACE	= 8'h20,
 				 KEY_LEFT	= 8'h1C,
 				 KEY_RIGHT	= 8'h23,
 				 KEY_ENTER	= 8'h5A,
@@ -115,7 +128,8 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 				 
 	parameter LEFT = 	1'b0,
 				 RIGHT = 1'b1;
-				 
+	
+	// String nums for lcd module
 	parameter 	GET_STATE_STRING 		= 5'h0,
 					GET_STATE_0_STRING 	= 5'h1,
 					GET_STATE_1_STRING 	= 5'h2,
@@ -141,23 +155,30 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 			prev_state <= CHOICE;
 		end
 		else begin
-			if(state == LCD_OFF_TIMER_START || state == TURING_WAIT)
+			if(state == LCD_ON_TIMER_START || state == TURING_WAIT) begin
 				if(timer_done && print_done) begin
 					state <= next_state;
 					prev_state <= state;
 				end
+			end
 			else if(state == GET_STATE ||
 					  state == GET_READ  ||
 					  state == GET_WRITE ||
 					  state == GET_DIR   ||
-					  state == GET_NS)
+					  state == GET_NS		||
+					  state == PRINT_TAPE) begin
 				if(print_done) begin
 					state <= next_state;
 					prev_state <= state;
 				end
-			else
+			end
+			else if (state == LCD_OFF) begin
+				state <= next_state;
+			end
+			else begin
 				prev_state <= state;
 				state <= next_state;
+			end
 		end
 	end
 	
@@ -383,7 +404,10 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 					timer_start <= 1;
 					timer_max <= TURING_DELAY;
 				end
-				LCD_OFF_TIMER_START: begin
+				LCD_OFF: begin
+					print_start <= 0;
+				end
+				LCD_ON_TIMER_START: begin
 					case(prev_state)
 						GET_STATE_0: begin
 							timer_max <= HALF_SECOND;
@@ -454,19 +478,8 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 	// Calculate next state
 	always@(*) begin
 		case(state)
-			CHOICE: begin
-				if(is_pressed) begin
-					if(keycode == KEY_ZERO)
-						next_state = PRINT_TAPE;
-					else if(keycode == KEY_ONE)
-						next_state = GET_STATE;
-					else
-						next_state = CHOICE;
-				end
-				else
-					next_state = CHOICE;
-			end
-			GET_STATE: 		next_state = LCD_OFF_TIMER_START;
+			CHOICE: next_state = LCD_OFF;
+			GET_STATE: 		next_state = LCD_ON_TIMER_START;
 			GET_STATE_0: begin
 				if(is_pressed) begin
 					if(keycode == KEY_ENTER)
@@ -476,52 +489,52 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 					else if(keycode == KEY_BACK)
 						next_state = CHOICE;
 					else
-						next_state = LCD_OFF_TIMER_START;
+						next_state = LCD_ON_TIMER_START;
 				end
 				else next_state = GET_STATE_0;
 			end
 			GET_STATE_1: begin
 				if(is_pressed)
-					next_state = LCD_OFF_TIMER_START;
+					next_state = LCD_ON_TIMER_START;
 				else
 					next_state = GET_STATE_1;
 			end
-			GET_READ: 		next_state = LCD_OFF_TIMER_START;
+			GET_READ: 		next_state = LCD_ON_TIMER_START;
 			GET_READ_0: begin
 				if(is_pressed)
-					next_state = LCD_OFF_TIMER_START;
+					next_state = LCD_ON_TIMER_START;
 				else
 					next_state = GET_READ_0;
 			end
-			GET_WRITE:		next_state = LCD_OFF_TIMER_START;
+			GET_WRITE:		next_state = LCD_ON_TIMER_START;
 			GET_WRITE_0: begin
 				if(is_pressed)
-					next_state = LCD_OFF_TIMER_START;
+					next_state = LCD_ON_TIMER_START;
 				else
 					next_state = GET_WRITE_0;
 			end
-			GET_DIR:			next_state = LCD_OFF_TIMER_START;
+			GET_DIR:			next_state = LCD_ON_TIMER_START;
 			GET_DIR_0: begin
 				if(is_pressed)
-					next_state = LCD_OFF_TIMER_START;
+					next_state = LCD_ON_TIMER_START;
 				else
 					next_state = GET_DIR_0;
 			end
-			GET_NS:			next_state = LCD_OFF_TIMER_START;
+			GET_NS:			next_state = LCD_ON_TIMER_START;
 			GET_NS_0: begin
 				if(is_pressed)
-					next_state = LCD_OFF_TIMER_START;
+					next_state = LCD_ON_TIMER_START;
 				else
 					next_state = GET_NS_0;
 			end
 			GET_NS_1: begin
 				if(is_pressed)
-					next_state = LCD_OFF_TIMER_START;
+					next_state = LCD_ON_TIMER_START;
 				else
 					next_state = GET_NS_1;
 			end
 			WRITE_STATE:	next_state = GET_STATE;
-			PRINT_TAPE:		next_state = GET_KEY;
+			PRINT_TAPE:		next_state = LCD_OFF;
 			GET_KEY: begin
 				if(is_pressed) begin
 					if(keycode == KEY_BACK)
@@ -546,7 +559,7 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 			TURING_WAIT: begin
 				next_state = TURING_START;
 			end
-			LCD_OFF_TIMER_START: begin
+			LCD_ON_TIMER_START: begin
 				case(prev_state)
 					GET_STATE: 		next_state = GET_STATE_0;
 					GET_STATE_0: 	next_state = GET_STATE_1;
@@ -561,6 +574,24 @@ module Super(lcd_data, lcd_enable, lcd_rw, lcd_rs, key_clock, key_data, clk, rst
 					GET_NS_0:		next_state = GET_NS_1;
 					GET_NS_1:		next_state = WRITE_STATE;
 					default: 		next_state = CHOICE;
+				endcase
+			end
+			LCD_OFF: begin
+				case(prev_state)
+					CHOICE: begin
+						if(is_pressed) begin
+							if(keycode == KEY_ZERO)
+								next_state = PRINT_TAPE;
+							else if(keycode == KEY_ONE)
+								next_state = GET_STATE;
+							else
+								next_state = CHOICE;
+						end
+						else
+							next_state = LCD_OFF;
+					end
+					PRINT_TAPE: next_state = GET_KEY;
+					default: next_state = CHOICE;
 				endcase
 			end
 			default: 		next_state = CHOICE;

@@ -1,3 +1,4 @@
 Warning (10273): Verilog HDL warning at lcd_controller.v(40): extended using "x" or "z"
+Warning (10268): Verilog HDL information at interface.v(68): always construct contains both blocking and non-blocking assignments
 Warning (10273): Verilog HDL warning at machine.v(58): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at Super.v(57): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at Super.v(63): extended using "x" or "z"
