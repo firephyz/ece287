@@ -19,23 +19,35 @@ module lcd_interface(print_start, print_done, string_num, keycode, head_loc, mem
 	output reg mem_rw;
 	output reg [9:0] mem_addr;
 	
+	reg [7:0] key_to_print;
 	reg [127:0] line1;
 	reg [127:0] line2;
 	
-	output reg [3:0] state;
+	output reg [4:0] state;
 	reg [3:0] line_index; // Used within the various print states to record where it is along the line
 	
 	// Instantiate the lcd module
 	LCD_Display lcd_module(clk, rst, line2, line1, rs, en, rw, io);
 	
-	parameter WAIT 	= 4'h0,
-				 PRINT	= 4'h1,
-				 SPIN		= 4'h2,
-				 PRINT_TURING_MEM_SETUP		= 4'h3,
-				 PRINT_TURING_MEM_RECORD 	= 4'h4,
-				 PRINT_TURING_MEM_SHIFT		= 4'h5,
-				 PRINT_PRESENT_CHOICE		= 4'h6,
-				 PRINT_GET_STATE				= 4'h7;
+	parameter WAIT 	= 5'h00,
+				 PRINT	= 5'h01,
+				 SPIN		= 5'h02,
+				 PRINT_TURING_MEM_SETUP		= 5'h03,
+				 PRINT_TURING_MEM_RECORD 	= 5'h04,
+				 PRINT_TURING_MEM_SHIFT		= 5'h05,
+				 PRINT_PRESENT_CHOICE		= 5'h06,
+				 PRINT_GET_STATE				= 5'h07,
+				 PRINT_GET_STATE_0			= 5'h08,
+				 PRINT_GET_STATE_1			= 5'h09,
+				 PRINT_GET_READ				= 5'h0A,
+				 PRINT_GET_READ_0				= 5'h0B,
+				 PRINT_GET_WRITE				= 5'h0C,
+				 PRINT_GET_WRITE_0			= 5'h0D,
+				 PRINT_GET_DIR					= 5'h0E,
+				 PRINT_GET_DIR_0				= 5'h0F,
+				 PRINT_GET_NS					= 5'h10,
+				 PRINT_GET_NS_0				= 5'h11,
+				 PRINT_GET_NS_1				= 5'h12;
 				 
 	parameter 	GET_STATE_STRING 		= 5'h0,
 					GET_STATE_0_STRING 	= 5'h1,
@@ -54,6 +66,20 @@ module lcd_interface(print_start, print_done, string_num, keycode, head_loc, mem
 	
 	parameter LCD_ZERO 	= 8'h30,
 				 LCD_ONE	 	= 8'h31,
+				 LCD_TWO		= 8'h32,
+				 LCD_THREE	= 8'h33,
+				 LCD_FOUR	= 8'h34,
+				 LCD_FIVE	= 8'h35,
+				 LCD_SIX		= 8'h36,
+				 LCD_SEVEN	= 8'h37,
+				 LCD_EIGHT	= 8'h38,
+				 LCD_NINE	= 8'h39,
+				 LCD_A		= 8'h41,
+				 LCD_B		= 8'h42,
+				 LCD_C		= 8'h43,
+				 LCD_D		= 8'h44,
+				 LCD_E		= 8'h45,
+				 LCD_F		= 8'h46,
 				 LCD_HASH	= 8'h23,
 				 LCD_SPACE	= 8'h20,
 				 LCD_EXP		= 8'h5E;
@@ -62,6 +88,29 @@ module lcd_interface(print_start, print_done, string_num, keycode, head_loc, mem
 				 SYM_ZERO = 	2'b01,
 				 SYM_ONE = 		2'b10,
 				 SYM_HASH = 	2'b11;
+				 
+	parameter KEY_ZERO 	= 8'h45,
+				 KEY_ONE	 	= 8'h16,
+				 KEY_TWO		= 8'h1E,
+				 KEY_THREE	= 8'h26,
+				 KEY_FOUR	= 8'h25,
+				 KEY_FIVE	= 8'h2E,
+				 KEY_SIX		= 8'h36,
+				 KEY_SEVEN	= 8'h3D,
+				 KEY_EIGHT	= 8'h3E,
+				 KEY_NINE	= 8'h46,
+				 KEY_A		= 8'h1C,
+				 KEY_B		= 8'h32,
+				 KEY_C		= 8'h21,
+				 KEY_D		= 8'h23,
+				 KEY_E		= 8'h24,
+				 KEY_F		= 8'h2B,
+				 KEY_HASH	= 8'h26,
+				 KEY_SPACE	= 8'h29,
+				 KEY_LEFT	= 8'h1C,
+				 KEY_RIGHT	= 8'h23,
+				 KEY_ENTER	= 8'h5A,
+				 KEY_BACK	= 8'h66;
 	
 	always@(posedge clk or negedge rst) begin
 		if(rst == 0) begin
@@ -76,8 +125,6 @@ module lcd_interface(print_start, print_done, string_num, keycode, head_loc, mem
 				WAIT: begin
 					if(print_start) begin
 						line_index <= 4'h0;
-						line1 <= 0;
-						line2 <= 0;
 						state <= PRINT;
 					end
 				end
@@ -86,6 +133,8 @@ module lcd_interface(print_start, print_done, string_num, keycode, head_loc, mem
 						DISPLAY_TAPE: state <= PRINT_TURING_MEM_SETUP;
 						PRESENT_CHOICE: state <= PRINT_PRESENT_CHOICE;
 						GET_STATE_STRING: state <= PRINT_GET_STATE;
+						GET_STATE_0_STRING: state <= PRINT_GET_STATE_0;
+						GET_STATE_1_STRING: state <= PRINT_GET_STATE_1;
 						default: state <= WAIT;
 					endcase
 				end
@@ -148,23 +197,98 @@ module lcd_interface(print_start, print_done, string_num, keycode, head_loc, mem
 				/*
 				 * Present the user with the choice to edit the tape or edit states
 				 */
-				 PRINT_PRESENT_CHOICE: begin
+				PRINT_PRESENT_CHOICE: begin
 					line1 <= 128'h4564697420546170653A203020202020;
 					line2 <= 128'h45646974205374617465733A20312020;
 					state <= SPIN;
 					print_done <= 1;
-				 end
-				 /*
-				 * Prompt the user for getting the state to edit
-				 */
-				 PRINT_GET_STATE: begin
+				end
+				/*
+				* Prompt the user for getting the state to edit
+				*/
+				PRINT_GET_STATE: begin
 					line1 <= 128'h456E7465722053746174653A20202020;
 					line2 <= 128'h20202020202020202020202020202020;
 					state <= SPIN;
 					print_done <= 1;
-				 end
+				end
+				PRINT_GET_STATE_0: begin
+					line1[23:16] <= key_to_print;
+					state <= SPIN;
+					print_done <= 1;
+				end
+				PRINT_GET_STATE_1: begin
+					line1[15:8] <= key_to_print;
+					state <= SPIN;
+					print_done <= 1;
+				end
+				PRINT_GET_READ: begin
+					line1 <= 128'h47657420726561642020202020202020;
+					line2 <= 128'h73796d626f6c3a202020202020202020;
+					state <= SPIN;
+					print_done <= 1;
+				end
+				PRINT_GET_READ_0: begin
+					line2[72:65] <= key_to_print;
+					state <= SPIN;
+					print_done <= 1;
+				end
+				PRINT_GET_WRITE: begin
+					
+				end
+				PRINT_GET_WRITE_0: begin
+				
+				end
+				PRINT_GET_DIR: begin
+				
+				end
+				PRINT_GET_DIR_0: begin
+				
+				end
+				PRINT_GET_NS: begin
+				
+				end
+				PRINT_GET_NS_0: begin
+				
+				end
+				PRINT_GET_NS_1: begin
+				
+				end
 			endcase
 		end
+	end
+	
+	always@(*) begin
+		if(state == PRINT_GET_STATE_0 || state == PRINT_GET_STATE_1) begin
+			case(keycode)
+				KEY_ZERO: 	key_to_print = LCD_ZERO;
+				KEY_ONE: 	key_to_print = LCD_ONE;
+				KEY_TWO: 	key_to_print = LCD_TWO;
+				KEY_THREE: 	key_to_print = LCD_THREE;
+				KEY_FOUR: 	key_to_print = LCD_FOUR;
+				KEY_FIVE: 	key_to_print = LCD_FIVE;
+				KEY_SIX: 	key_to_print = LCD_SIX;
+				KEY_SEVEN: 	key_to_print = LCD_SEVEN;
+				KEY_EIGHT: 	key_to_print = LCD_EIGHT;
+				KEY_NINE: 	key_to_print = LCD_NINE;
+				KEY_A: 		key_to_print = LCD_A;
+				KEY_B: 		key_to_print = LCD_B;
+				KEY_C: 		key_to_print = LCD_C;
+				KEY_D: 		key_to_print = LCD_D;
+				KEY_E:		key_to_print = LCD_E;
+				KEY_F: 		key_to_print = LCD_F;
+				default:		key_to_print = LCD_HASH;
+			endcase
+		end
+		else if(state == PRINT_GET_READ_0) begin
+			case(keycode)
+				KEY_ZERO: 	key_to_print = LCD_ZERO;
+				KEY_ONE: 	key_to_print = LCD_ONE;
+				KEY_THREE: 	key_to_print = LCD_HASH;
+				default:		key_to_print = LCD_SPACE;
+			endcase
+		end
+		else key_to_print = LCD_SPACE;
 	end
 
 endmodule
