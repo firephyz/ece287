@@ -82,7 +82,10 @@ module lcd_interface(print_start, print_done, string_num, keycode, head_loc, mem
 				 LCD_F		= 8'h46,
 				 LCD_HASH	= 8'h23,
 				 LCD_SPACE	= 8'h20,
-				 LCD_EXP		= 8'h5E;
+				 LCD_EXP		= 8'h5E,
+				 LCD_L		= 8'h4C,
+				 LCD_R		= 8'h52,
+				 LCD_UNDERSCORE = 8'h5F;
 	
 	parameter SYM_BLANK = 	2'b00,
 				 SYM_ZERO = 	2'b01,
@@ -110,7 +113,9 @@ module lcd_interface(print_start, print_done, string_num, keycode, head_loc, mem
 				 KEY_LEFT	= 8'h1C,
 				 KEY_RIGHT	= 8'h23,
 				 KEY_ENTER	= 8'h5A,
-				 KEY_BACK	= 8'h66;
+				 KEY_BACK	= 8'h66,
+				 KEY_L 		= 8'h4B,
+				 KEY_R 		= 8'h2D;
 	
 	always@(posedge clk or negedge rst) begin
 		if(rst == 0) begin
@@ -135,6 +140,15 @@ module lcd_interface(print_start, print_done, string_num, keycode, head_loc, mem
 						GET_STATE_STRING: state <= PRINT_GET_STATE;
 						GET_STATE_0_STRING: state <= PRINT_GET_STATE_0;
 						GET_STATE_1_STRING: state <= PRINT_GET_STATE_1;
+						GET_READ_STRING: state <= PRINT_GET_READ;
+						GET_READ_0_STRING: state <= PRINT_GET_READ_0;
+						GET_WRITE_STRING: state <= PRINT_GET_WRITE;
+						GET_WRITE_0_STRING: state <= PRINT_GET_WRITE_0;
+						GET_DIR_STRING: state <= PRINT_GET_DIR;
+						GET_DIR_0_STRING: state <= PRINT_GET_DIR_0;
+						GET_NS_STRING:	state <= PRINT_GET_NS;
+						GET_NS_0_STRING: state <= PRINT_GET_NS_0;
+						GET_NS_1_STRING: state <= PRINT_GET_NS_1;
 						default: state <= WAIT;
 					endcase
 				end
@@ -208,12 +222,13 @@ module lcd_interface(print_start, print_done, string_num, keycode, head_loc, mem
 				*/
 				PRINT_GET_STATE: begin
 					line1 <= 128'h456E7465722053746174653A20202020;
-					line2 <= 128'h20202020202020202020202020202020;
+					line2 <= 128'h28454E54455220546F2052756E292020;
 					state <= SPIN;
 					print_done <= 1;
 				end
 				PRINT_GET_STATE_0: begin
 					line1[23:16] <= key_to_print;
+					line2 <= 128'h20202020202020202020202020202020;
 					state <= SPIN;
 					print_done <= 1;
 				end
@@ -223,69 +238,98 @@ module lcd_interface(print_start, print_done, string_num, keycode, head_loc, mem
 					print_done <= 1;
 				end
 				PRINT_GET_READ: begin
-					line1 <= 128'h47657420726561642020202020202020;
-					line2 <= 128'h73796d626f6c3a202020202020202020;
+					line1 <= 128'h456E7465722052656164202020202020;
+					line2 <= 128'h53796d626f6c3a202020202020202020;
 					state <= SPIN;
 					print_done <= 1;
 				end
 				PRINT_GET_READ_0: begin
-					line2[72:65] <= key_to_print;
+					line2[63:56] <= key_to_print;
 					state <= SPIN;
 					print_done <= 1;
 				end
 				PRINT_GET_WRITE: begin
-					
+					line1 <= 128'h456E7465722057726974652020202020;
+					line2 <= 128'h53796D626F6C3A202020202020202020;   
+					state <= SPIN;
+					print_done <= 1;
 				end
 				PRINT_GET_WRITE_0: begin
-				
+					line2[63:56] <= key_to_print;
+					state <= SPIN;
+					print_done <= 1;
 				end
 				PRINT_GET_DIR: begin
-				
+					line1 <= 128'h456E746572204D6F7665202020202020;
+					line2 <= 128'h4469723A202020202020202020202020;
+					state <= SPIN;
+					print_done <= 1;
 				end
 				PRINT_GET_DIR_0: begin
-				
+					line2[87:80] <= key_to_print;
+					state <= SPIN;
+					print_done <= 1;
 				end
 				PRINT_GET_NS: begin
-				
+					line1 <= 128'h456E746572204E657874202020202020;
+					line2 <= 128'h53746174653A20202020202020202020;
+					state <= SPIN;
+					print_done <= 1;
 				end
 				PRINT_GET_NS_0: begin
-				
+					line2[71:64] <= key_to_print;
+					state <= SPIN;
+					print_done <= 1;
 				end
 				PRINT_GET_NS_1: begin
-				
+					line2[63:56] <= key_to_print;
+					state <= SPIN;
+					print_done <= 1;
 				end
 			endcase
 		end
 	end
 	
 	always@(*) begin
-		if(state == PRINT_GET_STATE_0 || state == PRINT_GET_STATE_1) begin
-			case(keycode)
-				KEY_ZERO: 	key_to_print = LCD_ZERO;
-				KEY_ONE: 	key_to_print = LCD_ONE;
-				KEY_TWO: 	key_to_print = LCD_TWO;
-				KEY_THREE: 	key_to_print = LCD_THREE;
-				KEY_FOUR: 	key_to_print = LCD_FOUR;
-				KEY_FIVE: 	key_to_print = LCD_FIVE;
-				KEY_SIX: 	key_to_print = LCD_SIX;
-				KEY_SEVEN: 	key_to_print = LCD_SEVEN;
-				KEY_EIGHT: 	key_to_print = LCD_EIGHT;
-				KEY_NINE: 	key_to_print = LCD_NINE;
-				KEY_A: 		key_to_print = LCD_A;
-				KEY_B: 		key_to_print = LCD_B;
-				KEY_C: 		key_to_print = LCD_C;
-				KEY_D: 		key_to_print = LCD_D;
-				KEY_E:		key_to_print = LCD_E;
-				KEY_F: 		key_to_print = LCD_F;
-				default:		key_to_print = LCD_HASH;
-			endcase
+		if(state == PRINT_GET_STATE_0 || 
+		   state == PRINT_GET_STATE_1 ||
+			state == PRINT_GET_NS_0    ||
+			state == PRINT_GET_NS_1)
+			begin
+				case(keycode)
+					KEY_ZERO: 	key_to_print = LCD_ZERO;
+					KEY_ONE: 	key_to_print = LCD_ONE;
+					KEY_TWO: 	key_to_print = LCD_TWO;
+					KEY_THREE: 	key_to_print = LCD_THREE;
+					KEY_FOUR: 	key_to_print = LCD_FOUR;
+					KEY_FIVE: 	key_to_print = LCD_FIVE;
+					KEY_SIX: 	key_to_print = LCD_SIX;
+					KEY_SEVEN: 	key_to_print = LCD_SEVEN;
+					KEY_EIGHT: 	key_to_print = LCD_EIGHT;
+					KEY_NINE: 	key_to_print = LCD_NINE;
+					KEY_A: 		key_to_print = LCD_A;
+					KEY_B: 		key_to_print = LCD_B;
+					KEY_C: 		key_to_print = LCD_C;
+					KEY_D: 		key_to_print = LCD_D;
+					KEY_E:		key_to_print = LCD_E;
+					KEY_F: 		key_to_print = LCD_F;
+					default:		key_to_print = LCD_EXP;
+				endcase
 		end
-		else if(state == PRINT_GET_READ_0) begin
+		else if(state == PRINT_GET_READ_0 || state == PRINT_GET_WRITE_0) begin
 			case(keycode)
 				KEY_ZERO: 	key_to_print = LCD_ZERO;
 				KEY_ONE: 	key_to_print = LCD_ONE;
 				KEY_THREE: 	key_to_print = LCD_HASH;
-				default:		key_to_print = LCD_SPACE;
+				KEY_SPACE:  key_to_print = LCD_UNDERSCORE;
+				default:		key_to_print = LCD_EXP;
+			endcase
+		end
+		else if(state == PRINT_GET_DIR_0) begin
+			case(keycode)
+				KEY_A: 	key_to_print = LCD_L;
+				KEY_D: 	key_to_print = LCD_R;
+				default:		key_to_print = LCD_EXP;
 			endcase
 		end
 		else key_to_print = LCD_SPACE;

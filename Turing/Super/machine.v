@@ -78,23 +78,24 @@ module turing_machine(execute, execute_is_done, print_start, print_done, mem_acc
 			print_start <= 0;
 			execute_is_done <= 0;
 			
-			t_states[{8'h00, 2'b01}] <= {2'b10, 1'b1, 8'h01};
-			t_states[{8'h00, 2'b10}] <= {2'b01, 1'b0, 8'h02};
-			t_states[{8'h01, 2'b00}] <= {2'b00, 1'b0, 8'h00};
-			t_states[{8'h01, 2'b01}] <= {2'b01, 1'b1, 8'h01};
-			t_states[{8'h01, 2'b10}] <= {2'b10, 1'b1, 8'h01};
-			t_states[{8'h02, 2'b00}] <= {2'b10, 1'b1, 8'h01};
-			t_states[{8'h02, 2'b01}] <= {2'b10, 1'b1, 8'h01};
-			t_states[{8'h02, 2'b10}] <= {2'b01, 1'b0, 8'h02};
-			t_states[{8'h02, 2'b11}] <= {2'b00, 1'b1, 8'h03};
-			t_states[{8'h03, 2'b01}] <= {2'b00, 1'b1, 8'h03};
-			t_states[{8'h03, 2'b10}] <= {2'b00, 1'b1, 8'h03};
-			t_states[{8'h03, 2'b00}] <= {2'b00, 1'b1, 8'hFF};
+//			t_states[{8'h00, 2'b01}] <= {2'b10, 1'b1, 8'h01};
+//			t_states[{8'h00, 2'b10}] <= {2'b01, 1'b0, 8'h02};
+//			t_states[{8'h01, 2'b00}] <= {2'b00, 1'b0, 8'h00};
+//			t_states[{8'h01, 2'b01}] <= {2'b01, 1'b1, 8'h01};
+//			t_states[{8'h01, 2'b10}] <= {2'b10, 1'b1, 8'h01};
+//			t_states[{8'h02, 2'b00}] <= {2'b10, 1'b1, 8'h01};
+//			t_states[{8'h02, 2'b01}] <= {2'b10, 1'b1, 8'h01};
+//			t_states[{8'h02, 2'b10}] <= {2'b01, 1'b0, 8'h02};
+//			t_states[{8'h02, 2'b11}] <= {2'b00, 1'b1, 8'h03};
+//			t_states[{8'h03, 2'b01}] <= {2'b00, 1'b1, 8'h03};
+//			t_states[{8'h03, 2'b10}] <= {2'b00, 1'b1, 8'h03};
+//			t_states[{8'h03, 2'b00}] <= {2'b00, 1'b1, 8'hFF};
 			
 			// Clear the tape to all blanks
 			for(index = 0; index < TURING_MEMORY_SIZE; index = index + 1) begin
 				if(index == TURING_MEMORY_SIZE / 2)
-					memory[index] <= SYM_ZERO;
+					//memory[index] <= SYM_ZERO;
+					memory[index] <= SYM_BLANK;
 				else
 					memory[index] <= SYM_BLANK;
 			end
